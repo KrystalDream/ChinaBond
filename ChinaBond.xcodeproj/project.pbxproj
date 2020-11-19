@@ -196,15 +196,12 @@
 		73BE030E1C18118C00AE1C09 /* CBMessageShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BE030D1C18118C00AE1C09 /* CBMessageShareView.m */; };
 		73C29AD21C1AB9A700B64DBC /* CBUserHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C29AD01C1AB9A700B64DBC /* CBUserHeadCell.m */; };
 		73C29AD31C1AB9A700B64DBC /* CBUserHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C29AD11C1AB9A700B64DBC /* CBUserHeadCell.xib */; };
-		73C2D1BE1C2AFE7700CAE210 /* CBLaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2D1BD1C2AFE7700CAE210 /* CBLaunchController.m */; };
 		73C2D1C71C2B9D6000CAE210 /* CBChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2D1C61C2B9D6000CAE210 /* CBChannelModel.m */; };
 		73C2D1D31C2D0E2200CAE210 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73C2D1D21C2D0E2200CAE210 /* Images.xcassets */; };
-		73C2D1D51C2D114800CAE210 /* zhongzhai.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73C2D1D41C2D114800CAE210 /* zhongzhai.gif */; };
 		73C2D1DE1C2D27C900CAE210 /* CBChannelSChildCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2D1DC1C2D27C900CAE210 /* CBChannelSChildCell.m */; };
 		73C2D1DF1C2D27C900CAE210 /* CBChannelSChildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C2D1DD1C2D27C900CAE210 /* CBChannelSChildCell.xib */; };
 		73C2D1E81C2D3F7700CAE210 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2D1E51C2D3F7700CAE210 /* EAIntroPage.m */; };
 		73C2D1E91C2D3F7700CAE210 /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2D1E71C2D3F7700CAE210 /* EAIntroView.m */; };
-		73C2D1EC1C2D45CE00CAE210 /* iphone5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73C2D1EB1C2D45CE00CAE210 /* iphone5.gif */; };
 		73C999D31C16A62F00B8ECEF /* CBThreeLevelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C999D21C16A62F00B8ECEF /* CBThreeLevelButton.m */; };
 		73C999D81C16D22000B8ECEF /* CBTaskTipsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C999D61C16D22000B8ECEF /* CBTaskTipsCell.m */; };
 		73C999D91C16D22000B8ECEF /* CBTaskTipsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C999D71C16D22000B8ECEF /* CBTaskTipsCell.xib */; };
@@ -603,12 +600,9 @@
 		73C29ACF1C1AB9A700B64DBC /* CBUserHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBUserHeadCell.h; sourceTree = "<group>"; };
 		73C29AD01C1AB9A700B64DBC /* CBUserHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBUserHeadCell.m; sourceTree = "<group>"; };
 		73C29AD11C1AB9A700B64DBC /* CBUserHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBUserHeadCell.xib; sourceTree = "<group>"; };
-		73C2D1BC1C2AFE7700CAE210 /* CBLaunchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLaunchController.h; sourceTree = "<group>"; };
-		73C2D1BD1C2AFE7700CAE210 /* CBLaunchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLaunchController.m; sourceTree = "<group>"; };
 		73C2D1C51C2B9D6000CAE210 /* CBChannelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBChannelModel.h; sourceTree = "<group>"; };
 		73C2D1C61C2B9D6000CAE210 /* CBChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBChannelModel.m; sourceTree = "<group>"; };
 		73C2D1D21C2D0E2200CAE210 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		73C2D1D41C2D114800CAE210 /* zhongzhai.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zhongzhai.gif; sourceTree = "<group>"; };
 		73C2D1DB1C2D27C900CAE210 /* CBChannelSChildCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBChannelSChildCell.h; sourceTree = "<group>"; };
 		73C2D1DC1C2D27C900CAE210 /* CBChannelSChildCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBChannelSChildCell.m; sourceTree = "<group>"; };
 		73C2D1DD1C2D27C900CAE210 /* CBChannelSChildCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBChannelSChildCell.xib; sourceTree = "<group>"; };
@@ -616,7 +610,6 @@
 		73C2D1E51C2D3F7700CAE210 /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroPage.m; sourceTree = "<group>"; };
 		73C2D1E61C2D3F7700CAE210 /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroView.h; sourceTree = "<group>"; };
 		73C2D1E71C2D3F7700CAE210 /* EAIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroView.m; sourceTree = "<group>"; };
-		73C2D1EB1C2D45CE00CAE210 /* iphone5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iphone5.gif; sourceTree = "<group>"; };
 		73C999D11C16A62F00B8ECEF /* CBThreeLevelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBThreeLevelButton.h; sourceTree = "<group>"; };
 		73C999D21C16A62F00B8ECEF /* CBThreeLevelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBThreeLevelButton.m; sourceTree = "<group>"; };
 		73C999D51C16D22000B8ECEF /* CBTaskTipsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTaskTipsCell.h; sourceTree = "<group>"; };
@@ -1406,11 +1399,7 @@
 		73C2D1BB1C2AFD7E00CAE210 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				73C2D1EB1C2D45CE00CAE210 /* iphone5.gif */,
-				73C2D1D41C2D114800CAE210 /* zhongzhai.gif */,
 				733ED72A1C3A78450064F379 /* zhongzhai1.gif */,
-				73C2D1BC1C2AFE7700CAE210 /* CBLaunchController.h */,
-				73C2D1BD1C2AFE7700CAE210 /* CBLaunchController.m */,
 			);
 			name = Launch;
 			sourceTree = "<group>";
@@ -1933,7 +1922,6 @@
 				73C999E61C16EB1700B8ECEF /* CBSellNewsDetailTitleCell.xib in Resources */,
 				73BCB05F1C1E76270049A359 /* CBUserCustomSCell.xib in Resources */,
 				73AD33321C575B380055AFF8 /* CBCollectCell.xib in Resources */,
-				73C2D1EC1C2D45CE00CAE210 /* iphone5.gif in Resources */,
 				733B73481C3CE020007AE160 /* WeiboSDK.bundle in Resources */,
 				73442AFE1C285667000C95C5 /* refresh@2x.gif in Resources */,
 				730E2C8B1C134C0C00B4F881 /* CBChannelGroupCell.xib in Resources */,
@@ -1952,7 +1940,6 @@
 				73F122F71C0BEAAA00B84877 /* LaunchScreen.storyboard in Resources */,
 				73AF683E1C28FB9B0094AFA0 /* PushConfig.plist in Resources */,
 				733B73501C3CED66007AE160 /* CBHelpController.xib in Resources */,
-				73C2D1D51C2D114800CAE210 /* zhongzhai.gif in Resources */,
 				73D7C6D11C11EA1D00259DAA /* CBZNSearchResultCell.xib in Resources */,
 				7321FC2E1C1FCB1D00655850 /* CBProductController.xib in Resources */,
 				21F594BF1C17414600E19D3D /* RKExponentViewController.xib in Resources */,
@@ -2086,7 +2073,6 @@
 				73442AEB1C27D5EF000C95C5 /* CBDataBase.m in Sources */,
 				73BCB0631C1EABB40049A359 /* CBFontSetView.m in Sources */,
 				73F122EC1C0BEAAA00B84877 /* AppDelegate.m in Sources */,
-				73C2D1BE1C2AFE7700CAE210 /* CBLaunchController.m in Sources */,
 				73C2D1E81C2D3F7700CAE210 /* EAIntroPage.m in Sources */,
 				4EDBB98D25523C16007427B9 /* STPickerDate.m in Sources */,
 				73A0F93F1C3FB7ED001AC2F9 /* UITabBar+Night.m in Sources */,

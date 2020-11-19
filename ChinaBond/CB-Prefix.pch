@@ -9,6 +9,9 @@
 #ifndef CB_Prefix_pch
 #define CB_Prefix_pch
 
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+
 #import "CBFunction.h"
 #import "CBApis.h"
 #import <UIImageView+WebCache.h>
@@ -23,5 +26,6 @@
 #import "DKNightVersion.h"
 #import "CBNavigationController.h"
 #import "MobClick.h"
+#import "Masonry.h"
 
 #endif /* CB_Prefix_pch */
