@@ -97,7 +97,6 @@
 		733B72CE1C3C2C42007AE160 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B72CD1C3C2C42007AE160 /* Social.framework */; };
 		733B72D01C3C2C4D007AE160 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B72CF1C3C2C4D007AE160 /* Accounts.framework */; };
 		733B73401C3CE020007AE160 /* SinaWeiboConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B73291C3CE020007AE160 /* SinaWeiboConnection.framework */; };
-		733B73411C3CE020007AE160 /* TencentWeiboConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B732A1C3CE020007AE160 /* TencentWeiboConnection.framework */; };
 		733B73421C3CE020007AE160 /* WeChatConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B732B1C3CE020007AE160 /* WeChatConnection.framework */; };
 		733B73431C3CE020007AE160 /* AGCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B732D1C3CE020007AE160 /* AGCommon.framework */; };
 		733B73441C3CE020007AE160 /* ShareSDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 733B732E1C3CE020007AE160 /* ShareSDKLocalizable.strings */; };
@@ -105,7 +104,6 @@
 		733B73461C3CE020007AE160 /* ShareSDKCoreService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B73311C3CE020007AE160 /* ShareSDKCoreService.framework */; };
 		733B73471C3CE020007AE160 /* libSinaWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B73351C3CE020007AE160 /* libSinaWeiboSDK.a */; };
 		733B73481C3CE020007AE160 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 733B73361C3CE020007AE160 /* WeiboSDK.bundle */; };
-		733B73491C3CE020007AE160 /* libTCWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B73391C3CE020007AE160 /* libTCWeiboSDK.a */; };
 		733B734A1C3CE020007AE160 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B733C1C3CE020007AE160 /* libWeChatSDK.a */; };
 		733B734B1C3CE020007AE160 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B733F1C3CE020007AE160 /* ShareSDK.framework */; };
 		733B734F1C3CED66007AE160 /* CBHelpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733B734D1C3CED66007AE160 /* CBHelpController.m */; };
@@ -745,7 +743,6 @@
 				73AF68401C28FE940094AFA0 /* libz.1.dylib in Frameworks */,
 				733B72C41C3C17F2007AE160 /* libicucore.A.dylib in Frameworks */,
 				73AF684C1C2911080094AFA0 /* Security.framework in Frameworks */,
-				733B73491C3CE020007AE160 /* libTCWeiboSDK.a in Frameworks */,
 				733B73401C3CE020007AE160 /* SinaWeiboConnection.framework in Frameworks */,
 				733B73471C3CE020007AE160 /* libSinaWeiboSDK.a in Frameworks */,
 				73AF684A1C2910FF0094AFA0 /* UIKit.framework in Frameworks */,
@@ -761,7 +758,6 @@
 				7321FC361C1FD8E500655850 /* libFMDB.a in Frameworks */,
 				7321FC341C1FD8DF00655850 /* libAFNetworking.a in Frameworks */,
 				733F42D71C1083E1004102FA /* libSDWebImage.a in Frameworks */,
-				733B73411C3CE020007AE160 /* TencentWeiboConnection.framework in Frameworks */,
 				73AF683C1C28FB6D0094AFA0 /* libPushSDK-1.8.8.a in Frameworks */,
 				C31A84F735E2242FC6EDBFEF /* libPods-ChinaBond.a in Frameworks */,
 			);
@@ -1886,7 +1882,8 @@
 				TargetAttributes = {
 					73F122E31C0BEAAA00B84877 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = EQ6YY87US2;
+						DevelopmentTeam = Y24FFVWLYR;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -2369,8 +2366,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Y24FFVWLYR;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2396,9 +2395,10 @@
 					"$(PROJECT_DIR)/ChinaBond/ShareSDK/Extend/WeChatSDK",
 				);
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.chinabond;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.chinabondtest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = com.chinabondtest.development;
 			};
 			name = Debug;
 		};
@@ -2409,8 +2409,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Y24FFVWLYR;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2436,9 +2438,10 @@
 					"$(PROJECT_DIR)/ChinaBond/ShareSDK/Extend/WeChatSDK",
 				);
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.chinabond;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.chinabondtest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = com.chinabondtest.distribution;
 			};
 			name = Release;
 		};
