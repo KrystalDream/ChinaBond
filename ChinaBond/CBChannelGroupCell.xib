@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CBChannelGroupCell" id="KGk-i7-Jjw" customClass="CBChannelGroupCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="48.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="channel_group" translatesAutoresizingMaskIntoConstraints="NO" id="tv7-bp-M7F">
+                        <rect key="frame" x="10" y="21" width="7" height="7"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="7" id="8tN-8X-GAa"/>
+                            <constraint firstAttribute="width" constant="7" id="CBz-ie-llu"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="国债" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auy-Xg-IeI">
+                        <rect key="frame" x="25" y="18" width="200" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="QUE-b6-nHl"/>
+                            <constraint firstAttribute="height" constant="15" id="R1G-Ja-1Pt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                        <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="channel_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="IuC-UL-3eE">
+                        <rect key="frame" x="287" y="21" width="13" height="7"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="7" id="8Kh-Dy-kRP"/>
+                            <constraint firstAttribute="width" constant="13" id="kCb-L7-qT3"/>
+                        </constraints>
+                    </imageView>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWo-Di-Km7">
+                        <rect key="frame" x="285" y="18" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="KFv-45-mzj"/>
+                            <constraint firstAttribute="height" constant="15" id="ab6-Kh-r9y"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="channel_add"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tv7-bp-M7F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1Zs-W9-IdX"/>
+                    <constraint firstItem="TWo-Di-Km7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="9Jp-oB-Nva"/>
+                    <constraint firstAttribute="trailing" secondItem="TWo-Di-Km7" secondAttribute="trailing" constant="20" id="NTt-s3-eQq"/>
+                    <constraint firstItem="tv7-bp-M7F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="bOb-KZ-Zg8"/>
+                    <constraint firstItem="Auy-Xg-IeI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="def-0o-bxA"/>
+                    <constraint firstAttribute="trailing" secondItem="IuC-UL-3eE" secondAttribute="trailing" constant="20" id="fKG-MK-4DT"/>
+                    <constraint firstItem="IuC-UL-3eE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="ooi-su-Lwu"/>
+                    <constraint firstItem="Auy-Xg-IeI" firstAttribute="leading" secondItem="tv7-bp-M7F" secondAttribute="trailing" constant="8" id="pR2-Zz-2nV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="channelGroupAdd" destination="TWo-Di-Km7" id="PjM-oE-v0N"/>
+                <outlet property="channelGroupName" destination="Auy-Xg-IeI" id="hgj-6A-Qeb"/>
+                <outlet property="channelGroupState" destination="IuC-UL-3eE" id="P4D-LS-67a"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="channel_add" width="14" height="14"/>
+        <image name="channel_arrow" width="13" height="7"/>
+        <image name="channel_group" width="7" height="7"/>
+    </resources>
+</document>

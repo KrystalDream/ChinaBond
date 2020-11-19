@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RKYieldRateViewController">
+            <connections>
+                <outlet property="_leftTableView" destination="925-EQ-uWe" id="81b-dm-ErT"/>
+                <outlet property="_rightTableView" destination="FTc-91-0lh" id="doh-6L-YT6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" tag="12601" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="925-EQ-uWe">
+                    <rect key="frame" x="0.0" y="45" width="160" height="523"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="EIj-6J-t1A"/>
+                        <outlet property="delegate" destination="-1" id="fZ5-Bs-0z8"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" tag="12602" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FTc-91-0lh">
+                    <rect key="frame" x="160" y="45" width="160" height="523"/>
+                    <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Lwg-NN-ve8"/>
+                        <outlet property="delegate" destination="-1" id="neL-e1-CLa"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="925-EQ-uWe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6oM-u2-d4c"/>
+                <constraint firstAttribute="bottom" secondItem="925-EQ-uWe" secondAttribute="bottom" id="9X0-mi-t5X"/>
+                <constraint firstItem="FTc-91-0lh" firstAttribute="width" secondItem="925-EQ-uWe" secondAttribute="width" id="RaT-0I-2oF"/>
+                <constraint firstAttribute="trailing" secondItem="FTc-91-0lh" secondAttribute="trailing" id="SI5-Kn-c3R"/>
+                <constraint firstItem="925-EQ-uWe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="45" id="YQm-Wm-wf5"/>
+                <constraint firstAttribute="bottom" secondItem="FTc-91-0lh" secondAttribute="bottom" id="dB8-tw-2JZ"/>
+                <constraint firstItem="FTc-91-0lh" firstAttribute="leading" secondItem="925-EQ-uWe" secondAttribute="trailing" id="pT8-Na-gWs"/>
+                <constraint firstItem="FTc-91-0lh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="45" id="tey-bw-j8y"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

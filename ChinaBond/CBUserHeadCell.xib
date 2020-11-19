@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CBUserHeadCell" id="KGk-i7-Jjw" customClass="CBUserHeadCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImage" translatesAutoresizingMaskIntoConstraints="NO" id="18E-1a-kPU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="hwr-Ya-q2x">
+                        <rect key="frame" x="10" y="20" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="bpr-Cc-Hg4"/>
+                            <constraint firstAttribute="height" constant="50" id="nuN-fu-Znv"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国债券" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="far-BN-jyo">
+                        <rect key="frame" x="70" y="37" width="200" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="VJR-vi-qf4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hwr-Ya-q2x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="EMl-e8-7BQ"/>
+                    <constraint firstItem="18E-1a-kPU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TQr-8t-yzo"/>
+                    <constraint firstItem="hwr-Ya-q2x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="The-2A-zHp"/>
+                    <constraint firstAttribute="trailing" secondItem="far-BN-jyo" secondAttribute="trailing" constant="50" id="VAt-n9-ykA"/>
+                    <constraint firstItem="far-BN-jyo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="Vhr-lU-eHK"/>
+                    <constraint firstAttribute="trailing" secondItem="18E-1a-kPU" secondAttribute="trailing" id="Wey-rU-r4s"/>
+                    <constraint firstAttribute="bottom" secondItem="18E-1a-kPU" secondAttribute="bottom" constant="0.5" id="bbo-N3-8Kc"/>
+                    <constraint firstItem="18E-1a-kPU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lFu-Sg-5QQ"/>
+                    <constraint firstItem="far-BN-jyo" firstAttribute="leading" secondItem="hwr-Ya-q2x" secondAttribute="trailing" constant="10" id="sXf-SA-8w5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="backImage" destination="18E-1a-kPU" id="83a-TP-PYp"/>
+                <outlet property="userAvatar" destination="hwr-Ya-q2x" id="ma7-X5-Sn0"/>
+                <outlet property="userName" destination="far-BN-jyo" id="Dfp-9u-fM6"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="avatar_default" width="50" height="50"/>
+        <image name="backImage" width="320" height="90"/>
+    </resources>
+</document>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CBAddCell" id="KGk-i7-Jjw" customClass="CBAddCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="48.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07国债05  (010705)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDb-ZG-zQy">
+                        <rect key="frame" x="10" y="8" width="243" height="32.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="243" id="Pbd-y9-KgL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="15"/>
+                        <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLO-KV-Kw5">
+                        <rect key="frame" x="274" y="13" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="FCv-lL-cE3"/>
+                            <constraint firstAttribute="height" constant="22" id="GkO-1C-DVX"/>
+                        </constraints>
+                        <state key="normal" image="add"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PDb-ZG-zQy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="3Ff-lE-GvS"/>
+                    <constraint firstAttribute="bottom" secondItem="PDb-ZG-zQy" secondAttribute="bottom" constant="8" id="KTG-rw-fyo"/>
+                    <constraint firstItem="NLO-KV-Kw5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="cdf-BU-0Z9"/>
+                    <constraint firstItem="PDb-ZG-zQy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="iUQ-TW-Cav"/>
+                    <constraint firstAttribute="trailing" secondItem="NLO-KV-Kw5" secondAttribute="trailing" constant="24" id="kSK-hj-UAm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="resultAdd" destination="NLO-KV-Kw5" id="rjd-mi-b9G"/>
+                <outlet property="resultName" destination="PDb-ZG-zQy" id="YfC-AR-8YV"/>
+            </connections>
+            <point key="canvasLocation" x="530" y="258.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="add" width="22" height="22"/>
+    </resources>
+</document>
