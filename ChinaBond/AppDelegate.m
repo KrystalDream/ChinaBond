@@ -25,6 +25,8 @@
 //#import "CBFocusDetailController.h"
 #import "CSWebView.h"
 #import "RNCachingURLProtocol.h"
+#import "CBPrivacyPolicyPopViewController.h"
+
 #define KUMAPPKEY @"56a5888467e58ec8940010e3"
 
 @interface AppDelegate ()<EAIntroDelegate>
@@ -315,6 +317,8 @@
  
     UIImageView *gifImage = (UIImageView *)[self.window viewWithTag:10000];
     [gifImage removeFromSuperview];
+    
+    
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
         
         //字体
@@ -327,11 +331,35 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:KDownLoad];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+        
+        
         [self showIntroWithCrossDissolve];
+
+        
+        __weak __typeof(self)weakSelf = self;
+        
+        [[CBPrivacyPolicyPopViewController shareInstance]initViewWithTitle:@"用户须知" subTilte:@"欢迎使用中国债券信息网app！为了保护您的隐私和使用安全，请您务必仔细阅读我们的《用户协议》和《隐私政策》。在确认充分理解并同意后再开始使用此应用。感谢！" leftBtnTitle:@"同意" leftBtnBlock:^{
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+
+        } rightBtnTitle:@"退出" BtnBlock:^{
+            [weakSelf exitApplication];
+        }];
+
+        
     }
 }
-
+- (void)exitApplication {
+     
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+     
+    [UIView animateWithDuration:0.35f animations:^{
+        window.alpha = 0;
+    } completion:^(BOOL finished) {
+        exit(0);
+    }];
+     
+}
 //引导页
 - (void)showIntroWithCrossDissolve {
     
@@ -343,7 +371,7 @@
 
     EAIntroPage *page3 = [EAIntroPage page];
     page3.bgImage = [UIImage imageNamed:@"3"];
-//
+
 //    EAIntroPage *page4 = [EAIntroPage page];
 //    page4.bgImage = [UIImage imageNamed:@"4"];
     
