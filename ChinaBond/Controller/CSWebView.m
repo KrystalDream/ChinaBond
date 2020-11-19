@@ -48,7 +48,7 @@
     [super viewDidLoad];
     
 //    self.infoUrl = @"https://www.chinabond.com.cn/Info/155464739?sd=chinabond";
-    self.infoUrl = @"https://www.chinabond.com.cn/Info/154688743?sd=chinabond";
+//    self.infoUrl = @"https://www.chinabond.com.cn/Info/154688743?sd=chinabond";
 
     self.title = self.titleS;
     
