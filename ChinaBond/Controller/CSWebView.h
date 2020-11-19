@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *tId;//资讯所属id
 @property (nonatomic, strong) NSString *infoUrl;//资讯url
 @property (nonatomic, strong) NSString *titleS;//资讯title
+@property (nonatomic, assign) BOOL isLocalHtml;
+@property (nonatomic, strong) NSString *localHtmlName;
 
 @end
 

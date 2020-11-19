@@ -257,6 +257,8 @@
 		73F123311C0BFFA800B84877 /* CBUserManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F123301C0BFFA800B84877 /* CBUserManageController.m */; };
 		73F123381C0C2CD400B84877 /* CBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F123371C0C2CD400B84877 /* CBNavigationController.m */; };
 		B2B0CE0625661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */; };
+		B2B0CE12256652CE007B6ED8 /* user_agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE10256652CE007B6ED8 /* user_agreement.html */; };
+		B2B0CE13256652CE007B6ED8 /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE11256652CE007B6ED8 /* privacy_policy.html */; };
 		C31A84F735E2242FC6EDBFEF /* libPods-ChinaBond.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF54CF7DB4EE9BBA07011F1 /* libPods-ChinaBond.a */; };
 /* End PBXBuildFile section */
 
@@ -718,6 +720,8 @@
 		73F123371C0C2CD400B84877 /* CBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNavigationController.m; sourceTree = "<group>"; };
 		B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPrivacyPolicyPopViewController.m; sourceTree = "<group>"; };
 		B2B0CE0525661A75007B6ED8 /* CBPrivacyPolicyPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPrivacyPolicyPopViewController.h; sourceTree = "<group>"; };
+		B2B0CE10256652CE007B6ED8 /* user_agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = user_agreement.html; sourceTree = "<group>"; };
+		B2B0CE11256652CE007B6ED8 /* privacy_policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy_policy.html; sourceTree = "<group>"; };
 		BFF54CF7DB4EE9BBA07011F1 /* libPods-ChinaBond.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChinaBond.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1606,6 +1610,8 @@
 		73F122E71C0BEAAA00B84877 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B2B0CE11256652CE007B6ED8 /* privacy_policy.html */,
+				B2B0CE10256652CE007B6ED8 /* user_agreement.html */,
 				4E776BCD2554E88500004BC7 /* main.css */,
 				4EF3E50C2550F8B200C17E40 /* *.chinabond.com.cn.cer */,
 				73F122E81C0BEAAA00B84877 /* main.m */,
@@ -1941,6 +1947,7 @@
 				73442B001C28566C000C95C5 /* refresh@3x.gif in Resources */,
 				21F594B91C17414600E19D3D /* RKExponentDetailCell.xib in Resources */,
 				73BCB06C1C1EC4D70049A359 /* CBAboutController.xib in Resources */,
+				B2B0CE13256652CE007B6ED8 /* privacy_policy.html in Resources */,
 				73442AE11C27C0EC000C95C5 /* CBProductDetailCell.xib in Resources */,
 				73F122F71C0BEAAA00B84877 /* LaunchScreen.storyboard in Resources */,
 				73AF683E1C28FB9B0094AFA0 /* PushConfig.plist in Resources */,
@@ -1955,6 +1962,7 @@
 				21F594CA1C17414600E19D3D /* RKValuationCell.xib in Resources */,
 				4E776BCE2554E88500004BC7 /* main.css in Resources */,
 				73C29AD31C1AB9A700B64DBC /* CBUserHeadCell.xib in Resources */,
+				B2B0CE12256652CE007B6ED8 /* user_agreement.html in Resources */,
 				735A49ED1C23101100DFD830 /* CBAddCell.xib in Resources */,
 				21F594B61C17414600E19D3D /* RKChartSecondCell.xib in Resources */,
 				21F594C91C17414600E19D3D /* RKStatisticsViewController.xib in Resources */,

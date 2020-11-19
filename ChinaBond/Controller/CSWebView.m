@@ -114,11 +114,18 @@
 //    _infoUrl = [_infoUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
    
     
-    NSURL *url = [NSURL URLWithString:self.infoUrl];
-    [wkWebView loadRequest:[NSURLRequest requestWithURL:url]];
+    if(self.isLocalHtml){
+        
+        NSString *filePath = [[NSBundle mainBundle]pathForResource:self.localHtmlName ofType:@"html"];
+        NSURL *pathURL = [NSURL fileURLWithPath:filePath];
+        [wkWebView loadRequest:[NSURLRequest requestWithURL:pathURL]];
+        
+    }else{
+        
+        NSURL *url = [NSURL URLWithString:self.infoUrl];
+        [wkWebView loadRequest:[NSURLRequest requestWithURL:url]];
+    }
     
-    
-
 //    NSString *htmlcontentstring = @"main.css";//这里是纯html内容没有加任何css的样式。
 //    NSString *path = [[NSBundle mainBundle]pathForResource:@"main" ofType:@".css"];
 //
