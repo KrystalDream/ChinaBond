@@ -7,14 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "CBHomeController.h"
 #import "RKChartViewController.h"
-#import "CBMessageController.h"
-#import "CBUserManageController.h"
-#import "UITabBar+badge.h"
-#import "RKBaseNavViewController.h"
 #import "RKTabBarViewController.h"
-#import "CBNavigationController.h"
 #import "APService.h"
 #import "CBCacheManager.h"
 #import "RKDataManager.h"
@@ -22,10 +16,10 @@
 #import "EAIntroView.h"
 #import <ShareSDK/ShareSDK.h>
 #import "WXApi.h"
-//#import "CBFocusDetailController.h"
 #import "CSWebView.h"
 #import "RNCachingURLProtocol.h"
 #import "CBPrivacyPolicyPopViewController.h"
+#import "UILabel+YBAttributeTextTapAction.h"
 
 #define KUMAPPKEY @"56a5888467e58ec8940010e3"
 
@@ -53,7 +47,7 @@
     //友盟的方法本身是异步执行，所以不需要再异步调用
     [self umengTrack];
     //推送
-    [self configueNotificateWithOptions:launchOptions];
+//    [self configueNotificateWithOptions:launchOptions];
     //分享
     [self threeShare];
     
@@ -69,50 +63,9 @@
     RKTabBarViewController *tab = [[RKTabBarViewController alloc] init];
     tab.tabBar.tintColor = UIColorFromRGB(0xff4e4e);
     self.window.rootViewController = tab;
-    //首页
-    CBHomeController *home = [[CBHomeController alloc] init];
-    
-    UIImage *homeImage = [UIImage imageNamed:@"tab_home"];
-    homeImage = [homeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *homeImageSel = [UIImage imageNamed:@"tab_home_select"];
-    homeImageSel = [homeImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    home.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"主页" image:homeImage selectedImage:homeImageSel];
-    
-    CBNavigationController *homeNav = [[CBNavigationController alloc] initWithRootViewController:home];
-    //中债数据
     
     
-    //资讯
-    CBMessageController *message = [[CBMessageController alloc] init];
     
-    UIImage *messageImage = [UIImage imageNamed:@"tab_message"];
-    messageImage = [messageImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *messageImageSel = [UIImage imageNamed:@"tab_message_select"];
-    messageImageSel = [messageImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    message.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"资讯" image:messageImage selectedImage:messageImageSel];
-    
-    //[tab.tabBar showBadgeOnItemIndex:2];
-    CBNavigationController *messagenav = [[CBNavigationController alloc] initWithRootViewController:message];
-    
-    
-    //用户
-    CBUserManageController *userManage = [[CBUserManageController alloc] init];
-    
-    UIImage *userImage = [UIImage imageNamed:@"tab_user"];
-    userImage = [userImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *userImageSel = [UIImage imageNamed:@"tab_user_select"];
-    userImageSel = [userImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    userManage.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"用户" image:userImage selectedImage:userImageSel];
-    
-    CBNavigationController *userNav = [[CBNavigationController alloc] initWithRootViewController:userManage];
-    
-    tab.viewControllers = @[homeNav,
-                            [[RKBaseNavViewController alloc] init],
-                            messagenav,
-                            userNav];
     [[CBCacheManager shareCache] requestPhoneConfigue];
     [self.window makeKeyAndVisible];
     
@@ -339,12 +292,34 @@
         
         __weak __typeof(self)weakSelf = self;
         
-        [[CBPrivacyPolicyPopViewController shareInstance]initViewWithTitle:@"用户须知" subTilte:@"欢迎使用中国债券信息网app！为了保护您的隐私和使用安全，请您务必仔细阅读我们的《用户协议》和《隐私政策》。在确认充分理解并同意后再开始使用此应用。感谢！" leftBtnTitle:@"同意" leftBtnBlock:^{
+        [[CBPrivacyPolicyPopViewController shareInstance]initPrivacyViewWithTitle:@"用户须知" subTilte:@"欢迎使用中国债券信息网app！为了保护您的隐私和使用安全，请您务必仔细阅读我们的《用户协议》和《隐私政策》。在确认充分理解并同意后再开始使用此应用。感谢！" leftBtnTitle:@"同意" leftBtnBlock:^{
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
 
         } rightBtnTitle:@"退出" BtnBlock:^{
             [weakSelf exitApplication];
         }];
+        
+        [CBPrivacyPolicyPopViewController shareInstance].PrivacyClickBlock = ^(NSString* text) {
+            if([text isEqualToString:@"用户协议"]){
+                
+                NSLog(@"《用户协议》");
+//                CSWebView *cs = [CSWebView new];
+//                      cs.isLocalHtml = YES;
+//                      cs.localHtmlName = @"privacy_policy";
+//                [[UIApplication sharedApplication].keyWindow addSubview:cs.view];
+
+//                weakSelf pre
+            }else{
+                NSLog(@"《隐私政策》");
+
+//                CSWebView *cs = [CSWebView new];
+//                      cs.isLocalHtml = YES;
+//                      cs.localHtmlName = @"user_agreement";
+//                [[UIApplication sharedApplication].keyWindow addSubview:cs.view];
+
+            }
+            
+        };
 
         
     }

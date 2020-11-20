@@ -256,9 +256,12 @@
 		73F1232E1C0BFF9100B84877 /* CBMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F1232D1C0BFF9100B84877 /* CBMessageController.m */; };
 		73F123311C0BFFA800B84877 /* CBUserManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F123301C0BFFA800B84877 /* CBUserManageController.m */; };
 		73F123381C0C2CD400B84877 /* CBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F123371C0C2CD400B84877 /* CBNavigationController.m */; };
+		B25ADDE625675182006A102B /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */; };
+		B25ADE022567A521006A102B /* YJLAttributesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADE012567A521006A102B /* YJLAttributesLabel.m */; };
 		B2B0CE0625661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */; };
 		B2B0CE12256652CE007B6ED8 /* user_agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE10256652CE007B6ED8 /* user_agreement.html */; };
 		B2B0CE13256652CE007B6ED8 /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE11256652CE007B6ED8 /* privacy_policy.html */; };
+		B2B0CE2325665FF5007B6ED8 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */; };
 		C31A84F735E2242FC6EDBFEF /* libPods-ChinaBond.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF54CF7DB4EE9BBA07011F1 /* libPods-ChinaBond.a */; };
 /* End PBXBuildFile section */
 
@@ -718,10 +721,16 @@
 		73F123341C0C00B800B84877 /* CB-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CB-Prefix.pch"; sourceTree = "<group>"; };
 		73F123361C0C2CD400B84877 /* CBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNavigationController.h; sourceTree = "<group>"; };
 		73F123371C0C2CD400B84877 /* CBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNavigationController.m; sourceTree = "<group>"; };
+		B25ADDE225675182006A102B /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
+		B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
+		B25ADE002567A521006A102B /* YJLAttributesLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJLAttributesLabel.h; sourceTree = "<group>"; };
+		B25ADE012567A521006A102B /* YJLAttributesLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJLAttributesLabel.m; sourceTree = "<group>"; };
 		B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPrivacyPolicyPopViewController.m; sourceTree = "<group>"; };
 		B2B0CE0525661A75007B6ED8 /* CBPrivacyPolicyPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPrivacyPolicyPopViewController.h; sourceTree = "<group>"; };
 		B2B0CE10256652CE007B6ED8 /* user_agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = user_agreement.html; sourceTree = "<group>"; };
 		B2B0CE11256652CE007B6ED8 /* privacy_policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy_policy.html; sourceTree = "<group>"; };
+		B2B0CE2125665FF4007B6ED8 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
+		B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		BFF54CF7DB4EE9BBA07011F1 /* libPods-ChinaBond.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChinaBond.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -904,6 +913,8 @@
 			children = (
 				B2B0CE0525661A75007B6ED8 /* CBPrivacyPolicyPopViewController.h */,
 				B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */,
+				B25ADE002567A521006A102B /* YJLAttributesLabel.h */,
+				B25ADE012567A521006A102B /* YJLAttributesLabel.m */,
 				4EDBB97525523C16007427B9 /* DateSelect */,
 			);
 			path = Tool;
@@ -1719,6 +1730,10 @@
 		73F123201C0BFD9E00B84877 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				B25ADDE225675182006A102B /* UILabel+YBAttributeTextTapAction.h */,
+				B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */,
+				B2B0CE2125665FF4007B6ED8 /* UILabel+Extension.h */,
+				B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -2082,7 +2097,9 @@
 				21D055F91C18905900F1C88D /* RKCateLevelModel.m in Sources */,
 				73DAAA521C44CF8D00CB29AB /* CBFileController.m in Sources */,
 				73DAAA811C44EF5600CB29AB /* MJRefreshBackFooter.m in Sources */,
+				B2B0CE2325665FF5007B6ED8 /* UILabel+Extension.m in Sources */,
 				73BE03091C17CDCC00AE1C09 /* CBSellNewsDetailCell.m in Sources */,
+				B25ADE022567A521006A102B /* YJLAttributesLabel.m in Sources */,
 				73D7C6C81C11B62100259DAA /* CBZQSearchCell.m in Sources */,
 				73442AEB1C27D5EF000C95C5 /* CBDataBase.m in Sources */,
 				73BCB0631C1EABB40049A359 /* CBFontSetView.m in Sources */,
@@ -2187,6 +2204,7 @@
 				4EDBB98E25523C16007427B9 /* NSCalendar+ST.m in Sources */,
 				21E629951C1D54CE004DD266 /* DayDatePickerView.m in Sources */,
 				21F594B71C17414600E19D3D /* RKChartViewController.m in Sources */,
+				B25ADDE625675182006A102B /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				7321FC281C1FC76700655850 /* CBCollectionController.m in Sources */,
 				73DAAA821C44EF5600CB29AB /* MJRefreshComponent.m in Sources */,
 				4E77DC36255CC0730093FA1E /* NSURLProtocol+WKWebVIew.m in Sources */,
