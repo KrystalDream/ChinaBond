@@ -616,19 +616,7 @@
     
 }
 
-//- (void)showAlert:(NSString *)content Title:(NSString *)title{
-//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-//                                                                             message:content
-//                                                                      preferredStyle:UIAlertControllerStyleAlert];
-//
-//    [alertController addAction:[UIAlertAction actionWithTitle:@"确定"
-//                                                        style:UIAlertActionStyleCancel
-//                                                      handler:^(UIAlertAction *action) {
-//                                                      }]];
-//    [self presentViewController:alertController animated:YES completion:^{
-//
-//    }];
-//}
+
 
 @end
 

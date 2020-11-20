@@ -258,6 +258,7 @@
 		73F123381C0C2CD400B84877 /* CBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F123371C0C2CD400B84877 /* CBNavigationController.m */; };
 		B25ADDE625675182006A102B /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */; };
 		B25ADE022567A521006A102B /* YJLAttributesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADE012567A521006A102B /* YJLAttributesLabel.m */; };
+		B25ADE0E2567B449006A102B /* CBPrivacyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */; };
 		B2B0CE0625661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */; };
 		B2B0CE12256652CE007B6ED8 /* user_agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE10256652CE007B6ED8 /* user_agreement.html */; };
 		B2B0CE13256652CE007B6ED8 /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE11256652CE007B6ED8 /* privacy_policy.html */; };
@@ -725,6 +726,8 @@
 		B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		B25ADE002567A521006A102B /* YJLAttributesLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJLAttributesLabel.h; sourceTree = "<group>"; };
 		B25ADE012567A521006A102B /* YJLAttributesLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJLAttributesLabel.m; sourceTree = "<group>"; };
+		B25ADE0C2567B449006A102B /* CBPrivacyWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBPrivacyWebViewController.h; sourceTree = "<group>"; };
+		B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBPrivacyWebViewController.m; sourceTree = "<group>"; };
 		B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPrivacyPolicyPopViewController.m; sourceTree = "<group>"; };
 		B2B0CE0525661A75007B6ED8 /* CBPrivacyPolicyPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPrivacyPolicyPopViewController.h; sourceTree = "<group>"; };
 		B2B0CE10256652CE007B6ED8 /* user_agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = user_agreement.html; sourceTree = "<group>"; };
@@ -994,6 +997,8 @@
 				4E77DC34255CC0720093FA1E /* NSURLProtocol+WKWebVIew.m */,
 				4EC85CAD2553F2BF00436D66 /* NSURLProtocolCustom.h */,
 				4EC85CAE2553F2BF00436D66 /* NSURLProtocolCustom.m */,
+				B25ADE0C2567B449006A102B /* CBPrivacyWebViewController.h */,
+				B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2176,6 +2181,7 @@
 				733F42D51C108276004102FA /* LCBannerView.m in Sources */,
 				73A0F9401C3FB7ED001AC2F9 /* UITableView+Night.m in Sources */,
 				73AF68571C291DFD0094AFA0 /* CBAFNNetworkHandler.m in Sources */,
+				B25ADE0E2567B449006A102B /* CBPrivacyWebViewController.m in Sources */,
 				733F42C01C103132004102FA /* CBItemValueView.m in Sources */,
 				21E381891C317E9000D519A5 /* RKRateInfoModel.m in Sources */,
 				73C999E51C16EB1700B8ECEF /* CBSellNewsDetailTitleCell.m in Sources */,

@@ -20,6 +20,7 @@
 #import "RNCachingURLProtocol.h"
 #import "CBPrivacyPolicyPopViewController.h"
 #import "UILabel+YBAttributeTextTapAction.h"
+#import "CBPrivacyWebViewController.h"
 
 #define KUMAPPKEY @"56a5888467e58ec8940010e3"
 
@@ -303,19 +304,16 @@
             if([text isEqualToString:@"用户协议"]){
                 
                 NSLog(@"《用户协议》");
-//                CSWebView *cs = [CSWebView new];
-//                      cs.isLocalHtml = YES;
-//                      cs.localHtmlName = @"privacy_policy";
-//                [[UIApplication sharedApplication].keyWindow addSubview:cs.view];
+                CBPrivacyWebViewController *cs = [CBPrivacyWebViewController new];
+                      cs.localHtmlName = @"privacy_policy";
+                [[UIApplication sharedApplication].keyWindow addSubview:cs.view];
 
-//                weakSelf pre
             }else{
                 NSLog(@"《隐私政策》");
 
-//                CSWebView *cs = [CSWebView new];
-//                      cs.isLocalHtml = YES;
-//                      cs.localHtmlName = @"user_agreement";
-//                [[UIApplication sharedApplication].keyWindow addSubview:cs.view];
+                CBPrivacyWebViewController *cs = [CBPrivacyWebViewController new];
+                      cs.localHtmlName = @"user_agreement";
+                [[UIApplication sharedApplication].keyWindow addSubview:cs.view];
 
             }
             
