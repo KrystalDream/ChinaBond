@@ -242,6 +242,8 @@
         if ([(id)self.delegate respondsToSelector:@selector(introDidFinish)]) {
             [self.delegate introDidFinish];
         }
+        [self removeFromSuperview];
+
     } else {
         LastPageIndex = self.pageControl.currentPage;
         self.pageControl.currentPage = self.currentPageIndex;
