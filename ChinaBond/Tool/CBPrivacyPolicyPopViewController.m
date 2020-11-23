@@ -97,13 +97,6 @@
     
     self.titleLabel.text = title;
     
-//    NSString * showText = subTitle;
-//    self.subTitleLabel.attributedText = [self getAttributeWith:@[@"用户协议",@"隐私政策"] string:showText orginFont:14 orginColor:[UIColor darkGrayColor] attributeFont:14 attributeColor:CBRGBColor(25, 122, 246)];
-//    [self.subTitleLabel yb_addAttributeTapActionWithStrings:@[@"用户协议",@"隐私政策"] tapClicked:^(UILabel *label, NSString *string, NSRange range, NSInteger index) {
-//        if(self.PrivacyClickBlock){
-//            self.PrivacyClickBlock(index);
-//        }
-//    }];
     
     //欢迎使用中国债券
     NSString *temp = subTitle;

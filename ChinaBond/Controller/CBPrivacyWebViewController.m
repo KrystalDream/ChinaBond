@@ -12,6 +12,7 @@
 #import "CBDataBase.h"
 #import <AFURLSessionManager.h>
 #import "NSURLProtocol+WKWebVIew.h"
+#import "CBPrivacyPolicyPopViewController.h"
 
 @interface CBPrivacyWebViewController ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
 {
@@ -28,13 +29,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    NSString *titleNameStr;
+    if([self.localHtmlName isEqualToString:@"user_agreement"]){
+        titleNameStr = @"《用户协议》";
+    }else{
+        
+        titleNameStr = @"《隐私政策》";
+    }
+    self.title = titleNameStr;
     
     //设置背景颜色
     self.view.backgroundColor = [UIColor whiteColor];
+    //    self.navigationController.navigationBarHidden = YES;
     
-   [NSURLProtocol registerClass:[NSURLProtocolCustom class]];
-
+    
+    [NSURLProtocol registerClass:[NSURLProtocolCustom class]];
+    
     
     [NSURLProtocol wk_registerScheme:@"http"];
     [NSURLProtocol wk_registerScheme:@"https"];
@@ -44,17 +55,15 @@
     
     [self makeNavView];
     
-    [self makeView];
+    [self.wkWebView addObserver:self
+                     forKeyPath:@"loading"
+                        options:NSKeyValueObservingOptionNew
+                        context:nil];
     
     [self.wkWebView addObserver:self
-                   forKeyPath:@"loading"
-                      options:NSKeyValueObservingOptionNew
-                      context:nil];
-    
-    [self.wkWebView addObserver:self
-                   forKeyPath:@"estimatedProgress"
-                      options:NSKeyValueObservingOptionNew
-                      context:nil];
+                     forKeyPath:@"estimatedProgress"
+                        options:NSKeyValueObservingOptionNew
+                        context:nil];
     
     self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 64,SCREEN_WIDTH, 4)];
     self.progressView.backgroundColor = [UIColor whiteColor];
@@ -68,83 +77,45 @@
 {
     //1.创建配置项
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
-//    config.selectionGranularity = WKSelectionGranularityDynamic;
-//
-//    //1.1 设置偏好
-//    config.preferences = [[WKPreferences alloc] init];
-//    config.preferences.minimumFontSize = 10;
-//    config.preferences.javaScriptEnabled = YES;
-//    //1.1.1 默认是不能通过JS自动打开窗口的，必须通过用户交互才能打开
-//    config.preferences.javaScriptCanOpenWindowsAutomatically = NO;
-//    config.processPool = [[WKProcessPool alloc] init];
-//
-//    config.userContentController = [[WKUserContentController alloc] init];
-//    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //    config.selectionGranularity = WKSelectionGranularityDynamic;
+    //
+    //    //1.1 设置偏好
+    //    config.preferences = [[WKPreferences alloc] init];
+    //    config.preferences.minimumFontSize = 10;
+    //    config.preferences.javaScriptEnabled = YES;
+    //    //1.1.1 默认是不能通过JS自动打开窗口的，必须通过用户交互才能打开
+    //    config.preferences.javaScriptCanOpenWindowsAutomatically = NO;
+    //    config.processPool = [[WKProcessPool alloc] init];
+    //
+    //    config.userContentController = [[WKUserContentController alloc] init];
+    //    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     //2.添加WKWebView
-    WKWebView *wkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 64, [UIApplication sharedApplication].keyWindow.bounds.size.width, [UIApplication sharedApplication].keyWindow.bounds.size.height - 64) configuration:config];
+    WKWebView *wkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, JSBNavStatusH, SCREEN_WIDTH,JSBViewH) configuration:config];
+    //    WKWebView *wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
+    
     wkWebView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth ;
     wkWebView.UIDelegate = self;
     wkWebView.navigationDelegate = self;
     
-//    _infoUrl = [_infoUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-   
-    
-        
-        NSString *filePath = [[NSBundle mainBundle]pathForResource:self.localHtmlName ofType:@"html"];
-        NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-        [wkWebView loadRequest:[NSURLRequest requestWithURL:pathURL]];
-        
-    
-//    NSString *htmlcontentstring = @"main.css";//这里是纯html内容没有加任何css的样式。
-//    NSString *path = [[NSBundle mainBundle]pathForResource:@"main" ofType:@".css"];
-//
-//    NSString *localcss = [NSString stringWithFormat:@"<head><link rel=\"stylesheet\" type=\"text/css\" href=\"%@\"></head>",path];
-//    NSString * htmlcontent = [NSString stringWithFormat:@"%@%@",localcss, htmlcontentstring]; //拼接css
-//
-//    [self.wkWebView loadHTMLString:htmlcontent baseURL:[NSURL fileURLWithPath:path]]; //baseURL指定到css的路径.
-
-
-
+    NSString *filePath = [[NSBundle mainBundle]pathForResource:self.localHtmlName ofType:@"html"];
+    NSURL *pathURL = [NSURL fileURLWithPath:filePath];
+    [wkWebView loadRequest:[NSURLRequest requestWithURL:pathURL]];
     
     [self.view addSubview:wkWebView];
     _wkWebView = wkWebView;
     
     //3.注册js方法
-//    [config.userContentController addScriptMessageHandler:self name:@"webViewApp"];
+    //    [config.userContentController addScriptMessageHandler:self name:@"webViewApp"];
     
-    
-}
-- (void)makeView{
-    
-   
-    
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"focusDetailFirst"]) {
-//        self.guideView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-//        self.guideView.backgroundColor = UIColorFromRGB(0x000000);
-//        self.guideView.alpha = .7;
-//        [[UIApplication sharedApplication].keyWindow addSubview:self.guideView];
-//
-//        UIImageView *guideImage = [[UIImageView alloc] initWithFrame:CGRectMake(25, 195, 200, 155)];
-//        guideImage.image = [UIImage imageNamed:@"guide_youhua"];
-//        [self.guideView addSubview:guideImage];
-//
-//        UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGes:)];
-//        swipe.direction = UISwipeGestureRecognizerDirectionRight;
-//        [self.guideView addGestureRecognizer:swipe];
-//
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"focusDetailFirst"];
-    }
     
 }
 - (void)makeNavView{
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backButtonClick)];
     self.navigationItem.leftBarButtonItem = backButton;
+        
     
-    UIView *rightToolbar = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-55, 0, 55, 44)];
-    
-   
 }
 - (void)viewWillLayoutSubviews
 {
@@ -179,6 +150,7 @@
 
 - (void)backButtonClick
 {
+    [CBPrivacyPolicyPopViewController shareInstance].view.alpha = 1;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -203,29 +175,9 @@
 }
 #pragma mark -WKWebViewDelegate
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
-    //接受传过来的消息从而决定app调用的方法
-//    NSDictionary *dict = message.body;
-//    NSString *method = [dict objectForKey:@"method"];
-//    if ([method isEqualToString:@"hello"]) {
-//        [self hello:[dict objectForKey:@"param1"]];
-//    }else if ([method isEqualToString:@"Call JS"]){
-//        [self callJS];
-//    }else if ([method isEqualToString:@"Call JS Msg"]){
-//        [self callJSMsg:[dict objectForKey:@"param1"]];
-//    }
+
 }
 
-//- (void)hello:(NSString *)param{
-//    NSLog(@"hello");
-//}
-//
-//- (void)callJS{
-//    NSLog(@"callJS");
-//}
-//
-//- (void)callJSMsg:(NSString *)msg{
-//    NSLog(@"callJSMsg");
-//}
 
 //WKNavigationDelegate
 // 页面开始加载时调用
@@ -258,31 +210,8 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction*)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     NSLog(@"decidePolicyForNavigationAction %@",navigationAction.request);
     
-    NSString *strRequest = [navigationAction.request.URL.absoluteString stringByRemovingPercentEncoding];
-    
-    if ([strRequest hasPrefix:@"https://www.chinabond.com.cn/resource"]) {
-        // 不允许跳转
-        decisionHandler(WKNavigationActionPolicyCancel);
-        //显示弹窗去电脑端下载
-        
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
-                                                                                 message:@"APP中不支持此附件下载,如需下载，请访问网页版中国债券信息网！"
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
-        
-        [alertController addAction:[UIAlertAction actionWithTitle:@"确定"
-                                                            style:UIAlertActionStyleCancel
-                                                          handler:^(UIAlertAction *action) {
-        }]];
-        [self presentViewController:alertController animated:YES completion:^{
-            
-        }];
-        
-        
-    }else {
-        // 允许跳转
-        decisionHandler(WKNavigationActionPolicyAllow);
-        
-    }
+    // 允许跳转
+    decisionHandler(WKNavigationActionPolicyAllow);
     
 }
 

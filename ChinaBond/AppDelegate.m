@@ -291,47 +291,9 @@
         [self showIntroWithCrossDissolve];
 
         
-        __weak __typeof(self)weakSelf = self;
-        
-        [[CBPrivacyPolicyPopViewController shareInstance]initPrivacyViewWithTitle:@"用户须知" subTilte:@"欢迎使用中国债券信息网app！为了保护您的隐私和使用安全，请您务必仔细阅读我们的《用户协议》和《隐私政策》。在确认充分理解并同意后再开始使用此应用。感谢！" leftBtnTitle:@"同意" leftBtnBlock:^{
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
-
-        } rightBtnTitle:@"退出" BtnBlock:^{
-            [weakSelf exitApplication];
-        }];
-        
-        [CBPrivacyPolicyPopViewController shareInstance].PrivacyClickBlock = ^(NSString* text) {
-            if([text isEqualToString:@"用户协议"]){
-                
-                NSLog(@"《用户协议》");
-                CBPrivacyWebViewController *cs = [CBPrivacyWebViewController new];
-                      cs.localHtmlName = @"privacy_policy";
-                [[UIApplication sharedApplication].keyWindow addSubview:cs.view];
-
-            }else{
-                NSLog(@"《隐私政策》");
-
-                CBPrivacyWebViewController *cs = [CBPrivacyWebViewController new];
-                      cs.localHtmlName = @"user_agreement";
-                [[UIApplication sharedApplication].keyWindow addSubview:cs.view];
-
-            }
-            
-        };
 
         
     }
-}
-- (void)exitApplication {
-     
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-     
-    [UIView animateWithDuration:0.35f animations:^{
-        window.alpha = 0;
-    } completion:^(BOOL finished) {
-        exit(0);
-    }];
-     
 }
 //引导页
 - (void)showIntroWithCrossDissolve {
@@ -352,4 +314,52 @@
     [intro setDelegate:self];
     [intro showInView:[UIApplication sharedApplication].keyWindow animateDuration:0.0];
 }
+- (void)introDidFinish{
+    
+    __weak __typeof(self)weakSelf = self;
+    
+    [[CBPrivacyPolicyPopViewController shareInstance]initPrivacyViewWithTitle:@"用户须知" subTilte:@"欢迎使用中国债券信息网app！为了保护您的隐私和使用安全，请您务必仔细阅读我们的《用户协议》和《隐私政策》。在确认充分理解并同意后再开始使用此应用。感谢！" leftBtnTitle:@"退出" leftBtnBlock:^{
+        [weakSelf exitApplication];
+
+    } rightBtnTitle:@"同意" BtnBlock:^{
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+
+    }];
+    
+    [CBPrivacyPolicyPopViewController shareInstance].PrivacyClickBlock = ^(NSString* text) {
+        if([text isEqualToString:@"用户协议"]){
+            NSLog(@"《用户协议》");
+            
+            [CBPrivacyPolicyPopViewController shareInstance].view.alpha = 0;
+            CBPrivacyWebViewController *cs = [CBPrivacyWebViewController new];
+                  cs.localHtmlName =  @"user_agreement";
+            RKTabBarViewController *tab = (RKTabBarViewController *)self.window.rootViewController;
+            UINavigationController *nav = tab.viewControllers[0];
+            cs.hidesBottomBarWhenPushed = YES;
+            [nav pushViewController:cs animated:YES];
+
+        }else{
+            NSLog(@"《隐私政策》");
+            [CBPrivacyPolicyPopViewController shareInstance].view.alpha = 0;
+            CBPrivacyWebViewController *cs = [CBPrivacyWebViewController new];
+                  cs.localHtmlName = @"privacy_policy";
+            RKTabBarViewController *tab = (RKTabBarViewController *)self.window.rootViewController;
+            UINavigationController *nav = tab.viewControllers[0];
+            cs.hidesBottomBarWhenPushed = YES;
+            [nav pushViewController:cs animated:YES];
+        }
+    };
+}
+- (void)exitApplication {
+     
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+     
+    [UIView animateWithDuration:0.35f animations:^{
+        window.alpha = 0;
+    } completion:^(BOOL finished) {
+        exit(0);
+    }];
+     
+}
+
 @end
