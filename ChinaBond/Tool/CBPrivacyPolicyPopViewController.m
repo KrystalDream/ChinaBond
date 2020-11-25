@@ -105,8 +105,9 @@
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:temp];
     attrStr =  [self textArr:arr_text AttributedString:attrStr Connet:temp];//点击的文字简单设置属性
     [attrStr addAttribute:NSFontAttributeName
-                       value:[UIFont systemFontOfSize:14]
+                       value:[UIFont systemFontOfSize:15]
                        range:NSMakeRange(0, attrStr.length)];
+    
     __weak __typeof(self)weakSelf = self;
 
     self.subTitleLabel.YJLAttributesBlock = ^(NSString * _Nonnull clicktext) {//点击事件的d返回
@@ -315,7 +316,8 @@
     if(!_subTitleLabel){
         _subTitleLabel = [[YJLAttributesLabel alloc] init];
         _subTitleLabel.textColor = CBRGBColor(102, 102, 102);
-        _subTitleLabel.font = Font(14);
+        _subTitleLabel.font = Font(15);
+        _subTitleLabel.backgroundColor = [UIColor whiteColor];
         _subTitleLabel.userInteractionEnabled = YES;
 //        _subTitleLabel.textAlignment = NSTextAlignmentCenter;
 //        _subTitleLabel.numberOfLines = 0;

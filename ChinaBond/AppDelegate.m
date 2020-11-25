@@ -65,7 +65,10 @@
     tab.tabBar.tintColor = UIColorFromRGB(0xff4e4e);
     self.window.rootViewController = tab;
     
-    
+    //如果想要在某个UIViewController中禁用深色模式
+    if (@available(iOS 13.0, *)) {
+        [self.window setOverrideUserInterfaceStyle:UIUserInterfaceStyleLight];
+    }
     
     [[CBCacheManager shareCache] requestPhoneConfigue];
     [self.window makeKeyAndVisible];

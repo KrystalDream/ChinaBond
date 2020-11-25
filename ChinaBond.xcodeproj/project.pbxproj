@@ -52,15 +52,6 @@
 		4E776BCE2554E88500004BC7 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 4E776BCD2554E88500004BC7 /* main.css */; };
 		4E77DC36255CC0730093FA1E /* NSURLProtocol+WKWebVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E77DC34255CC0720093FA1E /* NSURLProtocol+WKWebVIew.m */; };
 		4EC85CAF2553F2C000436D66 /* NSURLProtocolCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC85CAE2553F2BF00436D66 /* NSURLProtocolCustom.m */; };
-		4EDBB98D25523C16007427B9 /* STPickerDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBB97725523C16007427B9 /* STPickerDate.m */; };
-		4EDBB98E25523C16007427B9 /* NSCalendar+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBB97925523C16007427B9 /* NSCalendar+ST.m */; };
-		4EDBB98F25523C16007427B9 /* STPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBB97C25523C16007427B9 /* STPickerView.m */; };
-		4EDBB99025523C16007427B9 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EDBB97F25523C16007427B9 /* area.plist */; };
-		4EDBB99125523C16007427B9 /* STPickerArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBB98025523C16007427B9 /* STPickerArea.m */; };
-		4EDBB99225523C16007427B9 /* STPickerSingle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBB98425523C16007427B9 /* STPickerSingle.m */; };
-		4EDBB99325523C16007427B9 /* UIView+STFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBB98725523C16007427B9 /* UIView+STFrame.m */; };
-		4EDBB99425523C16007427B9 /* STPickerViewConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBB98825523C16007427B9 /* STPickerViewConst.m */; };
-		4EDBB99525523C16007427B9 /* STPickerViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBB98925523C16007427B9 /* STPickerViewUI.m */; };
 		4EF3E50D2550F8B300C17E40 /* *.chinabond.com.cn.cer in Resources */ = {isa = PBXBuildFile; fileRef = 4EF3E50C2550F8B200C17E40 /* *.chinabond.com.cn.cer */; };
 		730E2C8A1C134C0C00B4F881 /* CBChannelGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730E2C881C134C0C00B4F881 /* CBChannelGroupCell.m */; };
 		730E2C8B1C134C0C00B4F881 /* CBChannelGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730E2C891C134C0C00B4F881 /* CBChannelGroupCell.xib */; };
@@ -256,6 +247,15 @@
 		73F1232E1C0BFF9100B84877 /* CBMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F1232D1C0BFF9100B84877 /* CBMessageController.m */; };
 		73F123311C0BFFA800B84877 /* CBUserManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F123301C0BFFA800B84877 /* CBUserManageController.m */; };
 		73F123381C0C2CD400B84877 /* CBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F123371C0C2CD400B84877 /* CBNavigationController.m */; };
+		B23BD3DB256E2EE3007CABA5 /* STPickerDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3C5256E2EE3007CABA5 /* STPickerDate.m */; };
+		B23BD3DC256E2EE3007CABA5 /* NSCalendar+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3C7256E2EE3007CABA5 /* NSCalendar+ST.m */; };
+		B23BD3DD256E2EE3007CABA5 /* STPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3CA256E2EE3007CABA5 /* STPickerView.m */; };
+		B23BD3DE256E2EE3007CABA5 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = B23BD3CD256E2EE3007CABA5 /* area.plist */; };
+		B23BD3DF256E2EE3007CABA5 /* STPickerArea.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3CE256E2EE3007CABA5 /* STPickerArea.m */; };
+		B23BD3E0256E2EE3007CABA5 /* STPickerSingle.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3D2256E2EE3007CABA5 /* STPickerSingle.m */; };
+		B23BD3E1256E2EE3007CABA5 /* UIView+STFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3D5256E2EE3007CABA5 /* UIView+STFrame.m */; };
+		B23BD3E2256E2EE3007CABA5 /* STPickerViewConst.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3D6256E2EE3007CABA5 /* STPickerViewConst.m */; };
+		B23BD3E3256E2EE3007CABA5 /* STPickerViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3D7256E2EE3007CABA5 /* STPickerViewUI.m */; };
 		B25ADDE625675182006A102B /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */; };
 		B25ADE022567A521006A102B /* YJLAttributesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADE012567A521006A102B /* YJLAttributesLabel.m */; };
 		B25ADE0E2567B449006A102B /* CBPrivacyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */; };
@@ -359,24 +359,6 @@
 		4E77DC35255CC0720093FA1E /* NSURLProtocol+WKWebVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLProtocol+WKWebVIew.h"; sourceTree = "<group>"; };
 		4EC85CAD2553F2BF00436D66 /* NSURLProtocolCustom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLProtocolCustom.h; sourceTree = "<group>"; };
 		4EC85CAE2553F2BF00436D66 /* NSURLProtocolCustom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLProtocolCustom.m; sourceTree = "<group>"; };
-		4EDBB97725523C16007427B9 /* STPickerDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerDate.m; sourceTree = "<group>"; };
-		4EDBB97825523C16007427B9 /* NSCalendar+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+ST.h"; sourceTree = "<group>"; };
-		4EDBB97925523C16007427B9 /* NSCalendar+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+ST.m"; sourceTree = "<group>"; };
-		4EDBB97A25523C16007427B9 /* STPickerDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerDate.h; sourceTree = "<group>"; };
-		4EDBB97C25523C16007427B9 /* STPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerView.m; sourceTree = "<group>"; };
-		4EDBB97D25523C16007427B9 /* STPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerView.h; sourceTree = "<group>"; };
-		4EDBB97F25523C16007427B9 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
-		4EDBB98025523C16007427B9 /* STPickerArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerArea.m; sourceTree = "<group>"; };
-		4EDBB98125523C16007427B9 /* STPickerArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerArea.h; sourceTree = "<group>"; };
-		4EDBB98325523C16007427B9 /* STPickerSingle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerSingle.h; sourceTree = "<group>"; };
-		4EDBB98425523C16007427B9 /* STPickerSingle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerSingle.m; sourceTree = "<group>"; };
-		4EDBB98625523C16007427B9 /* STPickerViewUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerViewUI.h; sourceTree = "<group>"; };
-		4EDBB98725523C16007427B9 /* UIView+STFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+STFrame.m"; sourceTree = "<group>"; };
-		4EDBB98825523C16007427B9 /* STPickerViewConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerViewConst.m; sourceTree = "<group>"; };
-		4EDBB98925523C16007427B9 /* STPickerViewUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerViewUI.m; sourceTree = "<group>"; };
-		4EDBB98A25523C16007427B9 /* UIView+STFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+STFrame.h"; sourceTree = "<group>"; };
-		4EDBB98B25523C16007427B9 /* STPickerViewConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerViewConst.h; sourceTree = "<group>"; };
-		4EDBB98C25523C16007427B9 /* STPickerViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerViewConfig.h; sourceTree = "<group>"; };
 		4EF3E50C2550F8B200C17E40 /* *.chinabond.com.cn.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "*.chinabond.com.cn.cer"; sourceTree = "<group>"; };
 		581839DB0537D7514AE16309 /* Pods-ChinaBond.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChinaBond.release.xcconfig"; path = "Target Support Files/Pods-ChinaBond/Pods-ChinaBond.release.xcconfig"; sourceTree = "<group>"; };
 		730E2C871C134C0C00B4F881 /* CBChannelGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBChannelGroupCell.h; sourceTree = "<group>"; };
@@ -722,6 +704,24 @@
 		73F123341C0C00B800B84877 /* CB-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CB-Prefix.pch"; sourceTree = "<group>"; };
 		73F123361C0C2CD400B84877 /* CBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNavigationController.h; sourceTree = "<group>"; };
 		73F123371C0C2CD400B84877 /* CBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNavigationController.m; sourceTree = "<group>"; };
+		B23BD3C5256E2EE3007CABA5 /* STPickerDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerDate.m; sourceTree = "<group>"; };
+		B23BD3C6256E2EE3007CABA5 /* NSCalendar+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+ST.h"; sourceTree = "<group>"; };
+		B23BD3C7256E2EE3007CABA5 /* NSCalendar+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+ST.m"; sourceTree = "<group>"; };
+		B23BD3C8256E2EE3007CABA5 /* STPickerDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerDate.h; sourceTree = "<group>"; };
+		B23BD3CA256E2EE3007CABA5 /* STPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerView.m; sourceTree = "<group>"; };
+		B23BD3CB256E2EE3007CABA5 /* STPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerView.h; sourceTree = "<group>"; };
+		B23BD3CD256E2EE3007CABA5 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		B23BD3CE256E2EE3007CABA5 /* STPickerArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerArea.m; sourceTree = "<group>"; };
+		B23BD3CF256E2EE3007CABA5 /* STPickerArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerArea.h; sourceTree = "<group>"; };
+		B23BD3D1256E2EE3007CABA5 /* STPickerSingle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerSingle.h; sourceTree = "<group>"; };
+		B23BD3D2256E2EE3007CABA5 /* STPickerSingle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerSingle.m; sourceTree = "<group>"; };
+		B23BD3D4256E2EE3007CABA5 /* STPickerViewUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerViewUI.h; sourceTree = "<group>"; };
+		B23BD3D5256E2EE3007CABA5 /* UIView+STFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+STFrame.m"; sourceTree = "<group>"; };
+		B23BD3D6256E2EE3007CABA5 /* STPickerViewConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerViewConst.m; sourceTree = "<group>"; };
+		B23BD3D7256E2EE3007CABA5 /* STPickerViewUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerViewUI.m; sourceTree = "<group>"; };
+		B23BD3D8256E2EE3007CABA5 /* UIView+STFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+STFrame.h"; sourceTree = "<group>"; };
+		B23BD3D9256E2EE3007CABA5 /* STPickerViewConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerViewConst.h; sourceTree = "<group>"; };
+		B23BD3DA256E2EE3007CABA5 /* STPickerViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerViewConfig.h; sourceTree = "<group>"; };
 		B25ADDE225675182006A102B /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
 		B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		B25ADE002567A521006A102B /* YJLAttributesLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJLAttributesLabel.h; sourceTree = "<group>"; };
@@ -918,74 +918,9 @@
 				B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */,
 				B25ADE002567A521006A102B /* YJLAttributesLabel.h */,
 				B25ADE012567A521006A102B /* YJLAttributesLabel.m */,
-				4EDBB97525523C16007427B9 /* DateSelect */,
+				B23BD3C3256E2EE3007CABA5 /* DateSelect */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		4EDBB97525523C16007427B9 /* DateSelect */ = {
-			isa = PBXGroup;
-			children = (
-				4EDBB97625523C16007427B9 /* Date(日期) */,
-				4EDBB97B25523C16007427B9 /* STPickerView */,
-				4EDBB97E25523C16007427B9 /* Area(地区) */,
-				4EDBB98225523C16007427B9 /* Single(单数组) */,
-				4EDBB98525523C16007427B9 /* STConfig */,
-			);
-			path = DateSelect;
-			sourceTree = "<group>";
-		};
-		4EDBB97625523C16007427B9 /* Date(日期) */ = {
-			isa = PBXGroup;
-			children = (
-				4EDBB97725523C16007427B9 /* STPickerDate.m */,
-				4EDBB97825523C16007427B9 /* NSCalendar+ST.h */,
-				4EDBB97925523C16007427B9 /* NSCalendar+ST.m */,
-				4EDBB97A25523C16007427B9 /* STPickerDate.h */,
-			);
-			path = "Date(日期)";
-			sourceTree = "<group>";
-		};
-		4EDBB97B25523C16007427B9 /* STPickerView */ = {
-			isa = PBXGroup;
-			children = (
-				4EDBB97C25523C16007427B9 /* STPickerView.m */,
-				4EDBB97D25523C16007427B9 /* STPickerView.h */,
-			);
-			path = STPickerView;
-			sourceTree = "<group>";
-		};
-		4EDBB97E25523C16007427B9 /* Area(地区) */ = {
-			isa = PBXGroup;
-			children = (
-				4EDBB97F25523C16007427B9 /* area.plist */,
-				4EDBB98025523C16007427B9 /* STPickerArea.m */,
-				4EDBB98125523C16007427B9 /* STPickerArea.h */,
-			);
-			path = "Area(地区)";
-			sourceTree = "<group>";
-		};
-		4EDBB98225523C16007427B9 /* Single(单数组) */ = {
-			isa = PBXGroup;
-			children = (
-				4EDBB98325523C16007427B9 /* STPickerSingle.h */,
-				4EDBB98425523C16007427B9 /* STPickerSingle.m */,
-			);
-			path = "Single(单数组)";
-			sourceTree = "<group>";
-		};
-		4EDBB98525523C16007427B9 /* STConfig */ = {
-			isa = PBXGroup;
-			children = (
-				4EDBB98625523C16007427B9 /* STPickerViewUI.h */,
-				4EDBB98725523C16007427B9 /* UIView+STFrame.m */,
-				4EDBB98825523C16007427B9 /* STPickerViewConst.m */,
-				4EDBB98925523C16007427B9 /* STPickerViewUI.m */,
-				4EDBB98A25523C16007427B9 /* UIView+STFrame.h */,
-				4EDBB98B25523C16007427B9 /* STPickerViewConst.h */,
-				4EDBB98C25523C16007427B9 /* STPickerViewConfig.h */,
-			);
-			path = STConfig;
 			sourceTree = "<group>";
 		};
 		4EDBBC492552A1EC007427B9 /* Controller */ = {
@@ -1833,6 +1768,71 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B23BD3C3256E2EE3007CABA5 /* DateSelect */ = {
+			isa = PBXGroup;
+			children = (
+				B23BD3C4256E2EE3007CABA5 /* Date(日期) */,
+				B23BD3C9256E2EE3007CABA5 /* STPickerView */,
+				B23BD3CC256E2EE3007CABA5 /* Area(地区) */,
+				B23BD3D0256E2EE3007CABA5 /* Single(单数组) */,
+				B23BD3D3256E2EE3007CABA5 /* STConfig */,
+			);
+			path = DateSelect;
+			sourceTree = "<group>";
+		};
+		B23BD3C4256E2EE3007CABA5 /* Date(日期) */ = {
+			isa = PBXGroup;
+			children = (
+				B23BD3C5256E2EE3007CABA5 /* STPickerDate.m */,
+				B23BD3C6256E2EE3007CABA5 /* NSCalendar+ST.h */,
+				B23BD3C7256E2EE3007CABA5 /* NSCalendar+ST.m */,
+				B23BD3C8256E2EE3007CABA5 /* STPickerDate.h */,
+			);
+			path = "Date(日期)";
+			sourceTree = "<group>";
+		};
+		B23BD3C9256E2EE3007CABA5 /* STPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				B23BD3CA256E2EE3007CABA5 /* STPickerView.m */,
+				B23BD3CB256E2EE3007CABA5 /* STPickerView.h */,
+			);
+			path = STPickerView;
+			sourceTree = "<group>";
+		};
+		B23BD3CC256E2EE3007CABA5 /* Area(地区) */ = {
+			isa = PBXGroup;
+			children = (
+				B23BD3CD256E2EE3007CABA5 /* area.plist */,
+				B23BD3CE256E2EE3007CABA5 /* STPickerArea.m */,
+				B23BD3CF256E2EE3007CABA5 /* STPickerArea.h */,
+			);
+			path = "Area(地区)";
+			sourceTree = "<group>";
+		};
+		B23BD3D0256E2EE3007CABA5 /* Single(单数组) */ = {
+			isa = PBXGroup;
+			children = (
+				B23BD3D1256E2EE3007CABA5 /* STPickerSingle.h */,
+				B23BD3D2256E2EE3007CABA5 /* STPickerSingle.m */,
+			);
+			path = "Single(单数组)";
+			sourceTree = "<group>";
+		};
+		B23BD3D3256E2EE3007CABA5 /* STConfig */ = {
+			isa = PBXGroup;
+			children = (
+				B23BD3D4256E2EE3007CABA5 /* STPickerViewUI.h */,
+				B23BD3D5256E2EE3007CABA5 /* UIView+STFrame.m */,
+				B23BD3D6256E2EE3007CABA5 /* STPickerViewConst.m */,
+				B23BD3D7256E2EE3007CABA5 /* STPickerViewUI.m */,
+				B23BD3D8256E2EE3007CABA5 /* UIView+STFrame.h */,
+				B23BD3D9256E2EE3007CABA5 /* STPickerViewConst.h */,
+				B23BD3DA256E2EE3007CABA5 /* STPickerViewConfig.h */,
+			);
+			path = STConfig;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1951,6 +1951,7 @@
 				733F42C71C103143004102FA /* CBHomeItemCell.xib in Resources */,
 				73C2D1D31C2D0E2200CAE210 /* Images.xcassets in Resources */,
 				73C999E61C16EB1700B8ECEF /* CBSellNewsDetailTitleCell.xib in Resources */,
+				B23BD3DE256E2EE3007CABA5 /* area.plist in Resources */,
 				73BCB05F1C1E76270049A359 /* CBUserCustomSCell.xib in Resources */,
 				73AD33321C575B380055AFF8 /* CBCollectCell.xib in Resources */,
 				733B73481C3CE020007AE160 /* WeiboSDK.bundle in Resources */,
@@ -1993,7 +1994,6 @@
 				733CACCF1C29A76700220F1B /* CBTaskTipHeadCell.xib in Resources */,
 				21F594B81C17414600E19D3D /* RKChartViewController.xib in Resources */,
 				7321FC961C200BF600655850 /* CBProductCell.xib in Resources */,
-				4EDBB99025523C16007427B9 /* area.plist in Resources */,
 				73DAAA981C44F7D500CB29AB /* shuaxin.gif in Resources */,
 				21F594B51C17414600E19D3D /* RKChartCell.xib in Resources */,
 				73DAAA8E1C44EF5600CB29AB /* MJRefresh.bundle in Resources */,
@@ -2077,10 +2077,8 @@
 				4E363E23254F9DFB00D7D3B3 /* CBHttpManager.m in Sources */,
 				21749E121C206023005E22FF /* RKTimeKLine.m in Sources */,
 				73AD33311C575B380055AFF8 /* CBCollectCell.m in Sources */,
-				4EDBB99425523C16007427B9 /* STPickerViewConst.m in Sources */,
 				B2B0CE0625661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m in Sources */,
 				733F42CB1C1033A1004102FA /* CBValueTitleCell.m in Sources */,
-				4EDBB99125523C16007427B9 /* STPickerArea.m in Sources */,
 				7395B3A01C4774E30050E7F1 /* Reachability.m in Sources */,
 				73A0F9411C3FB7ED001AC2F9 /* UITextField+Night.m in Sources */,
 				7321FC1F1C1FB95900655850 /* CBFeedSuccessView.m in Sources */,
@@ -2095,6 +2093,7 @@
 				73AF68611C2925FB0094AFA0 /* CBCacheManager.m in Sources */,
 				73A0F9301C3FB7ED001AC2F9 /* DKImage.m in Sources */,
 				7321FC951C200BF600655850 /* CBProductCell.m in Sources */,
+				B23BD3DC256E2EE3007CABA5 /* NSCalendar+ST.m in Sources */,
 				73DAAA871C44EF5600CB29AB /* MJRefreshAutoStateFooter.m in Sources */,
 				73F1232E1C0BFF9100B84877 /* CBMessageController.m in Sources */,
 				73C999D31C16A62F00B8ECEF /* CBThreeLevelButton.m in Sources */,
@@ -2110,7 +2109,6 @@
 				73BCB0631C1EABB40049A359 /* CBFontSetView.m in Sources */,
 				73F122EC1C0BEAAA00B84877 /* AppDelegate.m in Sources */,
 				73C2D1E81C2D3F7700CAE210 /* EAIntroPage.m in Sources */,
-				4EDBB98D25523C16007427B9 /* STPickerDate.m in Sources */,
 				73A0F93F1C3FB7ED001AC2F9 /* UITabBar+Night.m in Sources */,
 				73A0F9381C3FB7ED001AC2F9 /* UILabel+Night.m in Sources */,
 				73DAAA801C44EF5600CB29AB /* MJRefreshAutoFooter.m in Sources */,
@@ -2120,6 +2118,7 @@
 				73442AE01C27C0EC000C95C5 /* CBProductDetailCell.m in Sources */,
 				7395B39F1C4774E30050E7F1 /* NSString+Sha1.m in Sources */,
 				73AF685A1C291E8A0094AFA0 /* CBAFNNetworkItem.m in Sources */,
+				B23BD3E0256E2EE3007CABA5 /* STPickerSingle.m in Sources */,
 				73BCB0701C1ED0A50049A359 /* CBFeedbackController.m in Sources */,
 				21F594CC1C17414600E19D3D /* RKValuationModel.m in Sources */,
 				73A0F92E1C3FB7ED001AC2F9 /* DKColor.m in Sources */,
@@ -2137,7 +2136,6 @@
 				73A0F9441C3FB7ED001AC2F9 /* UIView+Night.m in Sources */,
 				21F594CF1C17414600E19D3D /* RKYieldRateViewController.m in Sources */,
 				735A49E51C226D1F00DFD830 /* NSString+CBMD5.m in Sources */,
-				4EDBB98F25523C16007427B9 /* STPickerView.m in Sources */,
 				4EC85CAF2553F2C000436D66 /* NSURLProtocolCustom.m in Sources */,
 				21F594BE1C17414600E19D3D /* RKExponentViewController.m in Sources */,
 				21F594C11C17414600E19D3D /* RKKLine.m in Sources */,
@@ -2162,8 +2160,10 @@
 				7342F9251C1ABCE0009D7B49 /* CBUerCustomCell.m in Sources */,
 				73442AFA1C28564D000C95C5 /* TiRefreshControl.m in Sources */,
 				73C999E11C16DC8400B8ECEF /* CBSellNewsDetailController.m in Sources */,
+				B23BD3DF256E2EE3007CABA5 /* STPickerArea.m in Sources */,
 				732248031C15740100D393C0 /* CBFirstLevelButton.m in Sources */,
 				73D7C6C01C11A21400259DAA /* CBSearchChannel.m in Sources */,
+				B23BD3DD256E2EE3007CABA5 /* STPickerView.m in Sources */,
 				73DAAA891C44EF5600CB29AB /* MJRefreshBackNormalFooter.m in Sources */,
 				73D7C6CC1C11E94E00259DAA /* CBZNSearchResultController.m in Sources */,
 				73C2D1E91C2D3F7700CAE210 /* EAIntroView.m in Sources */,
@@ -2185,7 +2185,9 @@
 				733F42C01C103132004102FA /* CBItemValueView.m in Sources */,
 				21E381891C317E9000D519A5 /* RKRateInfoModel.m in Sources */,
 				73C999E51C16EB1700B8ECEF /* CBSellNewsDetailTitleCell.m in Sources */,
+				B23BD3DB256E2EE3007CABA5 /* STPickerDate.m in Sources */,
 				733F42BF1C103132004102FA /* CBValueView.m in Sources */,
+				B23BD3E3256E2EE3007CABA5 /* STPickerViewUI.m in Sources */,
 				733CACCE1C29A76700220F1B /* CBTaskTipHeadCell.m in Sources */,
 				733F42C11C103132004102FA /* CBItemButton.m in Sources */,
 				73DAAA851C44EF5600CB29AB /* MJRefreshAutoGifFooter.m in Sources */,
@@ -2194,29 +2196,27 @@
 				73AD33351C57D09C0055AFF8 /* CBadController.m in Sources */,
 				73A0F93B1C3FB7ED001AC2F9 /* UIProgressView+Night.m in Sources */,
 				73DAAA8F1C44EF5600CB29AB /* MJRefreshConst.m in Sources */,
-				4EDBB99525523C16007427B9 /* STPickerViewUI.m in Sources */,
 				730E2C8F1C134EEA00B4F881 /* CBChannelChildCell.m in Sources */,
 				73D7C6BA1C117BFC00259DAA /* CBZNSearchController.m in Sources */,
 				73AF685D1C291F4A0094AFA0 /* CBNetworkManager.m in Sources */,
-				4EDBB99225523C16007427B9 /* STPickerSingle.m in Sources */,
 				733F42D01C103A84004102FA /* CBFocusCell.m in Sources */,
 				73BCB0671C1EC12F0049A359 /* CBVersionController.m in Sources */,
 				73442AFC1C28564D000C95C5 /* UIScrollView+Associated.m in Sources */,
 				21F594C81C17414600E19D3D /* RKStatisticsViewController.m in Sources */,
 				73DAAA901C44EF5600CB29AB /* UIScrollView+MJExtension.m in Sources */,
+				B23BD3E1256E2EE3007CABA5 /* UIView+STFrame.m in Sources */,
 				73442AFB1C28564D000C95C5 /* TiRefreshView.m in Sources */,
 				21E353AF1C245C9A00C99F3F /* RKStatisticsModel.m in Sources */,
 				73A0F9431C3FB7ED001AC2F9 /* UIToolBar+Night.m in Sources */,
-				4EDBB98E25523C16007427B9 /* NSCalendar+ST.m in Sources */,
 				21E629951C1D54CE004DD266 /* DayDatePickerView.m in Sources */,
 				21F594B71C17414600E19D3D /* RKChartViewController.m in Sources */,
+				B23BD3E2256E2EE3007CABA5 /* STPickerViewConst.m in Sources */,
 				B25ADDE625675182006A102B /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				7321FC281C1FC76700655850 /* CBCollectionController.m in Sources */,
 				73DAAA821C44EF5600CB29AB /* MJRefreshComponent.m in Sources */,
 				4E77DC36255CC0730093FA1E /* NSURLProtocol+WKWebVIew.m in Sources */,
 				733B734F1C3CED66007AE160 /* CBHelpController.m in Sources */,
 				73A0F9331C3FB7ED001AC2F9 /* UIButton+Night.m in Sources */,
-				4EDBB99325523C16007427B9 /* UIView+STFrame.m in Sources */,
 				73A0F9341C3FB7ED001AC2F9 /* UIImageView+Night.m in Sources */,
 				7321FC401C1FED8700655850 /* CBFocusDetailController.m in Sources */,
 				4E1C6FAE2558D5A7008F2573 /* CSWebView.m in Sources */,
