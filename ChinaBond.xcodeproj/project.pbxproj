@@ -257,7 +257,6 @@
 		B23BD3E2256E2EE3007CABA5 /* STPickerViewConst.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3D6256E2EE3007CABA5 /* STPickerViewConst.m */; };
 		B23BD3E3256E2EE3007CABA5 /* STPickerViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3D7256E2EE3007CABA5 /* STPickerViewUI.m */; };
 		B25ADDE625675182006A102B /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */; };
-		B25ADE022567A521006A102B /* YJLAttributesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADE012567A521006A102B /* YJLAttributesLabel.m */; };
 		B25ADE0E2567B449006A102B /* CBPrivacyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */; };
 		B2B0CE0625661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */; };
 		B2B0CE12256652CE007B6ED8 /* user_agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE10256652CE007B6ED8 /* user_agreement.html */; };
@@ -724,8 +723,6 @@
 		B23BD3DA256E2EE3007CABA5 /* STPickerViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerViewConfig.h; sourceTree = "<group>"; };
 		B25ADDE225675182006A102B /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
 		B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
-		B25ADE002567A521006A102B /* YJLAttributesLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJLAttributesLabel.h; sourceTree = "<group>"; };
-		B25ADE012567A521006A102B /* YJLAttributesLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJLAttributesLabel.m; sourceTree = "<group>"; };
 		B25ADE0C2567B449006A102B /* CBPrivacyWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBPrivacyWebViewController.h; sourceTree = "<group>"; };
 		B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBPrivacyWebViewController.m; sourceTree = "<group>"; };
 		B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPrivacyPolicyPopViewController.m; sourceTree = "<group>"; };
@@ -916,8 +913,6 @@
 			children = (
 				B2B0CE0525661A75007B6ED8 /* CBPrivacyPolicyPopViewController.h */,
 				B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */,
-				B25ADE002567A521006A102B /* YJLAttributesLabel.h */,
-				B25ADE012567A521006A102B /* YJLAttributesLabel.m */,
 				B23BD3C3256E2EE3007CABA5 /* DateSelect */,
 			);
 			path = Tool;
@@ -2103,7 +2098,6 @@
 				73DAAA811C44EF5600CB29AB /* MJRefreshBackFooter.m in Sources */,
 				B2B0CE2325665FF5007B6ED8 /* UILabel+Extension.m in Sources */,
 				73BE03091C17CDCC00AE1C09 /* CBSellNewsDetailCell.m in Sources */,
-				B25ADE022567A521006A102B /* YJLAttributesLabel.m in Sources */,
 				73D7C6C81C11B62100259DAA /* CBZQSearchCell.m in Sources */,
 				73442AEB1C27D5EF000C95C5 /* CBDataBase.m in Sources */,
 				73BCB0631C1EABB40049A359 /* CBFontSetView.m in Sources */,

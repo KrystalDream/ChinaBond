@@ -9,14 +9,14 @@
 #import "CBPrivacyPolicyPopViewController.h"
 #import "UIView+STFrame.h"
 #import "UILabel+Extension.h"
-#import "UILabel+YBAttributeTextTapAction.h"
-#import "YJLAttributesLabel.h"
+//#import "UILabel+YBAttributeTextTapAction.h"
+//#import "YJLAttributesLabel.h"
 
-@interface CBPrivacyPolicyPopViewController ()
+@interface CBPrivacyPolicyPopViewController ()<UITextViewDelegate>
 
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) YJLAttributesLabel *subTitleLabel;
+@property (nonatomic, strong) UITextView *subTitleLabel;
 @property (nonatomic, strong) UIButton *operationBtn;
 
 //@property (nonatomic, strong) UIView *horizontalLine;
@@ -97,34 +97,48 @@
     
     self.titleLabel.text = title;
     
-    
-    //欢迎使用中国债券
-    NSString *temp = subTitle;
-    NSMutableArray * arr_text  = [[NSMutableArray alloc]initWithObjects:@"用户协议",@"隐私政策", nil];//点击的文字设置
-    NSMutableArray * arr_range = [[NSMutableArray alloc]initWithObjects:@"41",@"48", nil];//点击的文字开始位置设置
-    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:temp];
-    attrStr =  [self textArr:arr_text AttributedString:attrStr Connet:temp];//点击的文字简单设置属性
-    [attrStr addAttribute:NSFontAttributeName
-                       value:[UIFont systemFontOfSize:15]
-                       range:NSMakeRange(0, attrStr.length)];
-    
-    __weak __typeof(self)weakSelf = self;
+    NSString *str1 = @"欢迎使用中国债券信息网app！为了保护您的隐私和使用安全，请您务必仔细阅读我们的";
+    NSString *str2 = @"《用户协议》";
+    NSString *str3 = @"和";
+    NSString *str4 = @"《隐私政策》";
+    NSString *str5 = @"。在确认充分理解并同意后再开始使用此应用。感谢！";
 
-    self.subTitleLabel.YJLAttributesBlock = ^(NSString * _Nonnull clicktext) {//点击事件的d返回
-//        if([clicktext isEqualToString:@"用户协议"]){
-//
-//            NSLog(@"欢迎使用");
-//
-//        }else{
-//            NSLog(@"中国债券");
-//
-//        }
-        if(weakSelf.PrivacyClickBlock){
-            weakSelf.PrivacyClickBlock(clicktext);
-        }
-        
-       };
-    [self.subTitleLabel setAttributesText:attrStr actionText:arr_text actionRange:arr_range];//d添加到UILabel上面
+    NSString *str = [NSString stringWithFormat:@"%@%@%@%@%@",str1,str2,str3,str4,str5];
+    
+    NSRange range1 = [str rangeOfString:str1];
+    NSRange range2 = [str rangeOfString:str2];
+    NSRange range3 = [str rangeOfString:str3];
+    NSRange range4 = [str rangeOfString:str4];
+    NSRange range5 = [str rangeOfString:str5];
+
+    
+//    UITextView *textView = [[UITextView alloc] init];
+//    textView.frame = CGRectMake(40, 100, 300, 350);
+//    textView.editable = NO;
+//    textView.delegate = self;
+//    [self.view addSubview:textView];
+    
+    
+    NSMutableAttributedString *mastring = [[NSMutableAttributedString alloc] initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0f]}];
+    
+    [mastring addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:range1];
+    [mastring addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:range2];
+    [mastring addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:range3];
+    [mastring addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:range4];
+    [mastring addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:range5];
+
+    
+    // 1.必须要用前缀（firstPerson，secondPerson），随便写但是要有
+    // 2.要有后面的方法，如果含有中文，url会无效，所以转码
+    
+    NSString *valueString2 = [[NSString stringWithFormat:@"firstPerson://%@",str2] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+    
+    NSString *valueString4 = [[NSString stringWithFormat:@"secondPerson://%@",str4] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+    
+    [mastring addAttribute:NSLinkAttributeName value:valueString2 range:range2];
+    [mastring addAttribute:NSLinkAttributeName value:valueString4 range:range4];
+    
+    self.subTitleLabel.attributedText = mastring;
     
     [_operationBtn setTitle : btnTitle
                    forState : UIControlStateNormal];
@@ -132,70 +146,44 @@
     [_cancleBtn setTitle : leftBtnTitle
                 forState : UIControlStateNormal];
 }
-#pragma mark  多个点击位置进行简单设置
--(NSMutableAttributedString *)textArr:(NSMutableArray *)textarr  AttributedString:(NSMutableAttributedString *)String Connet:(NSString *)connet{
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
     
-    for (int i=0; i<textarr.count; i++) {
-        NSRange range = [connet rangeOfString:textarr[i]];
-        [String addAttribute:NSLinkAttributeName
-                        value:textarr[i]
-                        range: range];
+    __weak __typeof(self)weakSelf = self;
+
+    if ([[URL scheme] isEqualToString:@"firstPerson"]) {
+        
+        NSString *tempStr = @"《用户协议》";
+        if(weakSelf.PrivacyClickBlock){
+            weakSelf.PrivacyClickBlock(tempStr);
+        }
+        
+        return NO;
+        
+    } else if ([[URL scheme] isEqualToString:@"secondPerson"]) {
+        
+        NSString *tempStr = @"《隐私政策》";
+
+        if(weakSelf.PrivacyClickBlock){
+            weakSelf.PrivacyClickBlock(tempStr);
+        }
+        return NO;
+        
     }
-    return String;
-}
-- (NSAttributedString *)getAttributeWith:(id)sender
-                                  string:(NSString *)string
-                               orginFont:(CGFloat)orginFont
-                              orginColor:(UIColor *)orginColor
-                           attributeFont:(CGFloat)attributeFont
-                          attributeColor:(UIColor *)attributeColor
-{
-    __block  NSMutableAttributedString *totalStr = [[NSMutableAttributedString alloc] initWithString:string];
-    [totalStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:orginFont] range:NSMakeRange(0, string.length)];
-    [totalStr addAttribute:NSForegroundColorAttributeName value:orginColor range:NSMakeRange(0, string.length)];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:5.0f]; //设置行间距
-    [paragraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
-    [paragraphStyle setAlignment:NSTextAlignmentLeft];
-    [paragraphStyle setLineBreakMode:NSLineBreakByCharWrapping];
-    [totalStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [totalStr length])];
     
-    if ([sender isKindOfClass:[NSArray class]]) {
-        
-        __block NSString *oringinStr = string;
-        __weak typeof(self) weakSelf = self;
-        
-        [sender enumerateObjectsUsingBlock:^(NSString *  _Nonnull str, NSUInteger idx, BOOL * _Nonnull stop) {
-            
-            NSRange range = [oringinStr rangeOfString:str];
-            [totalStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:attributeFont] range:range];
-            [totalStr addAttribute:NSForegroundColorAttributeName value:attributeColor range:range];
-            oringinStr = [oringinStr stringByReplacingCharactersInRange:range withString:[weakSelf getStringWithRange:range]];
-        }];
-        
-    }else if ([sender isKindOfClass:[NSString class]]) {
-        
-        NSRange range = [string rangeOfString:sender];
-        
-        [totalStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:attributeFont] range:range];
-        [totalStr addAttribute:NSForegroundColorAttributeName value:attributeColor range:range];
-    }
-    return totalStr;
+    return YES;
+    
 }
-- (NSString *)getStringWithRange:(NSRange)range
-{
-    NSMutableString *string = [NSMutableString string];
-    for (int i = 0; i < range.length ; i++) {
-        [string appendString:@" "];
-    }
-    return string;
+
+- (void)makeClickText{
+    
+   
 }
 
 - (void)initViewWithTitle:(NSString *)title subAttributedTilte:(NSAttributedString *)subAttributedTitle rightBtnTitle:(NSString *)btnTitle BtnBlock:(BtnClickBlock)btnClickBlock{
     self.view.alpha = 1.f;
     [[UIApplication sharedApplication].keyWindow addSubview:self.view];
     _btnClickBlock = btnClickBlock;
-    
+
     self.titleLabel.text = title;
     self.subTitleLabel.attributedText = subAttributedTitle;
     [_operationBtn setTitle : btnTitle
@@ -234,7 +222,7 @@
 //        make.centerX.equalTo(self.backView);
 //    }];
     
-    self.subTitleLabel.st_size = CGSizeMake(self.backView.st_size.width - 52, 90);
+    self.subTitleLabel.st_size = CGSizeMake(self.backView.st_size.width - 52, 98);
     self.subTitleLabel.st_top = 16 + self.titleLabel.st_bottom;
     self.subTitleLabel.st_left = 26;
 
@@ -312,13 +300,16 @@
     }
     return _titleLabel;
 }
-- (YJLAttributesLabel *)subTitleLabel{
+- (UITextView *)subTitleLabel{
     if(!_subTitleLabel){
-        _subTitleLabel = [[YJLAttributesLabel alloc] init];
+        _subTitleLabel = [[UITextView alloc] init];
         _subTitleLabel.textColor = CBRGBColor(102, 102, 102);
         _subTitleLabel.font = Font(15);
         _subTitleLabel.backgroundColor = [UIColor whiteColor];
         _subTitleLabel.userInteractionEnabled = YES;
+        _subTitleLabel.editable = NO;
+        _subTitleLabel.delegate = self;
+
 //        _subTitleLabel.textAlignment = NSTextAlignmentCenter;
 //        _subTitleLabel.numberOfLines = 0;
         
