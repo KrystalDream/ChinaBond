@@ -74,7 +74,13 @@
     [self.window makeKeyAndVisible];
     
     //启动动画
-    NSString *path=[[NSBundle mainBundle]pathForResource:@"zhongzhai1" ofType:@"gif"];
+    NSString *LaunchingGifName;
+    if(IS_IPHONE_X_XR){
+        LaunchingGifName = @"zhongzhai1_XR";
+    }else{
+        LaunchingGifName = @"zhongzhai1";
+    }
+    NSString *path=[[NSBundle mainBundle]pathForResource:LaunchingGifName ofType:@"gif"];
     NSMutableArray *array =[self praseGIFDataToImageArray:[NSData dataWithContentsOfFile:path]];
     
     UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0 , SCREEN_WIDTH, SCREEN_HEIGHT)];

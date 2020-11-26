@@ -262,6 +262,7 @@
 		B2B0CE12256652CE007B6ED8 /* user_agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE10256652CE007B6ED8 /* user_agreement.html */; };
 		B2B0CE13256652CE007B6ED8 /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE11256652CE007B6ED8 /* privacy_policy.html */; };
 		B2B0CE2325665FF5007B6ED8 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */; };
+		B2E952D6256FA17600420B95 /* zhongzhai1_XR.gif in Resources */ = {isa = PBXBuildFile; fileRef = B2E952D5256FA17600420B95 /* zhongzhai1_XR.gif */; };
 		C31A84F735E2242FC6EDBFEF /* libPods-ChinaBond.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF54CF7DB4EE9BBA07011F1 /* libPods-ChinaBond.a */; };
 /* End PBXBuildFile section */
 
@@ -731,6 +732,7 @@
 		B2B0CE11256652CE007B6ED8 /* privacy_policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy_policy.html; sourceTree = "<group>"; };
 		B2B0CE2125665FF4007B6ED8 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
+		B2E952D5256FA17600420B95 /* zhongzhai1_XR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zhongzhai1_XR.gif; sourceTree = "<group>"; };
 		BFF54CF7DB4EE9BBA07011F1 /* libPods-ChinaBond.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChinaBond.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1355,6 +1357,7 @@
 			isa = PBXGroup;
 			children = (
 				733ED72A1C3A78450064F379 /* zhongzhai1.gif */,
+				B2E952D5256FA17600420B95 /* zhongzhai1_XR.gif */,
 			);
 			name = Launch;
 			sourceTree = "<group>";
@@ -1959,6 +1962,7 @@
 				7321FC9B1C20169700655850 /* CBLoginController.xib in Resources */,
 				21F594D01C17414600E19D3D /* RKYieldRateViewController.xib in Resources */,
 				21F594C71C17414600E19D3D /* RKRateDetailFooter.xib in Resources */,
+				B2E952D6256FA17600420B95 /* zhongzhai1_XR.gif in Resources */,
 				4EF3E50D2550F8B300C17E40 /* *.chinabond.com.cn.cer in Resources */,
 				73442B001C28566C000C95C5 /* refresh@3x.gif in Resources */,
 				21F594B91C17414600E19D3D /* RKExponentDetailCell.xib in Resources */,
