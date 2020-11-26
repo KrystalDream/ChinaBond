@@ -302,16 +302,33 @@
 - (void)showIntroWithCrossDissolve {
     
     EAIntroPage *page1 = [EAIntroPage page];
-    page1.bgImage = [UIImage imageNamed:@"1"];
     
     EAIntroPage *page2 = [EAIntroPage page];
-    page2.bgImage = [UIImage imageNamed:@"2"];
 
     EAIntroPage *page3 = [EAIntroPage page];
-    page3.bgImage = [UIImage imageNamed:@"3"];
+    
+    NSString *pageName1;
+    NSString *pageName2;
+    NSString *pageName3;
 
-//    EAIntroPage *page4 = [EAIntroPage page];
-//    page4.bgImage = [UIImage imageNamed:@"4"];
+    if(IS_IPHONE_X_XR){
+        pageName1 = @"icon_yindao_1_XR";
+        pageName2 = @"icon_yindao_2_XR";
+        pageName3 = @"icon_yindao_3_XR";
+
+    }else{
+        pageName1 = @"icon_yindao_1";
+        pageName2 = @"icon_yindao_2";
+        pageName3 = @"icon_yindao_3";
+        
+    }
+    page1.bgImage = [UIImage imageNamed:pageName1];
+
+    page2.bgImage = [UIImage imageNamed:pageName2];
+
+    page3.bgImage = [UIImage imageNamed:pageName3];
+
+
     
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.window.bounds andPages:@[page1,page2,page3]];
     [intro setDelegate:self];
