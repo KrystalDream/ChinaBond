@@ -17,6 +17,7 @@
 #import "CBSearchController.h"
 #import "APService.h"
 #import "CBDataBase.h"
+#import "CBPrivacyWebViewController.h"
 
 @interface CBUserManageController ()<UITableViewDataSource,UITableViewDelegate,CBFontViewDelegate,UIGestureRecognizerDelegate,UIAlertViewDelegate>
 
@@ -100,13 +101,13 @@
         return 1;
     }
     if (section == 2) {
-        return 3;
+        return 2;
     }
     if (section == 3) {
         return 1;
     }
     if (section == 4) {
-        return 2;
+        return 3;
     }
     if (section == 5) {
         return 1;
@@ -200,18 +201,18 @@
     
     if (indexPath.section == 2) {
         
-        if (indexPath.row == 0) {
-            CBUerCustomCell *userCell = [tableView dequeueReusableCellWithIdentifier:@"CBUerCustomCell"];
-            if (!userCell) {
-                userCell = [CBUerCustomCell userCustomCell];
-            }
-            userCell.userCustomLab.text = @"字体设置";
-            userCell.userCustomImage.dk_imagePicker = DKImageWithNames(@"user_font", @"user_font_night");
-            userCell.lineView.dk_backgroundColorPicker = DKColorWithRGB(0xe9e9e9, 0x1e1c1d);
-            cell = userCell;
-        }
+//        if (indexPath.row == 0) {
+//            CBUerCustomCell *userCell = [tableView dequeueReusableCellWithIdentifier:@"CBUerCustomCell"];
+//            if (!userCell) {
+//                userCell = [CBUerCustomCell userCustomCell];
+//            }
+//            userCell.userCustomLab.text = @"字体设置";
+//            userCell.userCustomImage.dk_imagePicker = DKImageWithNames(@"user_font", @"user_font_night");
+//            userCell.lineView.dk_backgroundColorPicker = DKColorWithRGB(0xe9e9e9, 0x1e1c1d);
+//            cell = userCell;
+//        }
         
-        if (indexPath.row == 1) {
+        if (indexPath.row == 0) {
             CBUserCustomSCell *userCell = [tableView dequeueReusableCellWithIdentifier:@"CBUserCustomSCell"];
             if (!userCell) {
                 userCell = [CBUserCustomSCell userCustomCell];
@@ -229,7 +230,7 @@
             
             cell = userCell;
         }
-        if (indexPath.row == 2) {
+        if (indexPath.row == 1) {
             CBUserCustomSCell *userCell = [tableView dequeueReusableCellWithIdentifier:@"CBUserCustomSCell"];
             if (!userCell) {
                 userCell = [CBUserCustomSCell userCustomCell];
@@ -295,6 +296,14 @@
             userCell.rightArrow.hidden = YES;
             userCell.rightLab.hidden = YES;
         }
+        
+        if (indexPath.row == 2) {
+            userCell.userCustomLab.text = @"隐私协议";
+            userCell.userCustomImage.dk_imagePicker = DKImageWithNames(@"user_privacy", @"user_privacy_night");
+            userCell.rightArrow.hidden = YES;
+            userCell.rightLab.hidden = YES;
+        }
+        
         userCell.lineView.dk_backgroundColorPicker = DKColorWithRGB(0xe9e9e9, 0x1e1c1d);
         cell = userCell;
     }
@@ -370,10 +379,10 @@
         [self.navigationController pushViewController:myCollect animated:YES];
     }
     if (indexPath.section == 2) {
-        if (indexPath.row == 0) {
-            //字体设置
-            self.fontView.hidden = NO;
-        }
+//        if (indexPath.row == 0) {
+//            //字体设置
+//            self.fontView.hidden = NO;
+//        }
     }
     
     if (indexPath.section == 4) {
@@ -389,6 +398,16 @@
             [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=956379885&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"]];
             
         }
+        if (indexPath.row == 2) {
+            
+            //隐私协议
+            CBPrivacyWebViewController *vc = [CBPrivacyWebViewController new];
+            vc.localHtmlName =  @"privacy_policy";
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+
+        }
+
     }
     
     if (indexPath.section == 5) {

@@ -49,6 +49,9 @@
     [self umengTrack];
     //推送
 //    [self configueNotificateWithOptions:launchOptions];
+    
+    //夜间模式
+    [self isNightModel];
     //分享
     [self threeShare];
     
@@ -127,7 +130,9 @@
     {
         [[UIApplication sharedApplication] unregisterForRemoteNotifications];
     }
-    //夜间模式
+    
+}
+- (void)isNightModel{
     
     BOOL nightModel = [[NSUserDefaults standardUserDefaults] boolForKey:KNightModel];
     
@@ -138,8 +143,8 @@
     {
         [DKNightVersionManager dawnComing];
     }
+    
 }
-
 - (void)threeShare
 {
     
