@@ -40,7 +40,7 @@
 - (void)requestData
 {
     //估值接口
-    [[CBHttpRequest shareRequest] postWithUrl:@"http://testyield.chinabond.com.cn/cbweb-mn/GetIndexServlet/d2s"
+    [[CBHttpRequest shareRequest] postWithUrl:@"https://testyield.chinabond.com.cn/cbweb-mn/GetIndexServlet/d2s"
                                        Params:nil
                               completionBlock:^(id responseObject) {
                                   

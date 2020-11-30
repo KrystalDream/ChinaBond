@@ -65,7 +65,7 @@
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    [[CBHttpRequest shareRequest] getWithUrl:@"http://www.chinabond.com.cn/SearchMobil"
+    [[CBHttpRequest shareRequest] getWithUrl:@"https://www.chinabond.com.cn/SearchMobil"
                                       Params:@{@"qt":[self.searchWord stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
                                                @"c1":self.channelID,
                                                @"page":@(_page)}

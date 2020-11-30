@@ -189,7 +189,7 @@
 - (IBAction)forgetSecret:(id)sender
 {
     
-    [CBNetworkManager getRequstWithURL:@"http://app.gongkong.com/api/newsapi/GetAppNewsMain"
+    [CBNetworkManager getRequstWithURL:@"https://app.gongkong.com/api/newsapi/GetAppNewsMain"
                                 params:nil
                           successBlock:^(NSDictionary *responseObject) {
 

@@ -10,12 +10,12 @@
 #import <UIKit/UIKit.h>
 #import "RKKLineModel.h"
 
-#define kApiRateInfo @"http://yield.chinabond.com.cn/cbweb-mn/GetSelectIndics"
-#define kApiRateData @"http://yield.chinabond.com.cn/cbweb-mn/GetIndicsServletV2"
-#define kApiExponentList @"http://yield.chinabond.com.cn/cbweb-mn/GetSelectIndex"
-#define kApiExponentData @"http://yield.chinabond.com.cn/cbweb-mn/GetIndexServlet"
-#define kApiStatistics @"http://www.chinabond.com.cn/QueryZqForPhone"
-#define kApiValuation @"http://yield.chinabond.com.cn/cbweb-mn/GetIndexServlet/d2s"
+#define kApiRateInfo @"https://yield.chinabond.com.cn/cbweb-mn/GetSelectIndics"
+#define kApiRateData @"https://yield.chinabond.com.cn/cbweb-mn/GetIndicsServletV2"
+#define kApiExponentList @"https://yield.chinabond.com.cn/cbweb-mn/GetSelectIndex"
+#define kApiExponentData @"https://yield.chinabond.com.cn/cbweb-mn/GetIndexServlet"
+#define kApiStatistics @"https://www.chinabond.com.cn/QueryZqForPhone"
+#define kApiValuation @"https://yield.chinabond.com.cn/cbweb-mn/GetIndexServlet/d2s"
 
 @interface RKDataManager : NSObject
 + (RKDataManager *)sharedInstance;

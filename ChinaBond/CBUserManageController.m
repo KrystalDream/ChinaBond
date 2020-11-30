@@ -395,7 +395,7 @@
         if (indexPath.row == 1) {
             
             //去好评
-            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=956379885&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"]];
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=956379885&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"]];
             
         }
         if (indexPath.row == 2) {

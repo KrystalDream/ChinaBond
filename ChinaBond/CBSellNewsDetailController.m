@@ -36,7 +36,7 @@
 //    NSString *zqjc = [NSString stringWithFormat:@"%@",self.infoDic[@"zqjc"]];
 //    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding (kCFStringEncodingGB_18030_2000);
 //    NSString *str = [zqjc stringByAddingPercentEscapesUsingEncoding:enc];
-    NSString *url = [NSString stringWithFormat:@"http://www.chinabond.com.cn/jsp/mb/kbcontent.jsp?zqdm=%@",self.infoDic[@"zqdm"]];
+    NSString *url = [NSString stringWithFormat:@"https://www.chinabond.com.cn/jsp/mb/kbcontent.jsp?zqdm=%@",self.infoDic[@"zqdm"]];
     
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     //webView.scrollView.scrollEnabled = NO;

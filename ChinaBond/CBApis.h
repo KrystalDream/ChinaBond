@@ -17,7 +17,7 @@
 
 #define CBMainBaseUrl @""
 
-#define CBBaseUrl @"http://www.chinabond.com.cn/QueryZqForPhone"
+#define CBBaseUrl @"https://www.chinabond.com.cn/QueryZqForPhone"
 #define CBImageBaseUrl @""
 
 #endif /* CBApis_h */

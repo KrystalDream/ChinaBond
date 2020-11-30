@@ -406,7 +406,7 @@
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    [[CBHttpRequest shareRequest] getWithUrl:@"http://www.chinabond.com.cn/d2s/menu.json"
+    [[CBHttpRequest shareRequest] getWithUrl:@"https://www.chinabond.com.cn/d2s/menu.json"
                                           Params:nil
                                  completionBlock:^(id responseObject) {
         
