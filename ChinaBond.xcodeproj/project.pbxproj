@@ -258,6 +258,7 @@
 		B23BD3E3256E2EE3007CABA5 /* STPickerViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3D7256E2EE3007CABA5 /* STPickerViewUI.m */; };
 		B25ADDE625675182006A102B /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */; };
 		B25ADE0E2567B449006A102B /* CBPrivacyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */; };
+		B2A3C2C22574E329000A945A /* CBHomeBannerWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C2C12574E329000A945A /* CBHomeBannerWebViewController.m */; };
 		B2B0CE0625661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */; };
 		B2B0CE12256652CE007B6ED8 /* user_agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE10256652CE007B6ED8 /* user_agreement.html */; };
 		B2B0CE13256652CE007B6ED8 /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE11256652CE007B6ED8 /* privacy_policy.html */; };
@@ -726,6 +727,8 @@
 		B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		B25ADE0C2567B449006A102B /* CBPrivacyWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBPrivacyWebViewController.h; sourceTree = "<group>"; };
 		B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBPrivacyWebViewController.m; sourceTree = "<group>"; };
+		B2A3C2C02574E329000A945A /* CBHomeBannerWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBHomeBannerWebViewController.h; sourceTree = "<group>"; };
+		B2A3C2C12574E329000A945A /* CBHomeBannerWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBHomeBannerWebViewController.m; sourceTree = "<group>"; };
 		B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPrivacyPolicyPopViewController.m; sourceTree = "<group>"; };
 		B2B0CE0525661A75007B6ED8 /* CBPrivacyPolicyPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPrivacyPolicyPopViewController.h; sourceTree = "<group>"; };
 		B2B0CE10256652CE007B6ED8 /* user_agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = user_agreement.html; sourceTree = "<group>"; };
@@ -925,6 +928,8 @@
 			children = (
 				4E1C6FAC2558D5A7008F2573 /* CSWebView.h */,
 				4E1C6FAD2558D5A7008F2573 /* CSWebView.m */,
+				B2A3C2C02574E329000A945A /* CBHomeBannerWebViewController.h */,
+				B2A3C2C12574E329000A945A /* CBHomeBannerWebViewController.m */,
 				4E77DC35255CC0720093FA1E /* NSURLProtocol+WKWebVIew.h */,
 				4E77DC34255CC0720093FA1E /* NSURLProtocol+WKWebVIew.m */,
 				4EC85CAD2553F2BF00436D66 /* NSURLProtocolCustom.h */,
@@ -2194,6 +2199,7 @@
 				73AD33351C57D09C0055AFF8 /* CBadController.m in Sources */,
 				73A0F93B1C3FB7ED001AC2F9 /* UIProgressView+Night.m in Sources */,
 				73DAAA8F1C44EF5600CB29AB /* MJRefreshConst.m in Sources */,
+				B2A3C2C22574E329000A945A /* CBHomeBannerWebViewController.m in Sources */,
 				730E2C8F1C134EEA00B4F881 /* CBChannelChildCell.m in Sources */,
 				73D7C6BA1C117BFC00259DAA /* CBZNSearchController.m in Sources */,
 				73AF685D1C291F4A0094AFA0 /* CBNetworkManager.m in Sources */,

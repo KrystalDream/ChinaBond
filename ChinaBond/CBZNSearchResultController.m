@@ -8,7 +8,8 @@
 
 #import "CBZNSearchResultController.h"
 #import "CBZNSearchResultCell.h"
-#import "CBFocusDetailController.h"
+//#import "CBFocusDetailController.h"
+#import "CSWebView.h"
 
 @interface CBZNSearchResultController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -143,7 +144,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CBFocusDetailController *focusDetail = [[CBFocusDetailController alloc] init];
+//    CBFocusDetailController *focusDetail = [[CBFocusDetailController alloc] init];
+    CSWebView *focusDetail = [[CSWebView alloc] init];
     focusDetail.hidesBottomBarWhenPushed = YES;
     focusDetail.infoDic = self.dataList[indexPath.row];
     focusDetail.infoUrl = self.dataList[indexPath.row][@"urlstr"];

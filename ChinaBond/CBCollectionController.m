@@ -8,7 +8,8 @@
 
 #import "CBCollectionController.h"
 #import "CBCollectCell.h"
-#import "CBFocusDetailController.h"
+//#import "CBFocusDetailController.h"
+#import "CSWebView.h"
 #import "CBDataBase.h"
 #import "UIScrollView+Associated.h"
 
@@ -147,7 +148,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CBFocusDetailController *focusDetail = [[CBFocusDetailController alloc] init];
+//    CBFocusDetailController *focusDetail = [[CBFocusDetailController alloc] init];
+    CSWebView *focusDetail = [[CSWebView alloc] init];
+
     focusDetail.infoDic = self.dataList[indexPath.row];
     focusDetail.infoUrl = self.dataList[indexPath.row][@"infoUrl"];
     focusDetail.tId = self.dataList[indexPath.row][@"tId"];

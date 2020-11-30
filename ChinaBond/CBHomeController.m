@@ -26,6 +26,7 @@
 #import "UIScrollView+Associated.h"
 #import "CBadController.h"
 #import "CSWebView.h"
+#import "CBHomeBannerWebViewController.h"
 
 @interface CBHomeController ()<UITableViewDataSource,UITableViewDelegate,LCBannerViewDelegate,UIGestureRecognizerDelegate,CBHomeChannelChoseDelegate,UIAlertViewDelegate>
 @property (strong, nonatomic) UITableView *tableView;
@@ -492,7 +493,8 @@
 
 - (void)bannerView:(LCBannerView *)bannerView didClickedImageIndex:(NSInteger)index {
     
-    CBadController *adVC = [[CBadController alloc] init];
+//    CBadController *adVC = [[CBadController alloc] init];
+    CBHomeBannerWebViewController *adVC = [[CBHomeBannerWebViewController alloc] init];
     adVC.infoUrl = self.advList[index][@"infoUrl"];
     adVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:adVC animated:YES];
