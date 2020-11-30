@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CBNavigationController : UINavigationController
+@property(nonatomic, getter=isFSGesEnabled) BOOL fSGesEnabled;
 
 @end
