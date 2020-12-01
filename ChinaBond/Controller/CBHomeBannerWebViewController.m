@@ -24,18 +24,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIColor *backColor;
 
-    self.view.dk_backgroundColorPicker = DKColorWithRGB(0xf0eff4, 0x0f0f0f);
+    if ([DKNightVersionManager currentThemeVersion] == DKThemeVersionNight) {
+        backColor =  [UIColor lightGrayColor];
+    }else{
+        backColor =  [UIColor whiteColor];
+    }
+    self.view.backgroundColor = backColor;
+    
+//    self.view.dk_backgroundColorPicker = DKColorWithRGB(0xf0eff4, 0x0f0f0f);
     self.title = @"中国债券信息网";
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backButtonClick)];
     self.navigationItem.leftBarButtonItem = backButton;
-    
-//    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-//    webView.delegate = self;
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.infoUrl]];
-//    [webView loadRequest:request];
-    
-    
     
     [NSURLProtocol registerClass:[NSURLProtocolCustom class]];
     
@@ -71,61 +73,14 @@
     
     if ([DKNightVersionManager currentThemeVersion] == DKThemeVersionNight) {
         webView.opaque = NO;
-//        [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName(‘body‘)[0].style.background=‘#000000‘"];
-        
-        NSString *jSString = @"document.getElementsByTagName(‘body‘)[0].style.background=‘#C0C0C0‘";
-              //用于进行JavaScript注入
-              WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jSString injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
-              [config.userContentController addUserScript:wkUScript];
 
-    }
-    else
-    {
+    }else{
         webView.opaque = YES;
-//        [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName(‘body‘)[0].style.background=‘#ffffff‘"];
-        
-        NSString *jSString = @"document.getElementsByTagName(‘body‘)[0].style.background=‘#ffffff‘";
-              //用于进行JavaScript注入
-              WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jSString injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
-              [config.userContentController addUserScript:wkUScript];
     }
     
     [self.view addSubview:webView];
 }
-//
-//-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-//{
-//    if ([request.URL.absoluteString containsString:@"download="]) {
-//
-//        [webView stopLoading];
-//
-//        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-//        NSString *urlStr = [NSString stringWithFormat:@"%@",request.URL.absoluteString];
-//        AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-//        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
-//        NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request
-//                                                                         progress:nil
-//                                                                      destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
-//
-//                                                                          NSURL *downloadURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-//                                                                          return [downloadURL URLByAppendingPathComponent:[response suggestedFilename]];
-//
-//                                                                      }
-//                                                                completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-//
-//                                                                    CBFileController *file = [[CBFileController alloc] init];
-//                                                                    file.fileUrl = filePath;
-//                                                                    [self.navigationController pushViewController:file animated:YES];
-//
-//
-//                                                                }];
-//
-//        [downloadTask resume];
-//
-//    }
-//    return YES;
-//}
-//
+
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskPortrait ;
@@ -167,6 +122,14 @@
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation { // 类似UIWebView 的 －webViewDidFinishLoad:
     NSLog(@"didFinishNavigation");
+    
+    
+//    //设置JS。@"document.getElementsByTagName(‘body‘)[0].style.background=‘#000000‘"
+//        NSString *inputValueJS = @"document.getElementsByName('body')[0].style.background='#00FF00'";
+//        //执行JS
+//        [webView evaluateJavaScript:inputValueJS completionHandler:^(id _Nullable response, NSError * _Nullable error) {
+//            NSLog(@"value: %@ error: %@", response, error);
+//        }];
     
 }
 // 页面加载失败时调用

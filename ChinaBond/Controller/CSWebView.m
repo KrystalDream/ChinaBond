@@ -26,7 +26,7 @@
 #import "CBLoginController.h"
 #import "NSURLProtocol+WKWebVIew.h"
 
-@interface CSWebView ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
+@interface CSWebView ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler,CBMessageShareDelegate>
 {
     UIView *bgView;
     UIImageView *imgView;
@@ -53,7 +53,16 @@
     self.title = self.titleS;
     
     //设置背景颜色
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
+    UIColor *backColor;
+
+    if ([DKNightVersionManager currentThemeVersion] == DKThemeVersionNight) {
+        backColor =  [UIColor lightGrayColor];
+    }else{
+        backColor =  [UIColor whiteColor];
+    }
+    self.view.backgroundColor = backColor;
+
     
    [NSURLProtocol registerClass:[NSURLProtocolCustom class]];
 
@@ -80,7 +89,7 @@
                       options:NSKeyValueObservingOptionNew
                       context:nil];
     
-    self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 64,SCREEN_WIDTH, 4)];
+    self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 64,SCREEN_WIDTH, 2)];
     self.progressView.backgroundColor = [UIColor whiteColor];
     self.progressView.tintColor = [UIColor orangeColor];
     [self.view addSubview:self.progressView];
@@ -110,9 +119,14 @@
     wkWebView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth ;
     wkWebView.UIDelegate = self;
     wkWebView.navigationDelegate = self;
-    
+    wkWebView.backgroundColor = [UIColor clearColor];
 //    _infoUrl = [_infoUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-   
+    if ([DKNightVersionManager currentThemeVersion] == DKThemeVersionNight) {
+        wkWebView.opaque = NO;
+
+    }else{
+        wkWebView.opaque = YES;
+    }
     
     if(self.isLocalHtml){
         
