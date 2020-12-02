@@ -20,21 +20,22 @@
 #import "CBMessageShareView.h"
 #import "CBDataBase.h"
 #import "CBCacheManager.h"
-#import <ShareSDK/ShareSDK.h>
+//#import <ShareSDK/ShareSDK.h>
+#import "CustomActivity.h"
 #import <AFURLSessionManager.h>
 #import "CBFileController.h"
 #import "CBLoginController.h"
 #import "NSURLProtocol+WKWebVIew.h"
 
-@interface CSWebView ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler,CBMessageShareDelegate>
+@interface CSWebView ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
 {
     UIView *bgView;
     UIImageView *imgView;
 }
 
 @property (nonatomic, strong) WKWebView *wkWebView;
-@property (nonatomic, strong) UIView *shadowView;
-@property (nonatomic, strong) CBMessageShareView *shareView;
+//@property (nonatomic, strong) UIView *shadowView;
+//@property (nonatomic, strong) CBMessageShareView *shareView;
 @property (nonatomic) BOOL isCollect;
 @property (nonatomic, strong) UIButton *rightButton1;
 @property (nonatomic, strong) UIView *guideView;
@@ -139,37 +140,22 @@
         NSURL *url = [NSURL URLWithString:self.infoUrl];
         [wkWebView loadRequest:[NSURLRequest requestWithURL:url]];
     }
-    
-//    NSString *htmlcontentstring = @"main.css";//这里是纯html内容没有加任何css的样式。
-//    NSString *path = [[NSBundle mainBundle]pathForResource:@"main" ofType:@".css"];
-//
-//    NSString *localcss = [NSString stringWithFormat:@"<head><link rel=\"stylesheet\" type=\"text/css\" href=\"%@\"></head>",path];
-//    NSString * htmlcontent = [NSString stringWithFormat:@"%@%@",localcss, htmlcontentstring]; //拼接css
-//
-//    [self.wkWebView loadHTMLString:htmlcontent baseURL:[NSURL fileURLWithPath:path]]; //baseURL指定到css的路径.
 
-
-
-    
     [self.view addSubview:wkWebView];
     _wkWebView = wkWebView;
-    
-    //3.注册js方法
-//    [config.userContentController addScriptMessageHandler:self name:@"webViewApp"];
-    
     
 }
 - (void)makeView{
     
-    self.shadowView = [[UIView alloc] initWithFrame:self.view.frame];
-    self.shadowView.backgroundColor = [UIColor blackColor];
-    self.shadowView.alpha = 0.5;
-    self.shadowView.hidden = YES;
-    [self.view addSubview:self.shadowView];
-    
-    self.shareView = [[CBMessageShareView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 257)];
-    self.shareView.delegate = self;
-    [self.view addSubview:self.shareView];
+//    self.shadowView = [[UIView alloc] initWithFrame:self.view.frame];
+//    self.shadowView.backgroundColor = [UIColor blackColor];
+//    self.shadowView.alpha = 0.5;
+//    self.shadowView.hidden = YES;
+//    [self.view addSubview:self.shadowView];
+//
+//    self.shareView = [[CBMessageShareView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 257)];
+//    self.shareView.delegate = self;
+//    [self.view addSubview:self.shareView];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"focusDetailFirst"]) {
         self.guideView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
@@ -282,17 +268,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)shareButtonClick
-{
-    self.shadowView.hidden = NO;
-    
-    [UIView animateWithDuration:.5f animations:^{
-        self.shareView.frame = CGRectMake(0, SCREEN_HEIGHT-257, SCREEN_WIDTH, 257);
-        
-    }];
-    
-}
-
 - (void)collectButtonClick
 {
     if (self.isCollect) {
@@ -384,93 +359,182 @@
     }
 }
 #pragma mark -Share
+- (void)shareButtonClick
+{
+//    self.shadowView.hidden = NO;
+//
+//    [UIView animateWithDuration:.5f animations:^{
+//        self.shareView.frame = CGRectMake(0, SCREEN_HEIGHT-257, SCREEN_WIDTH, 257);
+//
+//    }];
+    
+    // 1、设置分享的内容，并将内容添加到数组中
+    NSString *shareText = @"中国债券信息网";
+    UIImage *shareImage = [UIImage imageNamed:@"shareIcon"];
+    NSURL *shareUrl = [NSURL URLWithString:@"https://www.chinabond.com.cn/Info/155464739?sd=chinabond"];
+    NSArray *activityItemsArray = @[shareText,shareImage,shareUrl];
+    
+    // 自定义的CustomActivity，继承自UIActivity
+//    CustomActivity *customActivity = [[CustomActivity alloc]initWithTitle:shareText ActivityImage:[UIImage imageNamed:@"shareLogo"] URL:shareUrl ActivityType:@"Custom"];
+//    NSArray *activityArray = @[customActivity];
+    
+    // 2、创建分享的控制器
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItemsArray applicationActivities:nil];
+    //3.设定不想显示的平台和功能
+    activityVC.excludedActivityTypes = [self excludetypes];
+    activityVC.modalInPopover = YES;
+    
+    //4. 设置操作回调,用户点击 菜单按钮后事件执行完成会回调这个block
+    activityVC.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
+
+          if (completed) {
+              [MBProgressHUD bwm_showTitle:@"分享成功" toView:self.view hideAfter:2];
+          }else{
+
+              [MBProgressHUD bwm_showTitle:@"分享失败" toView:self.view hideAfter:2];
+          }
+
+      };
+    // 4、调用控制器
+    [self presentViewController:activityVC animated:YES completion:nil];
+    
+    
+}
+-(NSArray *)excludetypes{
+    
+    NSMutableArray *excludeTypeM = [NSMutableArray arrayWithArray:@[//UIActivityTypePostToFacebook,
+        
+        UIActivityTypePostToTwitter,
+        
+        UIActivityTypePostToWeibo,
+        
+        UIActivityTypeMessage,
+        
+        UIActivityTypeMail,
+        
+        UIActivityTypePrint,
+        
+        UIActivityTypeCopyToPasteboard,
+        
+        UIActivityTypeAssignToContact,
+        
+        UIActivityTypeSaveToCameraRoll,
+        
+        UIActivityTypeAddToReadingList,
+        UIActivityTypePostToFlickr,
+        
+        UIActivityTypePostToVimeo,
+        
+        UIActivityTypePostToTencentWeibo,
+        
+        UIActivityTypeAirDrop,
+        
+        UIActivityTypeOpenInIBooks]];
+    
+    if (@available(iOS 11.0, *)) {
+        
+        [excludeTypeM addObject:UIActivityTypeMarkupAsPDF];
+        
+    } else {
+        
+        // Fallback on earlier versions
+        
+    }
+
+return excludeTypeM;
+
+}
 -(void)shareButtonClick:(NSInteger)tag
 {
-    switch (tag) {
-        case 0://微博
-        {
-            
-            id<ISSContent> content = [ShareSDK content:self.infoDic[@"title"]
-                                        defaultContent:self.infoDic[@"title"]
-                                                 image:nil
-                                                 title:self.infoDic[@"title"]
-                                                   url:@"www.baidu.com"
-                                           description:self.infoDic[@"title"]
-                                             mediaType:SSPublishContentMediaTypeNews];
-            [ShareSDK clientShareContent:content type:ShareTypeSinaWeibo statusBarTips:YES result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                switch (state) {
-                    case SSResponseStateSuccess:
-                        [MBProgressHUD bwm_showTitle:@"分享成功" toView:self.view hideAfter:2];
-                        break;
-                    case SSResponseStateFail:
-                        [MBProgressHUD bwm_showTitle:@"分享失败" toView:self.view hideAfter:2];
-                        break;
-                    default:
-                        break;
-                }
-            }];
-        }
-            break;
-        case 1://微信
-        {
-            NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"icon" ofType:@"png"];
-            id<ISSContent> content = [ShareSDK content:self.infoDic[@"title"]
-                                        defaultContent:self.infoDic[@"title"]
-                                                 image:[ShareSDK imageWithPath:imagePath]
-                                                 title:self.infoDic[@"title"]
-                                                   url:self.infoUrl
-                                           description:self.infoDic[@"title"]
-                                             mediaType:SSPublishContentMediaTypeNews];
-            [ShareSDK clientShareContent:content type:ShareTypeWeixiSession statusBarTips:YES result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                switch (state) {
-                    case SSResponseStateSuccess:
-                        [MBProgressHUD bwm_showTitle:@"分享成功" toView:self.view hideAfter:2];
-                        break;
-                    case SSResponseStateFail:
-                        [MBProgressHUD bwm_showTitle:@"请安装最新版本的微信客户端" toView:self.view hideAfter:2];
-                        break;
-                    default:
-                        break;
-                }
-            }];
-        }
-            break;
-        case 2://微信好友
-        {
-            NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"icon" ofType:@"png"];
-            id<ISSContent> content = [ShareSDK content:self.infoDic[@"title"]
-                                        defaultContent:self.infoDic[@"title"]
-                                                 image:[ShareSDK imageWithPath:imagePath]
-                                                 title:self.infoDic[@"title"]
-                                                   url:self.infoUrl
-                                           description:self.infoDic[@"title"]
-                                             mediaType:SSPublishContentMediaTypeNews];
-            [ShareSDK clientShareContent:content type:ShareTypeWeixiTimeline statusBarTips:YES result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                switch (state) {
-                    case SSResponseStateSuccess:
-                        [MBProgressHUD bwm_showTitle:@"分享成功" toView:self.view hideAfter:2];
-                        break;
-                    case SSResponseStateFail:
-                        [MBProgressHUD bwm_showTitle:@"请安装最新版本的微信客户端" toView:self.view hideAfter:2];
-                        break;
-                    default:
-                        break;
-                }
-            }];
-        }
-            break;
-        default:
-            break;
-    }
+    
+//    switch (tag) {
+//        case 0://微博
+//        {
+//
+//            id<ISSContent> content = [ShareSDK content:self.infoDic[@"title"]
+//                                        defaultContent:self.infoDic[@"title"]
+//                                                 image:nil
+//                                                 title:self.infoDic[@"title"]
+//                                                   url:@"www.baidu.com"
+//                                           description:self.infoDic[@"title"]
+//                                             mediaType:SSPublishContentMediaTypeNews];
+//            [ShareSDK clientShareContent:content type:ShareTypeSinaWeibo statusBarTips:YES result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+//                switch (state) {
+//                    case SSResponseStateSuccess:
+//                        [MBProgressHUD bwm_showTitle:@"分享成功" toView:self.view hideAfter:2];
+//                        break;
+//                    case SSResponseStateFail:
+//                        [MBProgressHUD bwm_showTitle:@"分享失败" toView:self.view hideAfter:2];
+//                        break;
+//                    default:
+//                        break;
+//                }
+//            }];
+//        }
+//            break;
+//        case 1://微信
+//        {
+//            NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"icon" ofType:@"png"];
+//            id<ISSContent> content = [ShareSDK content:self.infoDic[@"title"]
+//                                        defaultContent:self.infoDic[@"title"]
+//                                                 image:[ShareSDK imageWithPath:imagePath]
+//                                                 title:self.infoDic[@"title"]
+//                                                   url:self.infoUrl
+//                                           description:self.infoDic[@"title"]
+//                                             mediaType:SSPublishContentMediaTypeNews];
+//            [ShareSDK clientShareContent:content type:ShareTypeWeixiSession statusBarTips:YES result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+//                switch (state) {
+//                    case SSResponseStateSuccess:
+//                        [MBProgressHUD bwm_showTitle:@"分享成功" toView:self.view hideAfter:2];
+//                        break;
+//                    case SSResponseStateFail:
+//                        [MBProgressHUD bwm_showTitle:@"请安装最新版本的微信客户端" toView:self.view hideAfter:2];
+//                        break;
+//                    default:
+//                        break;
+//                }
+//            }];
+//        }
+//            break;
+//        case 2://微信好友
+//        {
+//            NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"icon" ofType:@"png"];
+//            id<ISSContent> content = [ShareSDK content:self.infoDic[@"title"]
+//                                        defaultContent:self.infoDic[@"title"]
+//                                                 image:[ShareSDK imageWithPath:imagePath]
+//                                                 title:self.infoDic[@"title"]
+//                                                   url:self.infoUrl
+//                                           description:self.infoDic[@"title"]
+//                                             mediaType:SSPublishContentMediaTypeNews];
+//            [ShareSDK clientShareContent:content type:ShareTypeWeixiTimeline statusBarTips:YES result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+//                switch (state) {
+//                    case SSResponseStateSuccess:
+//                        [MBProgressHUD bwm_showTitle:@"分享成功" toView:self.view hideAfter:2];
+//                        break;
+//                    case SSResponseStateFail:
+//                        [MBProgressHUD bwm_showTitle:@"请安装最新版本的微信客户端" toView:self.view hideAfter:2];
+//                        break;
+//                    default:
+//                        break;
+//                }
+//            }];
+//        }
+//            break;
+//        default:
+//            break;
+//    }
+    
+    
+    
 }
 
--(void)cancelBtnClick
-{
-    self.shadowView.hidden = YES;
-    [UIView animateWithDuration:.5f animations:^{
-        self.shareView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 257);
-    }];
-}
+//-(void)cancelBtnClick
+//{
+//    self.shadowView.hidden = YES;
+//    [UIView animateWithDuration:.5f animations:^{
+//        self.shareView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 257);
+//    }];
+//}
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
@@ -501,18 +565,6 @@
 //        [self callJSMsg:[dict objectForKey:@"param1"]];
 //    }
 }
-
-//- (void)hello:(NSString *)param{
-//    NSLog(@"hello");
-//}
-//
-//- (void)callJS{
-//    NSLog(@"callJS");
-//}
-//
-//- (void)callJSMsg:(NSString *)msg{
-//    NSLog(@"callJSMsg");
-//}
 
 //WKNavigationDelegate
 // 页面开始加载时调用

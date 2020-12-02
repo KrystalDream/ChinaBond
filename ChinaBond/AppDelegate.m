@@ -53,7 +53,7 @@
     //夜间模式
     [self isNightModel];
     //分享
-    [self threeShare];
+//    [self threeShare];
     
     [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
     
