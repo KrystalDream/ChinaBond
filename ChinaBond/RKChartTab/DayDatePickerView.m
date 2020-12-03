@@ -393,7 +393,6 @@
     
     NSDate *date=[dateFormatter dateFromString:dateString];
     
-    NSLog(@"date == %@",date);
     
     return date;
 }

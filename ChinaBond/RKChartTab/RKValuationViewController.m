@@ -151,7 +151,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"1");
 }
 
 #pragma mark - 横竖屏－仅竖屏

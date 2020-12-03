@@ -94,7 +94,7 @@
                                  }
                                  
                              } failBlock:^(NSError *error) {
-                                 NSLog(@"%@",error);
+                                 CBLog(@"%@",error);
                              }];
 }
 

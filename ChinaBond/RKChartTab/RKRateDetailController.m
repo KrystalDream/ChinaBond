@@ -198,7 +198,7 @@
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     if (!jsonData) {
-        NSLog(@"Got an error: %@", error);
+        CBLog(@"Got an error: %@", error);
     } else {
         jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     }
@@ -401,7 +401,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"1");
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath

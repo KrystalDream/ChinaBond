@@ -14,7 +14,6 @@ static NSString* const FilteredKey = @"FilteredKey";
  
 + (BOOL)canInitWithRequest:(NSURLRequest *)request
 {
-    NSLog(@"request.URL.absoluteString = %@",request.URL.absoluteString);
     
     NSString *extension = request.URL.pathExtension;
         BOOL isSource = [@[@"css"] indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -37,7 +36,7 @@ static NSString* const FilteredKey = @"FilteredKey";
 - (void)startLoading
 {
     NSString *fileName = [super.request.URL.absoluteString componentsSeparatedByString:@"/"].lastObject;
-       NSLog(@"fileName is %@",fileName);
+       CBLog(@"fileName is %@",fileName);
        //这里是获取本地资源路径 如:png,js等
        NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
        if (!path) {

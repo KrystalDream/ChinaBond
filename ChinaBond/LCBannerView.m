@@ -129,7 +129,7 @@ static CGFloat LCPageDistance = 10.0f;      // pageControl 到底部的距离
                 UIImage *image = [UIImage imageNamed:currentImageName];
                 if (!image) {
                     
-                    NSLog(@"ERROR: No image named `%@`!", currentImageName);
+                    CBLog(@"ERROR: No image named `%@`!", currentImageName);
                 }
                 
                 imageView.image = image;

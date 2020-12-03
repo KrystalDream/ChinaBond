@@ -255,7 +255,6 @@ static int currentSection[3] = {-1, -1, -1};
 //确认刷新列表
 - (void)confirmByModel:(RKCateLevelModel *)model
 {
-    NSLog(@"%@",model.levelTitle);
     if (self.delegate && [self.delegate respondsToSelector:@selector(freshViewSelectModel:)]) {
         [self.delegate freshViewSelectModel:model];
     }

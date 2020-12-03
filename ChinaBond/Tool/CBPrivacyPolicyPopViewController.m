@@ -264,7 +264,6 @@
 }
 - (void)operationBtnClick{
     
-    NSLog(@"operationBtnClick");
     [self.view removeFromSuperview];
 
     if (self.btnClickBlock) {
@@ -272,7 +271,6 @@
     }
 }
 - (void)cancleBtnClick{
-    NSLog(@"cancleBtnClick");
 
     [self.view removeFromSuperview];
 

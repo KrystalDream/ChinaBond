@@ -112,16 +112,13 @@
 //WKNavigationDelegate
 // 页面开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {// 类似UIWebView的 -webViewDidStartLoad:
-    NSLog(@"didStartProvisionalNavigation");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 // 当内容开始返回时调用
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
-    NSLog(@"didCommitNavigation");
 }
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation { // 类似UIWebView 的 －webViewDidFinishLoad:
-    NSLog(@"didFinishNavigation");
     
     
 //    //设置JS。@"document.getElementsByTagName(‘body‘)[0].style.background=‘#000000‘"
@@ -135,7 +132,6 @@
 // 页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     // 类似 UIWebView 的- webView:didFailLoadWithError:
-    NSLog(@"didFailProvisionalNavigation");
 }
 
 
@@ -146,7 +142,6 @@
 
 // 在发送请求之前，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction*)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    NSLog(@"decidePolicyForNavigationAction %@",navigationAction.request);
     
     NSString *strRequest = [navigationAction.request.URL.absoluteString stringByRemovingPercentEncoding];
 
@@ -178,7 +173,6 @@
 
 // 接收到服务器跳转请求之后调用
 - (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{
-    NSLog(@"didReceiveServerRedirectForProvisionalNavigation");
 }
 
 //WKUIDelegate

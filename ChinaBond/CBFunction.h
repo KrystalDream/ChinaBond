@@ -54,16 +54,28 @@ static CGFloat const kTabbarHeight            = 49;
 #define CBRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
 
+//配置2
 
-#ifdef DEBUG
-
-#define CBLog(...) NSLog(__VA_ARGS__)
-
+#define kAppDebug 0
+#if kAppDebug
+#define CBLog(fmt, ...)                             NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else
-
 #define CBLog(...)
 
 #endif
+
+//
+//#if DEBUG
+//
+//#define CBLog(FORMAT, ...) \
+//do {\
+//    fprintf(stderr, "[%s:%d行] %s\n", [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);\
+//} while (0)
+//
+//#else
+//
+//#define CBLog(FORMAT, ...) nil
+//#endif
 
 #define SHOW_ALERT(_msg_)  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:_msg_ delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];\
 [alert show];

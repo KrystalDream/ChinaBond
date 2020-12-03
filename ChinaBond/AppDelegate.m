@@ -359,7 +359,6 @@
     
     [CBPrivacyPolicyPopViewController shareInstance].PrivacyClickBlock = ^(NSString* text) {
         if([text isEqualToString:@"用户协议"]){
-            NSLog(@"《用户协议》");
             
             [CBPrivacyPolicyPopViewController shareInstance].view.alpha = 0;
             CBPrivacyWebViewController *cs = [CBPrivacyWebViewController new];
@@ -370,7 +369,6 @@
             [nav pushViewController:cs animated:YES];
 
         }else{
-            NSLog(@"《隐私政策》");
             [CBPrivacyPolicyPopViewController shareInstance].view.alpha = 0;
             CBPrivacyWebViewController *cs = [CBPrivacyWebViewController new];
                   cs.localHtmlName = @"privacy_policy";

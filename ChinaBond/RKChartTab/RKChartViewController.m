@@ -128,7 +128,7 @@
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     if (!jsonData) {
-        NSLog(@"Got an error: %@", error);
+        CBLog(@"Got an error: %@", error);
     } else {
         jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     }
@@ -520,7 +520,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"1");
 }
 #pragma mark - ButtonClicked
 - (void)headerButtonClicked:(UIButton *)sender

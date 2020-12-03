@@ -48,7 +48,7 @@ static CBHttpRequest *_shareRequest = nil;
             paramStr = [NSString stringWithFormat:@"%@&%@=%@",paramStr,key,params[key]];
         }
     }
-    NSLog(@"\n\n\n\n\n\n%@\n\n\n\n\n\n",[NSString stringWithFormat:@"%@?%@",url,paramStr]);
+    CBLog(@"\n\n\n\n\n\n%@\n\n\n\n\n\n",[NSString stringWithFormat:@"%@?%@",url,paramStr]);
 
     CBHttpManager *manager = [CBHttpManager sharedManager];
 
