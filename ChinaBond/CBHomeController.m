@@ -160,19 +160,6 @@
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"Home"];
 }
-+(NSString*)DataTOjsonString:(id)object{
-    NSString *jsonString = nil;
-    NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:&error];
-    if (!jsonData) {
-        NSLog(@"Got an error: %@", error);
-    } else {
-        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    }
-    return jsonString;
-}
 - (void)requestData
 {
     //估值接口
@@ -181,8 +168,8 @@
                                        Params:nil
                                     completionBlock:^(id responseObject) {
        
-        CBLog(@"首页请求--------------------%@", [CBHomeController DataTOjsonString:responseObject]);
-                                       
+        CBLog(@"首页请求--------------------%@", responseObject);
+
                                         //清空已读
                                         [self.readArr removeAllObjects];
                                         
@@ -230,7 +217,6 @@
     [[CBHttpRequest shareRequest] getWithUrl:@"https://www.chinabond.com.cn/d2s/homepage.json"
                                         Params:nil
                                         completionBlock:^(id responseObject) {
-        CBLog(@"首页请求2--------------------%@", [CBHomeController DataTOjsonString:responseObject]);
 
                                             NSString *state = [responseObject objectForKey:@"state"];
                                             if ([state isEqualToString:@"0"]) {
