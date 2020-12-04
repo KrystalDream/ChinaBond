@@ -613,6 +613,11 @@ return excludeTypeM;
         
         
     }else {
+        
+        //如果是跳转一个新页面
+        if (navigationAction.targetFrame == nil) {
+            [webView loadRequest:navigationAction.request];
+        }
         // 允许跳转
         decisionHandler(WKNavigationActionPolicyAllow);
         

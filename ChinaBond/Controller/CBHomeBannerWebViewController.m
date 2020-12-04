@@ -164,9 +164,13 @@
 
 
     }else {
+        
+        //如果是跳转一个新页面
+        if (navigationAction.targetFrame == nil) {
+            [webView loadRequest:navigationAction.request];
+        }
         // 允许跳转
         decisionHandler(WKNavigationActionPolicyAllow);
-        
     }
     
 }
@@ -178,7 +182,7 @@
 //WKUIDelegate
 - (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction*)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
     // 接口的作用是打开新窗口委托
-    //[self createNewWebViewWithURL:webView.URL.absoluteString config:Web];
+//    [self createNewWebViewWithURL:webView.URL.absoluteString config:Web];
     
     return _wkWebView;
 }
