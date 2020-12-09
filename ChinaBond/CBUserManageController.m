@@ -15,7 +15,7 @@
 #import "CBMyCollectController.h"
 #import "CBLoginController.h"
 #import "CBSearchController.h"
-#import "APService.h"
+//#import "APService.h"
 #import "CBDataBase.h"
 #import "CBPrivacyWebViewController.h"
 
@@ -488,10 +488,10 @@
     }
     else
     {
-        [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                       UIRemoteNotificationTypeSound |
-                                                       UIRemoteNotificationTypeAlert)
-                                           categories:nil];
+//        [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+//                                                       UIRemoteNotificationTypeSound |
+//                                                       UIRemoteNotificationTypeAlert)
+//                                           categories:nil];
     }
     
     [[NSUserDefaults standardUserDefaults] setBool:onOff forKey:KNotification];

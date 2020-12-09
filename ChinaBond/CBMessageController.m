@@ -17,7 +17,7 @@
 #import "CBTaskTipsCell.h"
 #import "NSDictionary+ModelParse.h"
 #import "CBSellNewsCell.h"
-#import "CBFocusDetailController.h"
+//#import "CBFocusDetailController.h"
 #import "CBTaskTipHeadCell.h"
 //#import "CustomDatePickerView.h"
 //#import "JCAlertView.h"

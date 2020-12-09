@@ -9,13 +9,13 @@
 #import "AppDelegate.h"
 #import "RKChartViewController.h"
 #import "RKTabBarViewController.h"
-#import "APService.h"
+//#import "APService.h"
 #import "CBCacheManager.h"
 #import "RKDataManager.h"
 #import <ImageIO/ImageIO.h>
 #import "EAIntroView.h"
-#import <ShareSDK/ShareSDK.h>
-#import "WXApi.h"
+//#import <ShareSDK/ShareSDK.h>
+//#import "WXApi.h"
 #import "CSWebView.h"
 #import "RNCachingURLProtocol.h"
 #import "CBPrivacyPolicyPopViewController.h"
@@ -120,11 +120,11 @@
     BOOL isNoti = [[NSUserDefaults standardUserDefaults] boolForKey:KNotification];
     
     if (isNoti) {
-        [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                       UIRemoteNotificationTypeSound |
-                                                       UIRemoteNotificationTypeAlert)
-                                           categories:nil];
-        [APService setupWithOption:launchOptions];
+//        [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+//                                                       UIRemoteNotificationTypeSound |
+//                                                       UIRemoteNotificationTypeAlert)
+//                                           categories:nil];
+//        [APService setupWithOption:launchOptions];
     }
     else
     {
@@ -148,24 +148,24 @@
 - (void)threeShare
 {
     
-    [ShareSDK registerApp:@"4b78d3a1baa7"];
-    [ShareSDK importWeChatClass:[WXApi class]];
+//    [ShareSDK registerApp:@"4b78d3a1baa7"];
+//    [ShareSDK importWeChatClass:[WXApi class]];
 
 }
 
-- (BOOL)application:(UIApplication *)application
-      handleOpenURL:(NSURL *)url
-{
-    return [ShareSDK handleOpenURL:url wxDelegate:self];
-}
+//- (BOOL)application:(UIApplication *)application
+//      handleOpenURL:(NSURL *)url
+//{
+//    return [ShareSDK handleOpenURL:url wxDelegate:self];
+//}
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation
-{
-    return [ShareSDK handleOpenURL:url sourceApplication:sourceApplication annotation:annotation wxDelegate:self];
-}
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation
+//{
+//    return [ShareSDK handleOpenURL:url sourceApplication:sourceApplication annotation:annotation wxDelegate:self];
+//}
 
 - (void)applicationWillResignActivie:(UIApplication *)application {
 
@@ -191,17 +191,17 @@
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     //NSLog(@"%@", [NSString stringWithFormat:@"Device Token: %@", deviceToken]);
-    [APService registerDeviceToken:deviceToken];
+//    [APService registerDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [APService handleRemoteNotification:userInfo];
+//    [APService handleRemoteNotification:userInfo];
     //NSLog(@"收到通知:%@", [self logDic:userInfo]);
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:
 (void (^)(UIBackgroundFetchResult))completionHandler {
-    [APService handleRemoteNotification:userInfo];
+//    [APService handleRemoteNotification:userInfo];
     //NSLog(@"收到通知:%@", [self logDic:userInfo]);
     
     completionHandler(UIBackgroundFetchResultNewData);
@@ -217,7 +217,7 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    [APService showLocalNotificationAtFront:notification identifierKey:nil];
+//    [APService showLocalNotificationAtFront:notification identifierKey:nil];
 }
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
