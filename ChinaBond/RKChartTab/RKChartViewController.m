@@ -67,8 +67,8 @@
 {
     [super viewWillAppear:animated];
     
-    [MobClick event:@"1001"];
-    [MobClick beginLogPageView:@"Chart"];
+//    [MobClick event:@"1001"];
+//    [MobClick beginLogPageView:@"Chart"];
     
 //    // 1.获得网络监控的管理者
 //    AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
@@ -171,7 +171,7 @@
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [MobClick endLogPageView:@"Chart"];
+//    [MobClick endLogPageView:@"Chart"];
 }
 
 - (void)didReceiveMemoryWarning {

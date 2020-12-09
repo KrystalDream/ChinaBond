@@ -151,14 +151,14 @@
     
     [self.tableView reloadData];
 
-    [MobClick event:@"1000"];
-    [MobClick beginLogPageView:@"Home"];
+//    [MobClick event:@"1000"];
+//    [MobClick beginLogPageView:@"Home"];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [MobClick endLogPageView:@"Home"];
+//    [MobClick endLogPageView:@"Home"];
 }
 - (void)requestData
 {

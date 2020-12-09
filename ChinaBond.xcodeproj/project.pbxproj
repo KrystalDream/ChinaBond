@@ -156,7 +156,6 @@
 		73A0F9421C3FB7ED001AC2F9 /* UITextView+Night.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A0F9291C3FB7ED001AC2F9 /* UITextView+Night.m */; };
 		73A0F9431C3FB7ED001AC2F9 /* UIToolBar+Night.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A0F92B1C3FB7ED001AC2F9 /* UIToolBar+Night.m */; };
 		73A0F9441C3FB7ED001AC2F9 /* UIView+Night.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A0F92D1C3FB7ED001AC2F9 /* UIView+Night.m */; };
-		73A7C4BE1C55DDDC00EC2CC4 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A7C4BB1C55DDDC00EC2CC4 /* libMobClickLibrary.a */; };
 		73AD33311C575B380055AFF8 /* CBCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AD332F1C575B380055AFF8 /* CBCollectCell.m */; };
 		73AD33321C575B380055AFF8 /* CBCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AD33301C575B380055AFF8 /* CBCollectCell.xib */; };
 		73AD33351C57D09C0055AFF8 /* CBadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AD33341C57D09C0055AFF8 /* CBadController.m */; };
@@ -165,7 +164,6 @@
 		73AF68401C28FE940094AFA0 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AF683F1C28FE940094AFA0 /* libz.1.dylib */; };
 		73AF68421C2910BF0094AFA0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AF68411C2910BF0094AFA0 /* CFNetwork.framework */; };
 		73AF68441C2910D10094AFA0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AF68431C2910D10094AFA0 /* CoreFoundation.framework */; };
-		73AF68461C2910DA0094AFA0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AF68451C2910DA0094AFA0 /* CoreTelephony.framework */; };
 		73AF68481C2910F00094AFA0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AF68471C2910F00094AFA0 /* SystemConfiguration.framework */; };
 		73AF684A1C2910FF0094AFA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AF68491C2910FF0094AFA0 /* UIKit.framework */; };
 		73AF684C1C2911080094AFA0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AF684B1C2911070094AFA0 /* Security.framework */; };
@@ -540,9 +538,6 @@
 		73A0F92B1C3FB7ED001AC2F9 /* UIToolBar+Night.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolBar+Night.m"; sourceTree = "<group>"; };
 		73A0F92C1C3FB7ED001AC2F9 /* UIView+Night.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Night.h"; sourceTree = "<group>"; };
 		73A0F92D1C3FB7ED001AC2F9 /* UIView+Night.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Night.m"; sourceTree = "<group>"; };
-		73A7C4BB1C55DDDC00EC2CC4 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		73A7C4BC1C55DDDC00EC2CC4 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
-		73A7C4BD1C55DDDC00EC2CC4 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		73AD332E1C575B380055AFF8 /* CBCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCollectCell.h; sourceTree = "<group>"; };
 		73AD332F1C575B380055AFF8 /* CBCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCollectCell.m; sourceTree = "<group>"; };
 		73AD33301C575B380055AFF8 /* CBCollectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBCollectCell.xib; sourceTree = "<group>"; };
@@ -732,6 +727,7 @@
 		B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBPrivacyWebViewController.m; sourceTree = "<group>"; };
 		B272AEC025771F8A0037327C /* CustomActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivity.m; sourceTree = "<group>"; };
 		B272AEC125771F8A0037327C /* CustomActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivity.h; sourceTree = "<group>"; };
+		B27E032B257E034200A3480C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B2A3C2C02574E329000A945A /* CBHomeBannerWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBHomeBannerWebViewController.h; sourceTree = "<group>"; };
 		B2A3C2C12574E329000A945A /* CBHomeBannerWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBHomeBannerWebViewController.m; sourceTree = "<group>"; };
 		B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPrivacyPolicyPopViewController.m; sourceTree = "<group>"; };
@@ -757,7 +753,6 @@
 				733B72CC1C3C18A9007AE160 /* AdSupport.framework in Frameworks */,
 				733B72CA1C3C189E007AE160 /* ImageIO.framework in Frameworks */,
 				733B72C81C3C188B007AE160 /* JavaScriptCore.framework in Frameworks */,
-				73A7C4BE1C55DDDC00EC2CC4 /* libMobClickLibrary.a in Frameworks */,
 				733B73461C3CE020007AE160 /* ShareSDKCoreService.framework in Frameworks */,
 				73AF68401C28FE940094AFA0 /* libz.1.dylib in Frameworks */,
 				733B72C41C3C17F2007AE160 /* libicucore.A.dylib in Frameworks */,
@@ -768,7 +763,6 @@
 				21F594D51C17428500E19D3D /* CoreGraphics.framework in Frameworks */,
 				73AF68481C2910F00094AFA0 /* SystemConfiguration.framework in Frameworks */,
 				733B734A1C3CE020007AE160 /* libWeChatSDK.a in Frameworks */,
-				73AF68461C2910DA0094AFA0 /* CoreTelephony.framework in Frameworks */,
 				73AF68441C2910D10094AFA0 /* CoreFoundation.framework in Frameworks */,
 				73AF68421C2910BF0094AFA0 /* CFNetwork.framework in Frameworks */,
 				7321FC3A1C1FD8ED00655850 /* libMBProgressHUD+BWMExtension.a in Frameworks */,
@@ -950,6 +944,7 @@
 		642F8EBFDF39798F7739E8F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B27E032B257E034200A3480C /* libz.tbd */,
 				733B72CF1C3C2C4D007AE160 /* Accounts.framework */,
 				733B72CD1C3C2C42007AE160 /* Social.framework */,
 				733B72CB1C3C18A9007AE160 /* AdSupport.framework */,
@@ -1256,16 +1251,6 @@
 				73A0F92D1C3FB7ED001AC2F9 /* UIView+Night.m */,
 			);
 			path = UIKit;
-			sourceTree = "<group>";
-		};
-		73A7C4BA1C55DDD000EC2CC4 /* UM */ = {
-			isa = PBXGroup;
-			children = (
-				73A7C4BB1C55DDDC00EC2CC4 /* libMobClickLibrary.a */,
-				73A7C4BC1C55DDDC00EC2CC4 /* MobClick.h */,
-				73A7C4BD1C55DDDC00EC2CC4 /* MobClickSocialAnalytics.h */,
-			);
-			name = UM;
 			sourceTree = "<group>";
 		};
 		73AF68391C28FB610094AFA0 /* JPush */ = {
@@ -1636,7 +1621,6 @@
 		73F1231D1C0BFD8000B84877 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				73A7C4BA1C55DDD000EC2CC4 /* UM */,
 				7395B3981C4774B70050E7F1 /* WebCache */,
 				73DAAA531C44EF5600CB29AB /* MJRefresh */,
 				73BF08B41C33B1850063C8DA /* DKNightVersion */,
@@ -2475,6 +2459,7 @@
 					"$(PROJECT_DIR)/ChinaBond/ShareSDK/Extend/TencentWeiboSDK",
 					"$(PROJECT_DIR)/ChinaBond/ShareSDK/Extend/WeChatSDK",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.chinabondtest;
 				PRODUCT_NAME = "$(TARGET_NAME)";

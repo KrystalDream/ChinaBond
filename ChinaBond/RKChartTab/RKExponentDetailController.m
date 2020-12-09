@@ -157,7 +157,7 @@ typedef enum : NSUInteger {
 {
     [super viewDidAppear:animated];
     //请求今日数据
-    [MobClick event:@"1002"];
+//    [MobClick event:@"1002"];
 }
 
 - (void)backButtonClick:(id)sender

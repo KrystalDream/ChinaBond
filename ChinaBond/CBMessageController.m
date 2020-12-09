@@ -186,8 +186,8 @@
 {
     [super viewWillAppear:animated];
     
-    [MobClick event:@"1004"];
-    [MobClick beginLogPageView:@"Message"];
+//    [MobClick event:@"1004"];
+//    [MobClick beginLogPageView:@"Message"];
     
     //首页快捷菜单入口跳转传入资讯类型
     NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"channelFast"];
@@ -213,7 +213,7 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"channelFast"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [MobClick endLogPageView:@"Message"];
+//    [MobClick endLogPageView:@"Message"];
 }
 
 #pragma mark - http request

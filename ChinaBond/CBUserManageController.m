@@ -65,7 +65,7 @@
 {
     [super viewWillAppear:animated];
     
-    [MobClick beginLogPageView:@"User"];
+//    [MobClick beginLogPageView:@"User"];
     
     NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
     
@@ -84,7 +84,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [MobClick endLogPageView:@"User"];
+//    [MobClick endLogPageView:@"User"];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

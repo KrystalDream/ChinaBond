@@ -189,7 +189,7 @@
 {
     [super viewDidAppear:animated];
     //请求今日数据
-    [MobClick event:@"1003"];
+//    [MobClick event:@"1003"];
 }
 +(NSString*)DataTOjsonString:(id)object{
     NSString *jsonString = nil;
