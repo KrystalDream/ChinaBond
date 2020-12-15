@@ -243,6 +243,7 @@
 		B23BD3E2256E2EE3007CABA5 /* STPickerViewConst.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3D6256E2EE3007CABA5 /* STPickerViewConst.m */; };
 		B23BD3E3256E2EE3007CABA5 /* STPickerViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3D7256E2EE3007CABA5 /* STPickerViewUI.m */; };
 		B248D38D25787379000D9640 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = B248D38C25787379000D9640 /* Foundation+Log.m */; };
+		B24BC56525884D4E00788781 /* StoresTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B24BC56425884D4E00788781 /* StoresTool.m */; };
 		B25ADDE625675182006A102B /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */; };
 		B25ADE0E2567B449006A102B /* CBPrivacyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */; };
 		B272AEC225771F8A0037327C /* CustomActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B272AEC025771F8A0037327C /* CustomActivity.m */; };
@@ -688,6 +689,8 @@
 		B23BD3D9256E2EE3007CABA5 /* STPickerViewConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerViewConst.h; sourceTree = "<group>"; };
 		B23BD3DA256E2EE3007CABA5 /* STPickerViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerViewConfig.h; sourceTree = "<group>"; };
 		B248D38C25787379000D9640 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		B24BC56325884D4E00788781 /* StoresTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoresTool.h; sourceTree = "<group>"; };
+		B24BC56425884D4E00788781 /* StoresTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoresTool.m; sourceTree = "<group>"; };
 		B25ADDE225675182006A102B /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
 		B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		B25ADE0C2567B449006A102B /* CBPrivacyWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBPrivacyWebViewController.h; sourceTree = "<group>"; };
@@ -876,6 +879,8 @@
 			children = (
 				B2B0CE0525661A75007B6ED8 /* CBPrivacyPolicyPopViewController.h */,
 				B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */,
+				B24BC56325884D4E00788781 /* StoresTool.h */,
+				B24BC56425884D4E00788781 /* StoresTool.m */,
 				B23BD3C3256E2EE3007CABA5 /* DateSelect */,
 			);
 			path = Tool;
@@ -2039,6 +2044,7 @@
 				73DB983F1C187FF50051FCF0 /* UITabBar+badge.m in Sources */,
 				73D7C6D01C11EA1D00259DAA /* CBZNSearchResultCell.m in Sources */,
 				73A0F9371C3FB7ED001AC2F9 /* UIControl+Night.m in Sources */,
+				B24BC56525884D4E00788781 /* StoresTool.m in Sources */,
 				73DAAA8A1C44EF5600CB29AB /* MJRefreshBackStateFooter.m in Sources */,
 				21E629941C1D54CE004DD266 /* CustomDatePickerView.m in Sources */,
 				73C2D1DE1C2D27C900CAE210 /* CBChannelSChildCell.m in Sources */,
@@ -2266,7 +2272,7 @@
 				);
 				GCC_PREFIX_HEADER = "ChinaBond/CB-Prefix.pch";
 				INFOPLIST_FILE = ChinaBond/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2309,7 +2315,7 @@
 				);
 				GCC_PREFIX_HEADER = "ChinaBond/CB-Prefix.pch";
 				INFOPLIST_FILE = ChinaBond/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

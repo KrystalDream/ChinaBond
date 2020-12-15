@@ -70,70 +70,70 @@
 //    [MobClick event:@"1001"];
 //    [MobClick beginLogPageView:@"Chart"];
     
-//    // 1.获得网络监控的管理者
-//    AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
-//    // 2.设置网络状态改变后的处理
-//    [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-//        // 当网络状态改变了, 就会调用这个block
-//        switch (status)
-//        {
-//            case AFNetworkReachabilityStatusUnknown: // 未知网络
-//            {
-//                BOOL downLoad = [[NSUserDefaults standardUserDefaults] boolForKey:KDownLoad];
-//                if (downLoad) {
-//                    [self requestData];
-//                }
-//                else
-//                {
-//                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-//
-//                    [MBProgressHUD bwm_showTitle:@"请连接网络" toView:self.view hideAfter:2];
-//                }
-//            }
-//                break;
-//            case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
-//            {
-//                BOOL downLoad = [[NSUserDefaults standardUserDefaults] boolForKey:KDownLoad];
-//                if (downLoad) {
-//                    [self requestData];
-//                }
-//                else
-//                {
-//                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-//
-//                    [MBProgressHUD bwm_showTitle:@"请连接网络" toView:self.view hideAfter:2];
-//                }
-//
-//            }
-//                break;
-//            case AFNetworkReachabilityStatusReachableViaWWAN: // 手机自带网络
-//            {
-//                [self requestData];
-//            }
-//                break;
-//            case AFNetworkReachabilityStatusReachableViaWiFi: // WIFI
-//            {
-//                [self requestData];
-//            }
-//                break;
-//        }
-//    }];
-//    [mgr startMonitoring];
-    [self requestData];
+    // 1.获得网络监控的管理者
+    AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
+    // 2.设置网络状态改变后的处理
+    [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        // 当网络状态改变了, 就会调用这个block
+        switch (status)
+        {
+            case AFNetworkReachabilityStatusUnknown: // 未知网络
+            {
+                BOOL downLoad = [[NSUserDefaults standardUserDefaults] boolForKey:K_Tab_Second_DownLoad];
+                if (downLoad) {
+                    [self requestData];
+                }
+                else
+                {
+                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+
+                    [MBProgressHUD bwm_showTitle:@"请连接网络" toView:self.view hideAfter:2];
+                }
+            }
+                break;
+            case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
+            {
+                BOOL downLoad = [[NSUserDefaults standardUserDefaults] boolForKey:K_Tab_Second_DownLoad];
+                if (downLoad) {
+                    [self requestData];
+                }
+                else
+                {
+                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+
+                    [MBProgressHUD bwm_showTitle:@"请连接网络" toView:self.view hideAfter:2];
+                }
+
+            }
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN: // 手机自带网络
+            {
+                [self requestData];
+            }
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi: // WIFI
+            {
+                [self requestData];
+            }
+                break;
+        }
+    }];
+    [mgr startMonitoring];
+//    [self requestData];
 }
-+(NSString*)DataTOjsonString:(id)object{
-    NSString *jsonString = nil;
-    NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:&error];
-    if (!jsonData) {
-        CBLog(@"Got an error: %@", error);
-    } else {
-        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    }
-    return jsonString;
-}
+//+(NSString*)DataTOjsonString:(id)object{
+//    NSString *jsonString = nil;
+//    NSError *error;
+//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
+//                                                       options:NSJSONWritingPrettyPrinted
+//                                                         error:&error];
+//    if (!jsonData) {
+//        CBLog(@"Got an error: %@", error);
+//    } else {
+//        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+//    }
+//    return jsonString;
+//}
 
 - (void) requestData
 {
@@ -191,8 +191,12 @@
                                                 @"sDay":@""
                                        }
                               completionBlock:^(id responseObject) {
-        CBLog(@"页面2--------%@",[RKChartViewController DataTOjsonString:responseObject]);
+        CBLog(@"页面2--------%@",responseObject);
                                   if ([[(NSDictionary *)responseObject objectForKey:@"state"] isEqualToString:@"0"]) {
+                                      
+                                      [[NSUserDefaults standardUserDefaults] setBool:YES forKey:K_Tab_Second_DownLoad];
+                                      
+                                      
                                       NSArray *xArr = [(NSDictionary *)responseObject objectForKey:@"xValues"];
                                       NSArray *yArr = [(NSDictionary *)responseObject objectForKey:@"yValues"];
                                       _model = [[RKKLineModel alloc] init];
@@ -223,7 +227,9 @@
     [[CBHttpRequest shareRequest] postWithUrl:kApiExponentData
                                        Params:@{@"ksr":beginDateString, @"jsr":endDateString, @"id":model.levelID}
                               completionBlock:^(id responseObject) {
-                                  CBLog(@"页面2.2--------%@",[RKChartViewController DataTOjsonString:responseObject]);
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:K_Tab_Second_DownLoad];
+
+                                  CBLog(@"页面2.2--------%@",responseObject);
                                   if ([[(NSDictionary *)responseObject objectForKey:@"state"] isEqualToString:@"0"]) {
                                       NSArray *xArr = [(NSDictionary *)responseObject objectForKey:@"xValues"];
                                       NSArray *yArr = [(NSDictionary *)responseObject objectForKey:@"y_mValues"];

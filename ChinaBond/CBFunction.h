@@ -56,7 +56,7 @@ static CGFloat const kTabbarHeight            = 49;
 
 //配置2
 
-#define kAppDebug 0
+#define kAppDebug 1
 #if kAppDebug
 #define CBLog(fmt, ...)                             NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else
@@ -84,6 +84,8 @@ static CGFloat const kTabbarHeight            = 49;
 #define KNightModel   @"nightModel"
 #define KNotification @"notificationS"
 #define KDownLoad     @"downLoad"
+#define K_Tab_Second_DownLoad     @"K_Tab_Second_DownLoad"
+
 #define KWebFont      @"webFont"
 #define KSearchRecord @"searchRecord"
 
