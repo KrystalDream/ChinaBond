@@ -1010,9 +1010,10 @@
             focusDetail.infoUrl = self.infoList[indexPath.row][@"infoUrl"];
             focusDetail.infoDic = self.infoList[indexPath.row];
             [self.navigationController pushViewController:focusDetail animated:YES];
-            
-            [self.readArr addObject:self.infoList[indexPath.row][@"tId"]];
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+
+            //是否已读   标记用 model 记录  这样数据容易引起崩溃
+//            [self.readArr addObject:self.infoList[indexPath.row][@"tId"]];
+//            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         }
             break;
         case 4:

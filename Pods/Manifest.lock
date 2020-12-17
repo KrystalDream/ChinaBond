@@ -25,6 +25,7 @@ PODS:
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.9.1)
   - "MBProgressHUD+BWMExtension (~> 1.0.0)"
   - SDWebImage (~> 3.7.3)
+  - YYModel (= 1.0.4)
 
 SPEC REPOS:
   trunk:
@@ -44,6 +46,7 @@ SPEC REPOS:
     - MBProgressHUD
     - "MBProgressHUD+BWMExtension"
     - SDWebImage
+    - YYModel
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -53,7 +56,8 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   "MBProgressHUD+BWMExtension": d0603a1c0b03ef74cae6a0986d63c0bdf34bedfe
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: f99bc41d8abfb6ec966b333fa1d5a20a0f8690da
+PODFILE CHECKSUM: 2434beb387a4f87f49991e96249291a24f1dd278
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

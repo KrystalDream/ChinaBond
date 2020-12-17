@@ -244,6 +244,7 @@
 		B23BD3E3256E2EE3007CABA5 /* STPickerViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3D7256E2EE3007CABA5 /* STPickerViewUI.m */; };
 		B248D38D25787379000D9640 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = B248D38C25787379000D9640 /* Foundation+Log.m */; };
 		B24BC56525884D4E00788781 /* StoresTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B24BC56425884D4E00788781 /* StoresTool.m */; };
+		B24F7FC62589B2A70056420E /* MNCacheClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B24F7FC42589B2A70056420E /* MNCacheClass.m */; };
 		B25ADDE625675182006A102B /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */; };
 		B25ADE0E2567B449006A102B /* CBPrivacyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */; };
 		B272AEC225771F8A0037327C /* CustomActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B272AEC025771F8A0037327C /* CustomActivity.m */; };
@@ -691,6 +692,8 @@
 		B248D38C25787379000D9640 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		B24BC56325884D4E00788781 /* StoresTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoresTool.h; sourceTree = "<group>"; };
 		B24BC56425884D4E00788781 /* StoresTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoresTool.m; sourceTree = "<group>"; };
+		B24F7FC42589B2A70056420E /* MNCacheClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCacheClass.m; sourceTree = "<group>"; };
+		B24F7FC52589B2A70056420E /* MNCacheClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCacheClass.h; sourceTree = "<group>"; };
 		B25ADDE225675182006A102B /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
 		B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		B25ADE0C2567B449006A102B /* CBPrivacyWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBPrivacyWebViewController.h; sourceTree = "<group>"; };
@@ -881,6 +884,8 @@
 				B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */,
 				B24BC56325884D4E00788781 /* StoresTool.h */,
 				B24BC56425884D4E00788781 /* StoresTool.m */,
+				B24F7FC52589B2A70056420E /* MNCacheClass.h */,
+				B24F7FC42589B2A70056420E /* MNCacheClass.m */,
 				B23BD3C3256E2EE3007CABA5 /* DateSelect */,
 			);
 			path = Tool;
@@ -2105,6 +2110,7 @@
 				73AF68521C291D030094AFA0 /* CBUploadParam.m in Sources */,
 				21E3A6B11C1F31320091CEFF /* RKTabBarViewController.m in Sources */,
 				73C999DD1C16D61300B8ECEF /* CBSellNewsCell.m in Sources */,
+				B24F7FC62589B2A70056420E /* MNCacheClass.m in Sources */,
 				730E2C8A1C134C0C00B4F881 /* CBChannelGroupCell.m in Sources */,
 				73DAAA911C44EF5600CB29AB /* UIScrollView+MJRefresh.m in Sources */,
 				7321FC2D1C1FCB1D00655850 /* CBProductController.m in Sources */,
