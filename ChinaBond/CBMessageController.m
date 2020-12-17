@@ -52,7 +52,7 @@
 @property (nonatomic, retain) NSDate *dateTime;//重要业务提示时间
 //@property (strong, nonatomic) CustomDatePickerView *picker;
 
-@property (nonatomic, strong) NSMutableArray *readArr;
+//@property (nonatomic, strong) NSMutableArray *readArr;
 
 @property (nonatomic, strong) UIView *guideView;
 
@@ -877,22 +877,22 @@
             if (!focus) {
                 focus = [CBFocusCell focusCell];
             }
-            if (self.readArr.count>0) {
-                for (NSString *tid in self.readArr) {
-                    if (tid == self.infoList[indexPath.row][@"tId"]) {
-                        focus.titleLab.dk_textColorPicker = DKColorWithRGB(0xa8a8a8, 0x404040);
-                        
-                    }
-                    else
-                    {
-                        focus.titleLab.dk_textColorPicker = DKColorWithRGB(0x323232, 0x8c8c8c);
-                    }
-                }
-            }
-            else
-            {
+//            if (self.readArr.count>0) {
+//                for (NSString *tid in self.readArr) {
+//                    if (tid == self.infoList[indexPath.row][@"tId"]) {
+//                        focus.titleLab.dk_textColorPicker = DKColorWithRGB(0xa8a8a8, 0x404040);
+//
+//                    }
+//                    else
+//                    {
+//                        focus.titleLab.dk_textColorPicker = DKColorWithRGB(0x323232, 0x8c8c8c);
+//                    }
+//                }
+//            }
+//            else
+//            {
                 focus.titleLab.dk_textColorPicker = DKColorWithRGB(0x323232, 0x8c8c8c);
-            }
+//            }
             focus.dk_backgroundColorPicker = DKColorWithRGB(0xffffff, 0x171616);
             focus.timeLab.dk_textColorPicker = DKColorWithRGB(0xbebebe, 0x404040);
             focus.lineView.dk_backgroundColorPicker = DKColorWithRGB(0xd9d9d9, 0x262626);
@@ -1120,13 +1120,13 @@
     [self.pickerDate show];
 }
 
--(NSMutableArray *)readArr
-{
-    if (!_readArr) {
-        _readArr = [[NSMutableArray alloc] initWithCapacity:100];
-    }
-    return _readArr;
-}
+//-(NSMutableArray *)readArr
+//{
+//    if (!_readArr) {
+//        _readArr = [[NSMutableArray alloc] initWithCapacity:100];
+//    }
+//    return _readArr;
+//}
 
 -(NSMutableArray *)infoList
 {
