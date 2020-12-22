@@ -245,6 +245,7 @@
 		B248D38D25787379000D9640 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = B248D38C25787379000D9640 /* Foundation+Log.m */; };
 		B24BC56525884D4E00788781 /* StoresTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B24BC56425884D4E00788781 /* StoresTool.m */; };
 		B24F7FC62589B2A70056420E /* MNCacheClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B24F7FC42589B2A70056420E /* MNCacheClass.m */; };
+		B252E73F2590882600DA1336 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B252E73D2590882500DA1336 /* UIScrollView+EmptyDataSet.m */; };
 		B25ADDE625675182006A102B /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */; };
 		B25ADE0E2567B449006A102B /* CBPrivacyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B25ADE0D2567B449006A102B /* CBPrivacyWebViewController.m */; };
 		B272AEC225771F8A0037327C /* CustomActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B272AEC025771F8A0037327C /* CustomActivity.m */; };
@@ -694,6 +695,8 @@
 		B24BC56425884D4E00788781 /* StoresTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoresTool.m; sourceTree = "<group>"; };
 		B24F7FC42589B2A70056420E /* MNCacheClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCacheClass.m; sourceTree = "<group>"; };
 		B24F7FC52589B2A70056420E /* MNCacheClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCacheClass.h; sourceTree = "<group>"; };
+		B252E73D2590882500DA1336 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		B252E73E2590882600DA1336 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		B25ADDE225675182006A102B /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
 		B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		B25ADE0C2567B449006A102B /* CBPrivacyWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBPrivacyWebViewController.h; sourceTree = "<group>"; };
@@ -1556,6 +1559,8 @@
 				B25ADDE425675182006A102B /* UILabel+YBAttributeTextTapAction.m */,
 				B2B0CE2125665FF4007B6ED8 /* UILabel+Extension.h */,
 				B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */,
+				B252E73E2590882600DA1336 /* UIScrollView+EmptyDataSet.h */,
+				B252E73D2590882500DA1336 /* UIScrollView+EmptyDataSet.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -2012,6 +2017,7 @@
 				21F594C51C17414600E19D3D /* RKRateDetailController.m in Sources */,
 				73A0F9441C3FB7ED001AC2F9 /* UIView+Night.m in Sources */,
 				21F594CF1C17414600E19D3D /* RKYieldRateViewController.m in Sources */,
+				B252E73F2590882600DA1336 /* UIScrollView+EmptyDataSet.m in Sources */,
 				735A49E51C226D1F00DFD830 /* NSString+CBMD5.m in Sources */,
 				4EC85CAF2553F2C000436D66 /* NSURLProtocolCustom.m in Sources */,
 				21F594BE1C17414600E19D3D /* RKExponentViewController.m in Sources */,

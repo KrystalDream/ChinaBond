@@ -26,8 +26,9 @@
 #import <AFNetworkReachabilityManager.h>
 #import "STPickerDate.h"
 #import "CSWebView.h"
+#import "UIScrollView+EmptyDataSet.h"
 
-@interface CBMessageController ()<UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,STPickerDateDelegate>
+@interface CBMessageController ()<UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,STPickerDateDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 {
     int _typeid;//资讯类型
@@ -96,6 +97,8 @@
     self.tableView.tableFooterView = [UIView new];
     self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
     self.tableView.clipsToBounds = YES;
     [self.view addSubview:self.tableView];
     
@@ -1034,8 +1037,24 @@
     
     
 }
+#pragma mark - 无数据占位
+//无数据占位
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+//  return [UIImage imageNamed:@"icon_refresh_gray"];
+    return nil;
+}
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
+    return -159;
+}
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    NSString *text = @"暂无内容";
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:15],
+    NSForegroundColorAttributeName: [UIColor lightGrayColor]};
 
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 
+   
+}
 - (void)configueCell:(CBTaskTipsCell *)cell andInfoDic:(NSDictionary *)dic
 {
     NSString *lxStr = dic[@"lx"];
