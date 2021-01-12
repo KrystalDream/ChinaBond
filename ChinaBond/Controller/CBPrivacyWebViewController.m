@@ -150,8 +150,12 @@
 
 - (void)backButtonClick
 {
-    [CBPrivacyPolicyPopViewController shareInstance].view.alpha = 1;
+    if(self.CBPrivacyWebViewClickBlock){
+        self.CBPrivacyWebViewClickBlock();
+    }
     [self.navigationController popViewControllerAnimated:YES];
+    
+    
 }
 
 

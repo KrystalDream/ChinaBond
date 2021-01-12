@@ -239,7 +239,7 @@
     self.currentPageIndex = scrollView.contentOffset.x/self.scrollView.frame.size.width;
     
     if (self.currentPageIndex == (pageViews.count)) {
-        if ([(id)self.delegate respondsToSelector:@selector(introDidFinish)]) {
+        if ([self.delegate respondsToSelector:@selector(introDidFinish)]) {
             [self.delegate introDidFinish];
         }
         [self removeFromSuperview];

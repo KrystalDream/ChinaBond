@@ -23,6 +23,6 @@ typedef void(^leftBtnClickBlock)(void);
 - (void)initPrivacyViewWithTitle:(NSString *)title subTilte:(NSString *)subTitle leftBtnTitle:(NSString *)leftBtnTitle leftBtnBlock:(leftBtnClickBlock)leftBtnBlock rightBtnTitle:(NSString *)btnTitle BtnBlock:(BtnClickBlock)btnClickBlock;
 
 @property (nonatomic, strong) UIButton *cancleBtn;
-@property (nonatomic, strong) void (^PrivacyClickBlock) (NSString* text);
+@property (nonatomic, copy) void (^PrivacyClickBlock) (NSString* text);
 
 @end

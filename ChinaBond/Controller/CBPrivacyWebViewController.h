@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CBPrivacyWebViewController : UIViewController
 @property (nonatomic, strong) NSString *localHtmlName;
-
+@property (nonatomic, copy) void (^CBPrivacyWebViewClickBlock) ();
 @end
 
 NS_ASSUME_NONNULL_END
