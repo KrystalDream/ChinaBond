@@ -124,7 +124,7 @@
         [CBPrivacyPolicyPopViewController shareInstance].view.alpha = 0;
         self.intro.alpha = 0;
         
-        if([text isEqualToString:@"用户协议"]){
+        if([text isEqualToString:@"《用户协议》"]){
 
             CBPrivacyWebViewController *cs = [CBPrivacyWebViewController new];
             cs.CBPrivacyWebViewClickBlock = ^{
