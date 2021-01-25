@@ -142,7 +142,7 @@
                 [CBPrivacyPolicyPopViewController shareInstance].view.alpha = 1;
                 weakSelf.intro.alpha = 1;
             };
-            cs.localHtmlName = @"privacy_policy";
+            cs.localHtmlName = @"privacy_policy(1)";
             cs.hidesBottomBarWhenPushed = YES;
             [nav pushViewController:cs animated:YES];
         }

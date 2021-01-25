@@ -255,6 +255,7 @@
 		B2B0CE13256652CE007B6ED8 /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE11256652CE007B6ED8 /* privacy_policy.html */; };
 		B2B0CE2325665FF5007B6ED8 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */; };
 		B2E952D6256FA17600420B95 /* zhongzhai1_XR.gif in Resources */ = {isa = PBXBuildFile; fileRef = B2E952D5256FA17600420B95 /* zhongzhai1_XR.gif */; };
+		B2F2A15225B9155300B46F8C /* privacy_policy(1).html in Resources */ = {isa = PBXBuildFile; fileRef = B2F2A15125B9155300B46F8C /* privacy_policy(1).html */; };
 		B2FFAABB25AC35500054EC9B /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FFAAB925AC35500054EC9B /* ADViewController.m */; };
 		B2FFAABC25AC35500054EC9B /* ADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2FFAABA25AC35500054EC9B /* ADViewController.xib */; };
 		C31A84F735E2242FC6EDBFEF /* libPods-ChinaBond.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF54CF7DB4EE9BBA07011F1 /* libPods-ChinaBond.a */; };
@@ -715,6 +716,7 @@
 		B2B0CE2125665FF4007B6ED8 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		B2E952D5256FA17600420B95 /* zhongzhai1_XR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zhongzhai1_XR.gif; sourceTree = "<group>"; };
+		B2F2A15125B9155300B46F8C /* privacy_policy(1).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "privacy_policy(1).html"; sourceTree = "<group>"; };
 		B2FFAAB825AC35500054EC9B /* ADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
 		B2FFAAB925AC35500054EC9B /* ADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
 		B2FFAABA25AC35500054EC9B /* ADViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADViewController.xib; sourceTree = "<group>"; };
@@ -1439,6 +1441,7 @@
 		73F122E71C0BEAAA00B84877 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B2F2A15125B9155300B46F8C /* privacy_policy(1).html */,
 				B2B0CE11256652CE007B6ED8 /* privacy_policy.html */,
 				B2B0CE10256652CE007B6ED8 /* user_agreement.html */,
 				4E776BCD2554E88500004BC7 /* main.css */,
@@ -1797,7 +1800,7 @@
 		73F122DC1C0BEAAA00B84877 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = chinaBond;
 				TargetAttributes = {
 					73F122E31C0BEAAA00B84877 = {
@@ -1900,6 +1903,7 @@
 				7342F9261C1ABCE0009D7B49 /* CBUerCustomCell.xib in Resources */,
 				21F594BC1C17414600E19D3D /* RKExponentDetailFooter.xib in Resources */,
 				21F594CE1C17414600E19D3D /* RKValuationViewController.xib in Resources */,
+				B2F2A15225B9155300B46F8C /* privacy_policy(1).html in Resources */,
 				21F594C41C17414600E19D3D /* RKRateDetailCell.xib in Resources */,
 				731A60B41C30F3EA007F6281 /* CBGuzhiCell.xib in Resources */,
 				73C2D1DF1C2D27C900CAE210 /* CBChannelSChildCell.xib in Resources */,
@@ -2198,17 +2202,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: China Central Depository & Clearing Co., Ltd. (EQ6YY87US2)";
@@ -2231,7 +2247,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "6cabfdc2-7231-404f-a558-33e18d8c3527";
@@ -2243,17 +2259,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: China Central Depository & Clearing Co., Ltd. (EQ6YY87US2)";
@@ -2270,7 +2298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "6cabfdc2-7231-404f-a558-33e18d8c3527";
 				SDKROOT = iphoneos;
@@ -2285,8 +2313,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Meng Shao (YGJG9XV42F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Meng Shao (YGJG9XV42F)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Y24FFVWLYR;
 				ENABLE_BITCODE = NO;
@@ -2301,7 +2329,7 @@
 				);
 				GCC_PREFIX_HEADER = "ChinaBond/CB-Prefix.pch";
 				INFOPLIST_FILE = ChinaBond/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2317,7 +2345,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.chinabondtest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = com.chinabondtest.development;
+				PROVISIONING_PROFILE_SPECIFIER = chinabondtest.development;
 			};
 			name = Debug;
 		};
@@ -2328,8 +2356,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Jieshuibao Technology Co., Ltd. (Y24FFVWLYR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Jieshuibao Technology Co., Ltd. (Y24FFVWLYR)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Y24FFVWLYR;
 				ENABLE_BITCODE = NO;
@@ -2344,7 +2372,7 @@
 				);
 				GCC_PREFIX_HEADER = "ChinaBond/CB-Prefix.pch";
 				INFOPLIST_FILE = ChinaBond/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2361,7 +2389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.chinabondtest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = com.chinabondtest.distribution;
+				PROVISIONING_PROFILE_SPECIFIER = chinabondtestNewAdhoc;
 			};
 			name = Release;
 		};

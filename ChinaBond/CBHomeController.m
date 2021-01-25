@@ -44,6 +44,10 @@
 
 @implementation CBHomeController
 
+#pragma mark --- 状态栏
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     

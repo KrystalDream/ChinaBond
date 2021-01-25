@@ -402,7 +402,7 @@
             
             //隐私协议
             CBPrivacyWebViewController *vc = [CBPrivacyWebViewController new];
-            vc.localHtmlName =  @"privacy_policy";
+            vc.localHtmlName =  @"privacy_policy(1)";
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
 
