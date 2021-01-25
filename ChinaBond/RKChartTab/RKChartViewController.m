@@ -499,7 +499,7 @@
         [button addTarget:self action:@selector(headerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [headerView addSubview:button];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 12)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, 12)];
         label.backgroundColor = [UIColor clearColor];
         label.dk_textColorPicker = DKColorWithRGB(0x6d6d6d, 0x999999);
         label.textAlignment = NSTextAlignmentCenter;
