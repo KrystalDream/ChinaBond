@@ -8,6 +8,11 @@
 
 #import "RKValuationFooterView.h"
 
+@interface RKValuationFooterView()
+@property (nonatomic, strong) NSString *telStr;
+
+@end
+
 @implementation RKValuationFooterView
 
 - (id)initWithFrame:(CGRect)frame
@@ -19,6 +24,8 @@
 }
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.dk_backgroundColorPicker = DKColorWithRGB(0xffffff, 0x171616);
     NSDictionary *dic = [CBCacheManager shareCache].phoneDic;
     
@@ -40,7 +47,13 @@
     labelLine2.textAlignment = NSTextAlignmentCenter;
     labelLine2.dk_textColorPicker = DKColorWithRGB(0xa8a8a8, 0x595959);
     labelLine2.text = dic[@"varPhone"];
+    labelLine2.userInteractionEnabled = YES;
     [self addSubview:labelLine2];
+    
+    self.telStr = labelLine2.text;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(telTap)];
+    [labelLine2 addGestureRecognizer:tap];
     
     UILabel *labelLine3 = [[UILabel alloc] initWithFrame:CGRectMake(0, 11+30+30, SCREEN_WIDTH, 30)];
     labelLine3.backgroundColor = [UIColor clearColor];
@@ -56,9 +69,17 @@
     labelLine4.textAlignment = NSTextAlignmentCenter;
     labelLine4.dk_textColorPicker = DKColorWithRGB(0xa8a8a8, 0x595959);
     labelLine4.text = dic[@"varQueryPhone"];
+   
     [self addSubview:labelLine4];
 }
+- (void)telTap{
+    
+    CBLog(@"%s",__func__);
+    NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"tel:%@",self.telStr];
 
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
+
+}
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetAllowsAntialiasing(context, true);//抗锯齿

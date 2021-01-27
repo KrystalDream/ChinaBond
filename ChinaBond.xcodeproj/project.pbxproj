@@ -233,6 +233,7 @@
 		73F1232E1C0BFF9100B84877 /* CBMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F1232D1C0BFF9100B84877 /* CBMessageController.m */; };
 		73F123311C0BFFA800B84877 /* CBUserManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F123301C0BFFA800B84877 /* CBUserManageController.m */; };
 		73F123381C0C2CD400B84877 /* CBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F123371C0C2CD400B84877 /* CBNavigationController.m */; };
+		B22501CE25C104F100BDE78C /* privacy_policy(1).html in Resources */ = {isa = PBXBuildFile; fileRef = B22501CD25C104F100BDE78C /* privacy_policy(1).html */; };
 		B23BD3DB256E2EE3007CABA5 /* STPickerDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3C5256E2EE3007CABA5 /* STPickerDate.m */; };
 		B23BD3DC256E2EE3007CABA5 /* NSCalendar+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3C7256E2EE3007CABA5 /* NSCalendar+ST.m */; };
 		B23BD3DD256E2EE3007CABA5 /* STPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3CA256E2EE3007CABA5 /* STPickerView.m */; };
@@ -252,10 +253,8 @@
 		B2A3C2C22574E329000A945A /* CBHomeBannerWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C2C12574E329000A945A /* CBHomeBannerWebViewController.m */; };
 		B2B0CE0625661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */; };
 		B2B0CE12256652CE007B6ED8 /* user_agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE10256652CE007B6ED8 /* user_agreement.html */; };
-		B2B0CE13256652CE007B6ED8 /* privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE11256652CE007B6ED8 /* privacy_policy.html */; };
 		B2B0CE2325665FF5007B6ED8 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */; };
 		B2E952D6256FA17600420B95 /* zhongzhai1_XR.gif in Resources */ = {isa = PBXBuildFile; fileRef = B2E952D5256FA17600420B95 /* zhongzhai1_XR.gif */; };
-		B2F2A15225B9155300B46F8C /* privacy_policy(1).html in Resources */ = {isa = PBXBuildFile; fileRef = B2F2A15125B9155300B46F8C /* privacy_policy(1).html */; };
 		B2FFAABB25AC35500054EC9B /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FFAAB925AC35500054EC9B /* ADViewController.m */; };
 		B2FFAABC25AC35500054EC9B /* ADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2FFAABA25AC35500054EC9B /* ADViewController.xib */; };
 		C31A84F735E2242FC6EDBFEF /* libPods-ChinaBond.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF54CF7DB4EE9BBA07011F1 /* libPods-ChinaBond.a */; };
@@ -675,6 +674,7 @@
 		73F123341C0C00B800B84877 /* CB-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CB-Prefix.pch"; sourceTree = "<group>"; };
 		73F123361C0C2CD400B84877 /* CBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNavigationController.h; sourceTree = "<group>"; };
 		73F123371C0C2CD400B84877 /* CBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNavigationController.m; sourceTree = "<group>"; };
+		B22501CD25C104F100BDE78C /* privacy_policy(1).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "privacy_policy(1).html"; sourceTree = "<group>"; };
 		B23BD3C5256E2EE3007CABA5 /* STPickerDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerDate.m; sourceTree = "<group>"; };
 		B23BD3C6256E2EE3007CABA5 /* NSCalendar+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+ST.h"; sourceTree = "<group>"; };
 		B23BD3C7256E2EE3007CABA5 /* NSCalendar+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+ST.m"; sourceTree = "<group>"; };
@@ -712,11 +712,9 @@
 		B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPrivacyPolicyPopViewController.m; sourceTree = "<group>"; };
 		B2B0CE0525661A75007B6ED8 /* CBPrivacyPolicyPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPrivacyPolicyPopViewController.h; sourceTree = "<group>"; };
 		B2B0CE10256652CE007B6ED8 /* user_agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = user_agreement.html; sourceTree = "<group>"; };
-		B2B0CE11256652CE007B6ED8 /* privacy_policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy_policy.html; sourceTree = "<group>"; };
 		B2B0CE2125665FF4007B6ED8 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		B2E952D5256FA17600420B95 /* zhongzhai1_XR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zhongzhai1_XR.gif; sourceTree = "<group>"; };
-		B2F2A15125B9155300B46F8C /* privacy_policy(1).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "privacy_policy(1).html"; sourceTree = "<group>"; };
 		B2FFAAB825AC35500054EC9B /* ADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
 		B2FFAAB925AC35500054EC9B /* ADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
 		B2FFAABA25AC35500054EC9B /* ADViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADViewController.xib; sourceTree = "<group>"; };
@@ -1441,8 +1439,7 @@
 		73F122E71C0BEAAA00B84877 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B2F2A15125B9155300B46F8C /* privacy_policy(1).html */,
-				B2B0CE11256652CE007B6ED8 /* privacy_policy.html */,
+				B22501CD25C104F100BDE78C /* privacy_policy(1).html */,
 				B2B0CE10256652CE007B6ED8 /* user_agreement.html */,
 				4E776BCD2554E88500004BC7 /* main.css */,
 				4EF3E50C2550F8B200C17E40 /* *.chinabond.com.cn.cer */,
@@ -1805,7 +1802,7 @@
 				TargetAttributes = {
 					73F122E31C0BEAAA00B84877 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = Y24FFVWLYR;
+						DevelopmentTeam = EQ6YY87US2;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1862,6 +1859,7 @@
 				733F42CC1C1033A1004102FA /* CBValueTitleCell.xib in Resources */,
 				730E2C901C134EEA00B4F881 /* CBChannelChildCell.xib in Resources */,
 				B2FFAABC25AC35500054EC9B /* ADViewController.xib in Resources */,
+				B22501CE25C104F100BDE78C /* privacy_policy(1).html in Resources */,
 				7321FC9B1C20169700655850 /* CBLoginController.xib in Resources */,
 				21F594D01C17414600E19D3D /* RKYieldRateViewController.xib in Resources */,
 				21F594C71C17414600E19D3D /* RKRateDetailFooter.xib in Resources */,
@@ -1870,7 +1868,6 @@
 				73442B001C28566C000C95C5 /* refresh@3x.gif in Resources */,
 				21F594B91C17414600E19D3D /* RKExponentDetailCell.xib in Resources */,
 				73BCB06C1C1EC4D70049A359 /* CBAboutController.xib in Resources */,
-				B2B0CE13256652CE007B6ED8 /* privacy_policy.html in Resources */,
 				73442AE11C27C0EC000C95C5 /* CBProductDetailCell.xib in Resources */,
 				73F122F71C0BEAAA00B84877 /* LaunchScreen.storyboard in Resources */,
 				73AF683E1C28FB9B0094AFA0 /* PushConfig.plist in Resources */,
@@ -1903,7 +1900,6 @@
 				7342F9261C1ABCE0009D7B49 /* CBUerCustomCell.xib in Resources */,
 				21F594BC1C17414600E19D3D /* RKExponentDetailFooter.xib in Resources */,
 				21F594CE1C17414600E19D3D /* RKValuationViewController.xib in Resources */,
-				B2F2A15225B9155300B46F8C /* privacy_policy(1).html in Resources */,
 				21F594C41C17414600E19D3D /* RKRateDetailCell.xib in Resources */,
 				731A60B41C30F3EA007F6281 /* CBGuzhiCell.xib in Resources */,
 				73C2D1DF1C2D27C900CAE210 /* CBChannelSChildCell.xib in Resources */,
@@ -2313,10 +2309,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Meng Shao (YGJG9XV42F)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Meng Shao (YGJG9XV42F)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 梦 邵 (CDC4CFFN2V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 梦 邵 (CDC4CFFN2V)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Y24FFVWLYR;
+				DEVELOPMENT_TEAM = EQ6YY87US2;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2342,10 +2338,10 @@
 					"$(PROJECT_DIR)/ChinaBond/ShareSDK/Extend/WeChatSDK",
 				);
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.chinabondtest;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.chinabond;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = chinabondtest.development;
+				PROVISIONING_PROFILE_SPECIFIER = cn.com.chinabond.development;
 			};
 			name = Debug;
 		};
@@ -2356,10 +2352,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Jieshuibao Technology Co., Ltd. (Y24FFVWLYR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Jieshuibao Technology Co., Ltd. (Y24FFVWLYR)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: China Central Depository & Clearing Co., Ltd. (EQ6YY87US2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: China Central Depository & Clearing Co., Ltd. (EQ6YY87US2)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Y24FFVWLYR;
+				DEVELOPMENT_TEAM = EQ6YY87US2;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2386,10 +2382,10 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.chinabondtest;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.chinabond;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = chinabondtestNewAdhoc;
+				PROVISIONING_PROFILE_SPECIFIER = cn.com.chinabond.AdHoc;
 			};
 			name = Release;
 		};
