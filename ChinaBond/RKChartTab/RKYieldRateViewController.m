@@ -21,13 +21,22 @@
     IBOutlet UITableView *_leftTableView;
     IBOutlet UITableView *_rightTableView;
     
-    NSArray *_leftDataArray;
-    NSArray *_rightDataArray;
+//    NSArray *_leftDataArray;
+//    NSArray *_rightDataArray;
     
-    NSInteger _leftSelectedIndex;
+//    NSInteger _leftSelectedIndex;
     BOOL _fuckEver;
-    NSIndexPath *_leftSelectIndexPath;
+//    NSIndexPath *_leftSelectIndexPath;
 }
+@property (nonatomic, strong) NSArray *leftDataArray;
+@property (nonatomic, strong) NSArray *rightDataArray;
+
+@property (nonatomic, assign) NSInteger leftSelectedIndex;
+
+@property (nonatomic, strong) NSIndexPath *leftSelectIndexPath;
+
+
+
 @end
 
 @implementation RKYieldRateViewController
@@ -95,6 +104,8 @@
 - (void)requestForRateInfo
 {
     [self showHud];
+    
+    MJWeakSelf
     [[CBHttpRequest shareRequest] postWithUrl:kApiRateInfo
                                        Params:@{}
                               completionBlock:^(id responseObject) {
@@ -120,11 +131,11 @@
                                               [datas1 addObject:pInfo];
                                           }
                                       }
-                                      _leftDataArray = datas1;
-                                      if ([_leftDataArray count]>0) {
-                                          _rightDataArray = ((RKRateInfoModel *)[_leftDataArray objectAtIndex:0]).subInfos;
+                                      weakSelf.leftDataArray = datas1;
+                                      if ([weakSelf.leftDataArray count]>0) {
+                                          weakSelf.rightDataArray = ((RKRateInfoModel *)[weakSelf.leftDataArray objectAtIndex:0]).subInfos;
                                       }
-                                      _leftSelectedIndex = 0;
+                                      weakSelf.leftSelectedIndex = 0;
                                       [_leftTableView reloadData];
                                       [_rightTableView reloadData];
                                   }

@@ -611,7 +611,7 @@
 {
     [self.guideView removeFromSuperview];
 }
-#pragma mark DatePickerDelegate
+#pragma mark -DatePickerDelegate
 - (void)pickerDate:(STPickerDate *)pickerDate year:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
     NSString *m = ((month<10)? [NSString stringWithFormat:@"0%zd",month] : [NSString stringWithFormat:@"%zd",month]);
     NSString *d = ((day<10)? [NSString stringWithFormat:@"0%zd",day] : [NSString stringWithFormat:@"%zd",day]);
