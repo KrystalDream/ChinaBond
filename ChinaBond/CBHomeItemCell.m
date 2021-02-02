@@ -57,7 +57,7 @@
         [item removeFromSuperview];
     }
     
-    CGFloat tmpFloat = SCREEN_WIDTH/4;
+//    CGFloat tmpFloat = SCREEN_WIDTH/4;
     
     if (nameArr.count>0) {
         /*
@@ -83,9 +83,10 @@
         }
          */
         
-        float width =  SCREEN_WIDTH/4;
+        int  lineCount = 4;
+        float width =  SCREEN_WIDTH/lineCount;
         for(int i = 0; i < nameArr.count ; i++){
-            CBItemButton *item = [[CBItemButton alloc] initWithFrame : CGRectMake(tmpFloat*(i%4),  5 + i/4 *(75 + 5), width, 75)
+            CBItemButton *item = [[CBItemButton alloc] initWithFrame : CGRectMake(width*(i%lineCount),  5 + i/lineCount *(75 + 5), width, 75)
                                                             andImage : [NSString stringWithFormat:@"home_%@",nameArr[i][@"typeId"]]
                                                             andTitle : nameArr[i][@"name"]
                                                             andIndex : i
