@@ -8,6 +8,7 @@
 
 #import "CBHomeItemCell.h"
 #import "CBItemButton.h"
+//#import "UIView+STFrame.h"
 
 @implementation CBHomeItemCell
 
@@ -59,6 +60,7 @@
     CGFloat tmpFloat = SCREEN_WIDTH/4;
     
     if (nameArr.count>0) {
+        /*
         for (int j=0; j<2; j++) {
             for (int i =0; i<4; i++) {
                 
@@ -71,7 +73,6 @@
                                                                 andTitle:nameArr[i+j*4][@"name"]
                                                                 andIndex:i+j*4
                                                                   andDic:nameArr[i+j*4]];
-                
                 item.tag = i+j*4;
                 
                 item.clickBlock = ^(NSInteger tag){
@@ -80,7 +81,21 @@
                 [self.contentView addSubview:item];
             }
         }
+         */
         
+        float width =  SCREEN_WIDTH/4;
+        for(int i = 0; i < nameArr.count ; i++){
+            CBItemButton *item = [[CBItemButton alloc] initWithFrame : CGRectMake(tmpFloat*(i%4),  5 + i/4 *(75 + 5), width, 75)
+                                                            andImage : [NSString stringWithFormat:@"home_%@",nameArr[i][@"typeId"]]
+                                                            andTitle : nameArr[i][@"name"]
+                                                            andIndex : i
+                                                              andDic : nameArr[i]];
+            item.tag = i;
+            item.clickBlock = ^(NSInteger tag){
+                [self.delegate choseChannel:nameArr[tag]];
+            };
+            [self.contentView addSubview:item];
+        }
     }
     
 }
