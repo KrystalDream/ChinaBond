@@ -26,6 +26,7 @@
 #import "CBLoginController.h"
 #import "NSURLProtocolCustom.h"
 #import "NSURLProtocol+WKWebVIew.h"
+#import "WKWebView+ClearCache.h"
 
 @interface CSWebView ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
 {
@@ -44,13 +45,18 @@
 @end
 
 @implementation CSWebView
-
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [WKWebView  deleteWebCache];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
 //    self.infoUrl = @"https://www.chinabond.com.cn/Info/155464739?sd=chinabond";
 //    self.infoUrl = @"https://www.chinabond.com.cn/Info/154688743?sd=chinabond";
 
+//    self.infoUrl = @"https://www.baidu.com/baidu.html?from=noscript";
     self.title = self.titleS;
     
     //设置背景颜色
@@ -114,9 +120,11 @@
 //
 //    config.userContentController = [[WKUserContentController alloc] init];
 //    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
+    config.preferences.javaScriptEnabled = YES;
+    config.preferences.javaScriptCanOpenWindowsAutomatically = YES;
     //2.添加WKWebView
     WKWebView *wkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 64, [UIApplication sharedApplication].keyWindow.bounds.size.width, [UIApplication sharedApplication].keyWindow.bounds.size.height - 64) configuration:config];
+    wkWebView.userInteractionEnabled = YES;
     wkWebView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth ;
     wkWebView.UIDelegate = self;
     wkWebView.navigationDelegate = self;

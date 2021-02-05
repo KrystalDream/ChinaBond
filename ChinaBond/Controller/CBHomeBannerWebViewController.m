@@ -22,6 +22,11 @@
 @end
 
 @implementation CBHomeBannerWebViewController
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [WKWebView  deleteWebCache];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

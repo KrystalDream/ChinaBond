@@ -13,6 +13,7 @@
 #import <AFURLSessionManager.h>
 #import "NSURLProtocol+WKWebVIew.h"
 #import "CBPrivacyPolicyPopViewController.h"
+#import "WKWebView+ClearCache.h"
 
 @interface CBPrivacyWebViewController ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
 {
@@ -26,7 +27,19 @@
 @end
 
 @implementation CBPrivacyWebViewController
-
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [WKWebView  deleteWebCache];
+    
+}
+- (void)viewWillAppear:(BOOL)animated {
+    
+    //禁止返回
+    id traget = self.navigationController.interactivePopGestureRecognizer.delegate;
+    UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc]initWithTarget:traget action:nil];
+    [self.view addGestureRecognizer:pan];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     

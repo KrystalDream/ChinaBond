@@ -53,6 +53,15 @@
     _isFullScreen = NO;
     self.title = @"中债收益率";
     self.view.dk_backgroundColorPicker = DKColorWithRGB(0xffffff, 0x0f0f0f);
+    
+    UIColor *backColor;
+    if ([DKNightVersionManager currentThemeVersion] == DKThemeVersionNight) {
+        backColor =  [UIColor blackColor];
+    }else{
+        backColor =  [UIColor whiteColor];
+    }
+    self.tableView.backgroundColor = backColor;
+
     self.horView.dk_backgroundColorPicker = DKColorWithRGB(0xffffff, 0x0f0f0f);
     self.rightView.dk_backgroundColorPicker = DKColorWithRGB(0xffffff, 0x0f0f0f);
     self.shouyilvLab.dk_textColorPicker = DKColorWithRGB(0x6d6d6d, 0x963232);

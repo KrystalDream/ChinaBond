@@ -8,6 +8,7 @@
 
 #import "CBHelpController.h"
 #import <WebKit/WebKit.h>
+#import "WKWebView+ClearCache.h"
 
 @interface CBHelpController ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
 @property (nonatomic, strong) WKWebView *wkWebView;
@@ -15,6 +16,11 @@
 @end
 
 @implementation CBHelpController
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [WKWebView  deleteWebCache];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,7 +44,12 @@
     self.wkWebView.navigationDelegate = self;
     self.wkWebView.backgroundColor = [UIColor clearColor];
     [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.chinabond.com.cn/jsp/mb/bzsm.jsp"]]];
+    if ([DKNightVersionManager currentThemeVersion] == DKThemeVersionNight) {
+        self.wkWebView.opaque = NO;
 
+    }else{
+        self.wkWebView.opaque = YES;
+    }
     [self.view addSubview:self.wkWebView];
 
     
