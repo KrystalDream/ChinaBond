@@ -14,7 +14,7 @@ static NSString* const FilteredKey = @"FilteredKey";
  
 + (BOOL)canInitWithRequest:(NSURLRequest *)request
 {
-    
+    NSLog(@"request.URL.absoluteString = %@",request.URL.absoluteString);
     //https://www.chinabond.com.cn/Info/155464739?sd=chinabond
     
     //absoluteString： 绝对路径   资源文件
@@ -26,16 +26,12 @@ static NSString* const FilteredKey = @"FilteredKey";
     //png
     
     //isSource        YES   才走其他方法
-    
-    NSLog(@"------------------------- %@--%@",request.URL.absoluteString,request.URL.pathExtension);
 
-    NSString *extension = request.URL.absoluteString;//css  png
+    NSString *extension = request.URL.pathExtension;
         BOOL isSource = [@[@"css"] indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             return [extension compare:obj options:NSCaseInsensitiveSearch] == NSOrderedSame;
         }] != NSNotFound;
     return [NSURLProtocol propertyForKey:FilteredKey inRequest:request] == nil && isSource;
-    
-//    return  YES;
 
 }
 
