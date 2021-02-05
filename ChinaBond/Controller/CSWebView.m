@@ -16,7 +16,6 @@
 
 #import "CSWebView.h"
 #import <WebKit/WebKit.h>
-#import "NSURLProtocolCustom.h"
 #import "CBMessageShareView.h"
 #import "CBDataBase.h"
 #import "CBCacheManager.h"
@@ -25,6 +24,7 @@
 #import <AFURLSessionManager.h>
 #import "CBFileController.h"
 #import "CBLoginController.h"
+#import "NSURLProtocolCustom.h"
 #import "NSURLProtocol+WKWebVIew.h"
 
 @interface CSWebView ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>

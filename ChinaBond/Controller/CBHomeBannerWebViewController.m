@@ -10,10 +10,11 @@
 
 #import <WebKit/WebKit.h>
 
-//#import "NSURLProtocolCustom.h"
-//#import "NSURLProtocol+WKWebVIew.h"
+#import "NSURLProtocolCustom.h"
+#import "NSURLProtocol+WKWebVIew.h"
 #import <AFURLSessionManager.h>
 #import "CBFileController.h"
+#import "WKWebView+ClearCache.h"
 
 @interface CBHomeBannerWebViewController ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
 @property (nonatomic, strong) WKWebView *wkWebView;
@@ -39,10 +40,10 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backButtonClick)];
     self.navigationItem.leftBarButtonItem = backButton;
     
-//    [NSURLProtocol registerClass:[NSURLProtocolCustom class]];
+    [NSURLProtocol registerClass:[NSURLProtocolCustom class]];
     
-//    [NSURLProtocol wk_registerScheme:@"http"];
-//    [NSURLProtocol wk_registerScheme:@"https"];
+    [NSURLProtocol wk_registerScheme:@"http"];
+    [NSURLProtocol wk_registerScheme:@"https"];
     
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
 //    config.selectionGranularity = WKSelectionGranularityDynamic;
@@ -80,7 +81,11 @@
     
     [self.view addSubview:webView];
 }
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+//    [WKWebView deleteWebCache];
+}
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskPortrait ;

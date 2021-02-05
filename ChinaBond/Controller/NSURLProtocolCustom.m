@@ -27,11 +27,22 @@ static NSString* const FilteredKey = @"FilteredKey";
     
     //isSource        YES   才走其他方法
 
-    NSString *extension = request.URL.pathExtension;
-        BOOL isSource = [@[@"css"] indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            return [extension compare:obj options:NSCaseInsensitiveSearch] == NSOrderedSame;
-        }] != NSNotFound;
-    return [NSURLProtocol propertyForKey:FilteredKey inRequest:request] == nil && isSource;
+//    NSString *extension = request.URL.pathExtension;
+//        BOOL isSource = [@[@"css"] indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//            return [extension compare:obj options:NSCaseInsensitiveSearch] == NSOrderedSame;
+//        }] != NSNotFound;
+//    return [NSURLProtocol propertyForKey:FilteredKey inRequest:request] == nil && isSource;
+    
+        if ( ([request.URL.absoluteString containsString:@"main.css"]))
+        {
+            //看看是否已经处理过了，防止无限循环
+            if ([NSURLProtocol propertyForKey:FilteredKey inRequest:request]) {
+                return NO;
+            }
+    
+            return YES;
+        }
+        return NO;
 
 }
 
