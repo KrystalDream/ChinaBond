@@ -15,11 +15,27 @@ static NSString* const FilteredKey = @"FilteredKey";
 + (BOOL)canInitWithRequest:(NSURLRequest *)request
 {
     
-    NSString *extension = request.URL.pathExtension;
+    //https://www.chinabond.com.cn/Info/155464739?sd=chinabond
+    
+    //absoluteString： 绝对路径   资源文件
+    //https://www.chinabond.com.cn/static/mobile/css/main.css
+    //https://www.chinabond.com.cn/static/mobile/images/zdgz_down_btn.png
+
+    //pathExtension：  路径扩展
+    //css
+    //png
+    
+    //isSource        YES   才走其他方法
+    
+    NSLog(@"------------------------- %@--%@",request.URL.absoluteString,request.URL.pathExtension);
+
+    NSString *extension = request.URL.absoluteString;//css  png
         BOOL isSource = [@[@"css"] indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             return [extension compare:obj options:NSCaseInsensitiveSearch] == NSOrderedSame;
         }] != NSNotFound;
     return [NSURLProtocol propertyForKey:FilteredKey inRequest:request] == nil && isSource;
+    
+//    return  YES;
 
 }
 
@@ -36,7 +52,7 @@ static NSString* const FilteredKey = @"FilteredKey";
 - (void)startLoading
 {
     NSString *fileName = [super.request.URL.absoluteString componentsSeparatedByString:@"/"].lastObject;
-       CBLog(@"fileName is %@",fileName);
+       NSLog(@"fileName is %@",fileName);
        //这里是获取本地资源路径 如:png,js等
        NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
        if (!path) {
