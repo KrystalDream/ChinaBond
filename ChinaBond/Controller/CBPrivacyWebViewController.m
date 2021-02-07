@@ -53,9 +53,17 @@
     self.title = titleNameStr;
     
     //设置背景颜色
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
     //    self.navigationController.navigationBarHidden = YES;
-    
+    UIColor *backColor;
+
+    if ([DKNightVersionManager currentThemeVersion] == DKThemeVersionNight) {
+        backColor =  [UIColor lightGrayColor];
+    }else{
+        backColor =  [UIColor whiteColor];
+    }
+    self.view.backgroundColor = backColor;
+
     
     [NSURLProtocol registerClass:[NSURLProtocolCustom class]];
     
@@ -110,6 +118,16 @@
     wkWebView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth ;
     wkWebView.UIDelegate = self;
     wkWebView.navigationDelegate = self;
+    wkWebView.backgroundColor = [UIColor clearColor];
+    
+    //设置透明度  根据背景模式
+    if ([DKNightVersionManager currentThemeVersion] == DKThemeVersionNight) {
+        wkWebView.opaque = NO;
+
+    }else{
+        wkWebView.opaque = YES;
+    }
+    
     
     NSString *filePath = [[NSBundle mainBundle]pathForResource:self.localHtmlName ofType:@"html"];
     NSURL *pathURL = [NSURL fileURLWithPath:filePath];
