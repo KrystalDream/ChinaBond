@@ -9,23 +9,24 @@
 #import "RKExponentDetailController.h"
 #import "RKKLine.h"
 #import "RKDataManager.h"
-#import "CustomDatePickerView.h"
-#import "JCAlertView.h"
+//#import "CustomDatePickerView.h"
+//#import "JCAlertView.h"
 #import "RKTimeKLine.h"
 #import "RKCateLevelModel.h"
 #import <AFNetworkReachabilityManager.h>
+#import "STPickerDate.h"
 
 typedef enum : NSUInteger {
     RKExponentDetailStateCaifu = 0,
     RKExponentDetailStateJingjia,
 } RKExponentDetailState;
 
-@interface RKExponentDetailController ()<RKKLineDelegate>
+@interface RKExponentDetailController ()<RKKLineDelegate,STPickerDateDelegate>
 {
     UIButton *_caifuButtonRef;
     UIButton *_jingxuanButtonRef;
     UIButton *timeButton;
-    JCAlertView *_alert;
+//    JCAlertView *_alert;
     
     BOOL    _isFullScreen;
     RKTimeKLine *_horKLine;
@@ -46,9 +47,11 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic) IBOutlet UILabel *phoneLab;
 @property (strong, nonatomic) IBOutlet UILabel *phoneNum;
 @property (strong, nonatomic) IBOutlet UILabel *phoneNum1;
-@property (retain, nonatomic) CustomDatePickerView *picker;
+//@property (retain, nonatomic) CustomDatePickerView *picker;
 @property (readonly, nonatomic, retain) RKKLineModel *timeModel;
 @property (nonatomic, retain) NSDate *currentDate;
+@property (nonatomic, strong) STPickerDate *pickerDate;
+
 
 @end
 
@@ -60,6 +63,15 @@ typedef enum : NSUInteger {
     self.title = @"中债指数";
 
     self.view.dk_backgroundColorPicker = DKColorWithRGB(0xffffff, 0x0f0f0f);
+    
+    UIColor *backColor;
+    if ([DKNightVersionManager currentThemeVersion] == DKThemeVersionNight) {
+        backColor =  [UIColor blackColor];
+    }else{
+        backColor =  [UIColor whiteColor];
+    }
+    self.tableView.backgroundColor = backColor;
+    
     self.horView.dk_backgroundColorPicker = DKColorWithRGB(0xffffff, 0x0f0f0f);
     self.rightView.dk_backgroundColorPicker = DKColorWithRGB(0xffffff, 0x0f0f0f);
     self.souyilvLab.dk_textColorPicker = DKColorWithRGB(0x6d6d6d, 0x963232);
@@ -72,7 +84,6 @@ typedef enum : NSUInteger {
     
     self.headTitleLabel.text = self.exponentModel.levelTitle;
 
-    
     _detailState = RKExponentDetailStateCaifu;
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backButtonClick:)];
     self.navigationItem.leftBarButtonItem = backButton;
@@ -82,64 +93,64 @@ typedef enum : NSUInteger {
     [_tableView registerNib:oneNib forCellReuseIdentifier:@"RKExponentDetailCell"];
     [_tableView registerNib:twoNib forCellReuseIdentifier:@"RKExponentDetailFooter"];
     
-    self.picker = [[CustomDatePickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 210)];
-    __weak __typeof__(self) weakSelf = self;
-    self.picker.cancelBlock = ^{
-        __strong typeof(self) strongSelf = weakSelf;
-        if (strongSelf) {
-            [strongSelf->_alert dismissWithCompletion:^{
-                
-            }];
-        }
-    };
-    self.picker.sureBlock = ^(NSString *date){
-        __strong typeof(self) strongSelf = weakSelf;
-        if (strongSelf) {
-            [strongSelf->_alert dismissWithCompletion:^{
-                [strongSelf->timeButton setTitle:date forState:UIControlStateNormal];
-                strongSelf.currentDate = [[RKDataManager sharedInstance].dateFormatter dateFromString:date];
-                
-                
-                // 1.获得网络监控的管理者
-                AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
-                // 2.设置网络状态改变后的处理
-                [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-                    // 当网络状态改变了, 就会调用这个block
-                    switch (status)
-                    {
-                        case AFNetworkReachabilityStatusUnknown: // 未知网络
-                        {
-                            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                            
-                            [MBProgressHUD bwm_showTitle:@"请连接网络" toView:self.view hideAfter:2];
-                        }
-                            break;
-                        case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
-                        {
-                            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                            
-                            [MBProgressHUD bwm_showTitle:@"请连接网络" toView:self.view hideAfter:2];
-                        }
-                            break;
-                        case AFNetworkReachabilityStatusReachableViaWWAN: // 手机自带网络
-                        {
-                            CBLog(@"手机自带网络");
-                            [strongSelf requestForExponent:[[RKDataManager sharedInstance].dateFormatter2 stringFromDate:strongSelf.currentDate] exponentModel:strongSelf.exponentModel];
-                        }
-                            break;
-                        case AFNetworkReachabilityStatusReachableViaWiFi: // WIFI
-                        {
-                            CBLog(@"WIFI");
-                            [strongSelf requestForExponent:[[RKDataManager sharedInstance].dateFormatter2 stringFromDate:strongSelf.currentDate] exponentModel:strongSelf.exponentModel];
-                        }
-                            break;
-                    }
-                }];
-                [mgr startMonitoring];
-                
-            }];
-        }
-    };
+//    self.picker = [[CustomDatePickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 210)];
+//    __weak __typeof__(self) weakSelf = self;
+//    self.picker.cancelBlock = ^{
+//        __strong typeof(self) strongSelf = weakSelf;
+//        if (strongSelf) {
+//            [strongSelf->_alert dismissWithCompletion:^{
+//
+//            }];
+//        }
+//    };
+//    self.picker.sureBlock = ^(NSString *date){
+//        __strong typeof(self) strongSelf = weakSelf;
+//        if (strongSelf) {
+//            [strongSelf->_alert dismissWithCompletion:^{
+//                [strongSelf->timeButton setTitle:date forState:UIControlStateNormal];
+//                strongSelf.currentDate = [[RKDataManager sharedInstance].dateFormatter dateFromString:date];
+//
+//
+//                // 1.获得网络监控的管理者
+//                AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
+//                // 2.设置网络状态改变后的处理
+//                [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+//                    // 当网络状态改变了, 就会调用这个block
+//                    switch (status)
+//                    {
+//                        case AFNetworkReachabilityStatusUnknown: // 未知网络
+//                        {
+//                            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//
+//                            [MBProgressHUD bwm_showTitle:@"请连接网络" toView:self.view hideAfter:2];
+//                        }
+//                            break;
+//                        case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
+//                        {
+//                            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//
+//                            [MBProgressHUD bwm_showTitle:@"请连接网络" toView:self.view hideAfter:2];
+//                        }
+//                            break;
+//                        case AFNetworkReachabilityStatusReachableViaWWAN: // 手机自带网络
+//                        {
+//                            CBLog(@"手机自带网络");
+//                            [strongSelf requestForExponent:[[RKDataManager sharedInstance].dateFormatter2 stringFromDate:strongSelf.currentDate] exponentModel:strongSelf.exponentModel];
+//                        }
+//                            break;
+//                        case AFNetworkReachabilityStatusReachableViaWiFi: // WIFI
+//                        {
+//                            CBLog(@"WIFI");
+//                            [strongSelf requestForExponent:[[RKDataManager sharedInstance].dateFormatter2 stringFromDate:strongSelf.currentDate] exponentModel:strongSelf.exponentModel];
+//                        }
+//                            break;
+//                    }
+//                }];
+//                [mgr startMonitoring];
+//
+//            }];
+//        }
+//    };
     self.horView.hidden = YES;
     
     [self showHud];
@@ -179,7 +190,7 @@ typedef enum : NSUInteger {
     [[CBHttpRequest shareRequest] postWithUrl:kApiExponentData
                                        Params:@{@"ksr":dateString, @"jsr":todayString, @"id":model.levelID}
                               completionBlock:^(id responseObject) {
-                                 // NSLog(@"%@",responseObject);
+                                  CBLog(@"time--------------------%@",responseObject);
                                   if ([[(NSDictionary *)responseObject objectForKey:@"state"] isEqualToString:@"0"]) {
                                       NSArray *xArr = [(NSDictionary *)responseObject objectForKey:@"xValues"];
                                       NSArray *yArr = [(NSDictionary *)responseObject objectForKey:@"y_mValues"];
@@ -288,6 +299,7 @@ typedef enum : NSUInteger {
         
         UILabel *timeLabel = (UILabel *)[cell viewWithTag:23001];
         timeLabel.text = timeLastStirng2;
+
         UILabel *rateLabel = (UILabel *)[cell viewWithTag:23002];
         rateLabel.text = newData;
         UIView  *kLineBgView = (UIView *)[cell viewWithTag:23003];
@@ -443,8 +455,10 @@ typedef enum : NSUInteger {
 
 - (void)changeTime:(UIButton *)sender
 {
-    _alert = [[JCAlertView alloc] initWithCustomView:self.picker dismissWhenTouchedBackground:YES];
-    [_alert show];
+//    _alert = [[JCAlertView alloc] initWithCustomView:self.picker dismissWhenTouchedBackground:YES];
+//    [_alert show];
+    [self.pickerDate show];
+
 }
 
 - (void)caifuButtonClicked:(UIButton *)sender
@@ -659,6 +673,19 @@ typedef enum : NSUInteger {
     
     [self.horView bringSubviewToFront:self.headView];
 }
+#pragma mark -DatePickerDelegate
+- (void)pickerDate:(STPickerDate *)pickerDate year:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
+    NSString *m = ((month<10)? [NSString stringWithFormat:@"0%zd",month] : [NSString stringWithFormat:@"%zd",month]);
+    NSString *d = ((day<10)? [NSString stringWithFormat:@"0%zd",day] : [NSString stringWithFormat:@"%zd",day]);
+    NSString *text = [NSString stringWithFormat:@"%zd-%@-%@", year, m, d];
+    
+    [self->timeButton setTitle:text forState:UIControlStateNormal];
+    self.currentDate = [[RKDataManager sharedInstance].dateFormatter dateFromString:text];
+
+    [self requestForExponent:[[RKDataManager sharedInstance].dateFormatter2 stringFromDate:self.currentDate] exponentModel:self.exponentModel];
+ 
+    
+}
 
 #pragma mark - hud
 - (void)showHud
@@ -671,4 +698,17 @@ typedef enum : NSUInteger {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     _tableView.hidden = NO;
 }
+#pragma mark - LazyLoad
+
+- (STPickerDate *)pickerDate{
+    if(!_pickerDate){
+        _pickerDate= [[STPickerDate alloc]init];
+        _pickerDate.delegate = self;
+        _pickerDate.pickerTitle = @"选择日期";
+    }
+    return _pickerDate;
+    
+    
+}
+
 @end
