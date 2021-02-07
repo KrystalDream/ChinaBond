@@ -235,8 +235,16 @@
 - (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction*)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
     // 接口的作用是打开新窗口委托
     //[self createNewWebViewWithURL:webView.URL.absoluteString config:Web];
+//    return _wkWebView;
     
-    return _wkWebView;
+    if (navigationAction.request.URL) {
+        WKWebView *wkWebView = [[WKWebView alloc] initWithFrame:webView.frame configuration:configuration];
+        wkWebView.UIDelegate = self;
+        wkWebView.navigationDelegate = self;
+        [webView loadRequest:navigationAction.request];
+        return wkWebView;
+    }
+     return nil;
 }
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler

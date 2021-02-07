@@ -51,18 +51,18 @@
     [NSURLProtocol wk_registerScheme:@"https"];
     
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
-//    config.selectionGranularity = WKSelectionGranularityDynamic;
-//
-//    //1.1 设置偏好
-//    config.preferences = [[WKPreferences alloc] init];
-//    config.preferences.minimumFontSize = 10;
-//    config.preferences.javaScriptEnabled = YES;
-//    //1.1.1 默认是不能通过JS自动打开窗口的，必须通过用户交互才能打开
-//    config.preferences.javaScriptCanOpenWindowsAutomatically = NO;
-//    config.processPool = [[WKProcessPool alloc] init];
-//
-//    config.userContentController = [[WKUserContentController alloc] init];
-//    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    config.selectionGranularity = WKSelectionGranularityDynamic;
+
+    //1.1 设置偏好
+    config.preferences = [[WKPreferences alloc] init];
+    config.preferences.minimumFontSize = 10;
+    config.preferences.javaScriptEnabled = YES;
+    //1.1.1 默认是不能通过JS自动打开窗口的，必须通过用户交互才能打开
+    config.preferences.javaScriptCanOpenWindowsAutomatically = YES;
+    config.processPool = [[WKProcessPool alloc] init];
+
+    config.userContentController = [[WKUserContentController alloc] init];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     //2.添加WKWebView
     WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 64, [UIApplication sharedApplication].keyWindow.bounds.size.width, [UIApplication sharedApplication].keyWindow.bounds.size.height - 64) configuration:config];
@@ -75,7 +75,6 @@
     
     [self.view addSubview:webView];
     _wkWebView = webView;
-    
     
     if ([DKNightVersionManager currentThemeVersion] == DKThemeVersionNight) {
         webView.opaque = NO;
@@ -154,6 +153,7 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction*)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
     NSString *strRequest = [navigationAction.request.URL.absoluteString stringByRemovingPercentEncoding];
+    
 
     if ([strRequest hasPrefix:@"https://www.chinabond.com.cn/resource"]) {
         // 不允许跳转
@@ -172,8 +172,7 @@
 
         }];
 
-
-    }else {
+    }else{
         
         //如果是跳转一个新页面
         if (navigationAction.targetFrame == nil) {
@@ -193,8 +192,17 @@
 - (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction*)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
     // 接口的作用是打开新窗口委托
 //    [self createNewWebViewWithURL:webView.URL.absoluteString config:Web];
+//    return _wkWebView;
     
-    return _wkWebView;
+    if (navigationAction.request.URL) {
+        WKWebView *wkWebView = [[WKWebView alloc] initWithFrame:webView.frame configuration:configuration];
+        wkWebView.UIDelegate = self;
+        wkWebView.navigationDelegate = self;
+        [webView loadRequest:navigationAction.request];
+        return wkWebView;
+    }
+     return nil;
+
 }
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler
