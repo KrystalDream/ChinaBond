@@ -220,7 +220,7 @@
                                        Params:self.params
                               completionBlock:^(id responseObject) {
                                   //NSLog(@"%@",responseObject);
-                CBLog(@"rate详情--------%@",[RKRateDetailController DataTOjsonString:responseObject]);
+                CBLog(@"rate详情--------%@-----",[RKRateDetailController DataTOjsonString:responseObject]);
                                   if ([[(NSDictionary *)responseObject objectForKey:@"state"] isEqualToString:@"0"]) {
                                       NSArray *xArr = [(NSDictionary *)responseObject objectForKey:@"xValues"];
                                       NSArray *yArr = [(NSDictionary *)responseObject objectForKey:@"yValues"];
@@ -443,12 +443,18 @@
     yieldRate.delegate = self;
     [self.navigationController pushViewController:yieldRate animated:YES];
 }
-
+#pragma mark - RKYieldChoiceDelegate
 - (void)yieldRatePage:(RKYieldRateViewController *)page didChoiceData:(RKRateInfoModel *)choice
 {
     [self showHud];
-    NSString *dateNow = [[RKDataManager sharedInstance].dateFormatter2 stringFromDate:self.currentDate];
-    [self requestForRate:dateNow rateModel:choice];
+    self.params = @{@"id"   : choice.rateID,
+                    @"sDay" : @""};
+
+    [self requestForRate:[[RKDataManager sharedInstance].dateFormatter2 stringFromDate:[NSDate date]] rateModel:choice];
+        
+//    NSString *dateNow = [[RKDataManager sharedInstance].dateFormatter2 stringFromDate:self.currentDate];
+//    [self requestForRate:dateNow rateModel:choice];
+
 }
 - (void)kLine:(id)kLine refreshDataWithX:(CGFloat)x andY:(CGFloat)y
 {

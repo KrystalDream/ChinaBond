@@ -585,9 +585,15 @@
 }
 - (void)yieldRatePage:(RKYieldRateViewController *)page didChoiceData:(RKRateInfoModel *)choice
 {
-    [self showHud];
-    NSString *dateNow = [[RKDataManager sharedInstance].dateFormatter2 stringFromDate:[NSDate date]];
-    [self requestForRate:dateNow rateModel:choice];
+//    [self showHud];
+//    NSString *dateNow = [[RKDataManager sharedInstance].dateFormatter2 stringFromDate:[NSDate date]];
+//    [self requestForRate:dateNow rateModel:choice];
+    NSMutableDictionary *dic = [[CBCacheManager shareCache].phoneDic mutableCopy];
+    [dic setObject:choice.rateID forKey:@"curveId"];
+    [dic setObject:choice.rateTitle forKey:@"curveName"];
+    [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"phoneConfigue"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
 }
 - (void)exponentPage:(RKExponentViewController *)page didChoiceData:(RKCateLevelModel *)choice
 {

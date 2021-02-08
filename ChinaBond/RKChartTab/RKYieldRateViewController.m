@@ -279,14 +279,16 @@
         }else{
             if (self.delegate && [self.delegate respondsToSelector:@selector(yieldRatePage: didChoiceData:)]) {
                 
-                //记录下所选曲线id
-                NSMutableDictionary *dic = [[CBCacheManager shareCache].phoneDic mutableCopy];
-                [dic setObject:model.rateID forKey:@"curveId"];
-                [dic setObject:model.rateTitle forKey:@"curveName"];
-                [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"phoneConfigue"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
+                //记录下所选曲线id     只有 tabbar 中债数据 viewwillappear 的时候刷新请求 需要用！！！
+//                NSMutableDictionary *dic = [[CBCacheManager shareCache].phoneDic mutableCopy];
+//                [dic setObject:model.rateID forKey:@"curveId"];
+//                [dic setObject:model.rateTitle forKey:@"curveName"];
+//                [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"phoneConfigue"];
+//                [[NSUserDefaults standardUserDefaults] synchronize];
                 
-                //[self.delegate yieldRatePage:self didChoiceData:model];
+                
+                //tabbar 中债数据 viewwillappear 的时候刷新请求  偏好设置存储参数，  代理又刷新  
+                [self.delegate yieldRatePage:self didChoiceData:model];
                 [self.navigationController popViewControllerAnimated:YES];
             }
         }
