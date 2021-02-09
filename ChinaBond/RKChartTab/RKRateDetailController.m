@@ -37,8 +37,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *phoneNum;
 @property (strong, nonatomic) IBOutlet UILabel *phoneNum1;
 //@property (retain, nonatomic)  CustomDatePickerView *picker;
-@property (readonly, nonatomic, retain) RKKLineModel *model;
-@property (nonatomic, retain) NSDate *currentDate;
+@property (nonatomic, strong) RKKLineModel *model;
+@property (nonatomic, strong) NSDate *currentDate;
 
 @property (nonatomic, strong) NSDictionary *params;
 @property (nonatomic, strong) UIView *guideView;
@@ -216,6 +216,8 @@
 
 - (void)requestForRate:(NSString *)dateString rateModel:(RKRateInfoModel *)model
 {
+    
+    MJWeakSelf;
     [[CBHttpRequest shareRequest] postWithUrl:kApiRateData
                                        Params:self.params
                               completionBlock:^(id responseObject) {
@@ -224,11 +226,11 @@
                                   if ([[(NSDictionary *)responseObject objectForKey:@"state"] isEqualToString:@"0"]) {
                                       NSArray *xArr = [(NSDictionary *)responseObject objectForKey:@"xValues"];
                                       NSArray *yArr = [(NSDictionary *)responseObject objectForKey:@"yValues"];
-                                      _model = [[RKKLineModel alloc] init];
-                                      _model.xArr = xArr;
-                                      _model.yArr = yArr;
-                                      _model.time = responseObject[@"queryDate"];
-                                      _model.rateInfoModel = model;
+                                      weakSelf.model = [[RKKLineModel alloc] init];
+                                      weakSelf.model.xArr = xArr;
+                                      weakSelf.model.yArr = yArr;
+                                      weakSelf.model.time = responseObject[@"queryDate"];
+                                      weakSelf.model.rateInfoModel = model;
                                       
                                       [self hideHud];
                                       
@@ -236,14 +238,14 @@
                                           [MBProgressHUD bwm_showTitle:@"没有查到相关曲线信息" toView:self.view hideAfter:2];
                                       }
                                       
-                                      [_tableView reloadData];
+                                      [ weakSelf.tableView reloadData];
                                   }else{
                                       NSString *errorInfo = [(NSDictionary *)responseObject objectForKey:@"errorMsg"];
-                                      _model = [[RKKLineModel alloc] init];
-                                      _model.time = responseObject[@"queryDate"];
-                                      _model.rateInfoModel = model;
+                                      weakSelf.model = [[RKKLineModel alloc] init];
+                                      weakSelf.model.time = responseObject[@"queryDate"];
+                                      weakSelf.model.rateInfoModel = model;
                                       [self hideHud];
-                                      [_tableView reloadData];
+                                      [ weakSelf.tableView reloadData];
                                       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:errorInfo delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
                                       [alert  show];
                                   }

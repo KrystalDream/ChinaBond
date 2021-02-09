@@ -16,7 +16,7 @@
 
 #import "CSWebView.h"
 #import <WebKit/WebKit.h>
-#import "CBMessageShareView.h"
+//#import "CBMessageShareView.h"
 #import "CBDataBase.h"
 #import "CBCacheManager.h"
 //#import <ShareSDK/ShareSDK.h>
@@ -394,7 +394,7 @@
     // 1、设置分享的内容，并将内容添加到数组中
     NSString *shareText = @"中国债券信息网";
     UIImage *shareImage = [UIImage imageNamed:@"shareIcon"];
-    NSURL *shareUrl = [NSURL URLWithString:@"https://www.chinabond.com.cn/Info/155464739?sd=chinabond"];
+    NSURL *shareUrl = [NSURL URLWithString:self.infoUrl];
     NSArray *activityItemsArray = @[shareText,shareImage,shareUrl];
     
     // 自定义的CustomActivity，继承自UIActivity
@@ -467,9 +467,9 @@
 return excludeTypeM;
 
 }
--(void)shareButtonClick:(NSInteger)tag
-{
-    
+//-(void)shareButtonClick:(NSInteger)tag
+//{
+//
 //    switch (tag) {
 //        case 0://微博
 //        {
@@ -546,10 +546,10 @@ return excludeTypeM;
 //        default:
 //            break;
 //    }
-    
-    
-    
-}
+//    
+//    
+//    
+//}
 
 //-(void)cancelBtnClick
 //{
