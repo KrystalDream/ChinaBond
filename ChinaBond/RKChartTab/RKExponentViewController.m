@@ -45,7 +45,7 @@
         tableViewHeader.dk_backgroundColorPicker = DKColorWithRGB(0xffffff, 0x0f0f0f);
         UIView *icon = [[UIView alloc] initWithFrame:CGRectMake(0, 12, 4, 20)];
         icon.backgroundColor = [UIColor colorWithRed:251/255.0 green:70/255.0 blue:77/255.0 alpha:1.0];
-        UILabel *iconLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 12, 60, 20)];
+        UILabel *iconLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 12, 100, 20)];
         iconLabel.backgroundColor = [UIColor clearColor];
         iconLabel.font = [UIFont systemFontOfSize:15];
         iconLabel.dk_textColorPicker = DKColorWithRGB(0x4c4c4c, 0x737373);
