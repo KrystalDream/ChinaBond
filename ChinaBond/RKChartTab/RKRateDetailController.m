@@ -451,6 +451,8 @@
                     @"sDay" : @""};
 
     [self requestForRate:[[RKDataManager sharedInstance].dateFormatter2 stringFromDate:[NSDate date]] rateModel:choice];
+    
+    self.rateModel = choice;
         
 //    NSString *dateNow = [[RKDataManager sharedInstance].dateFormatter2 stringFromDate:self.currentDate];
 //    [self requestForRate:dateNow rateModel:choice];
