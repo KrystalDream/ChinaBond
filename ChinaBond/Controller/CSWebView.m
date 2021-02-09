@@ -280,6 +280,8 @@
 
 - (void)collectButtonClick
 {
+    
+    self.rightButton1.enabled = NO;
     if (self.isCollect) {
         
         //取消收藏
@@ -298,6 +300,8 @@
              
                                      completionBlock:^(id responseObject) {
                 
+                CBLog(@"cancleCollect---------------------%@",responseObject);
+                
                 if ([responseObject[@"state"] isEqualToString:@"0"]) {
                     self.isCollect = !self.isCollect;
                     [self.rightButton1 setBackgroundImage:[UIImage imageNamed:@"collect"] forState:UIControlStateNormal];
@@ -306,10 +310,13 @@
                 [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                 
                 [MBProgressHUD bwm_showTitle:responseObject[@"errorMsg"] toView:self.view hideAfter:2];
-                
+                self.rightButton1.enabled = YES;
+
             } failBlock:^(NSError *error) {
                 
                 [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                self.rightButton1.enabled = YES;
+
                 
             }];
             
@@ -317,13 +324,13 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"请登录" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
             alert.delegate = self;
             [alert show];
+            self.rightButton1.enabled = YES;
+
         }
         
-    }
-    else
-    {
+    }else{
         //添加
-        
+
         NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
         
         NSString *isLogStr = [userDic objectForKey:@"isLog"];
@@ -336,7 +343,8 @@
                                                        @"infoId":self.tId}
              
                                      completionBlock:^(id responseObject) {
-                
+                CBLog(@"isCollect---------------------%@",responseObject);
+
                 if ([responseObject[@"state"] isEqualToString:@"0"]) {
                     
                     self.isCollect = !self.isCollect;
@@ -347,16 +355,21 @@
                 [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                 
                 [MBProgressHUD bwm_showTitle:responseObject[@"errorMsg"] toView:self.view hideAfter:2];
-                
+                self.rightButton1.enabled = YES;
+
             } failBlock:^(NSError *error) {
                 
                 [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                self.rightButton1.enabled = YES;
+
             }];
             
         }else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"请登录" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
             alert.delegate = self;
             [alert show];
+            self.rightButton1.enabled = YES;
+
         }
     }
 }
