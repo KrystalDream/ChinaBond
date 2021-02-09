@@ -165,7 +165,10 @@
         //配置标题
         cell.textLabel.text = model.sName;
         //配置数值
-        ((UILabel *)[cell viewWithTag:12901]).text = model.SNumber;
+        NSString *tempStr = [model.SNumber stringByReplacingOccurrencesOfString:@".00" withString:@""];
+        ((UILabel *)[cell viewWithTag:12901]).text= indexPath.row== 0 ? model.SNumber : tempStr;
+        
+        
         //配置单位
         ((UILabel *)[cell viewWithTag:12902]).text = indexPath.row==0?@"亿元":@"家";
         cell.imageView.image = [UIImage imageNamed:indexPath.row==0?@"tongji30":@"tongji29"];
