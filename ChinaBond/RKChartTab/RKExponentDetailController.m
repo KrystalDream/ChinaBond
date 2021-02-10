@@ -7,7 +7,7 @@
 //
 
 #import "RKExponentDetailController.h"
-#import "RKKLine.h"
+//#import "RKKLine.h"
 #import "RKDataManager.h"
 //#import "CustomDatePickerView.h"
 //#import "JCAlertView.h"
@@ -48,8 +48,8 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic) IBOutlet UILabel *phoneNum;
 @property (strong, nonatomic) IBOutlet UILabel *phoneNum1;
 //@property (retain, nonatomic) CustomDatePickerView *picker;
-@property (readonly, nonatomic, retain) RKKLineModel *timeModel;
-@property (nonatomic, retain) NSDate *currentDate;
+@property (nonatomic,strong) RKKLineModel *timeModel;
+@property (nonatomic, strong) NSDate *currentDate;
 @property (nonatomic, strong) STPickerDate *pickerDate;
 
 
@@ -186,6 +186,8 @@ typedef enum : NSUInteger {
 
 - (void)requestForExponent:(NSString *)dateString exponentModel:(RKCateLevelModel *)model
 {
+    
+    MJWeakSelf;
     NSString *todayString = [[RKDataManager sharedInstance].dateFormatter2 stringFromDate:[NSDate date]];
     [[CBHttpRequest shareRequest] postWithUrl:kApiExponentData
                                        Params:@{@"ksr":dateString, @"jsr":todayString, @"id":model.levelID}
@@ -195,13 +197,13 @@ typedef enum : NSUInteger {
                                       NSArray *xArr = [(NSDictionary *)responseObject objectForKey:@"xValues"];
                                       NSArray *yArr = [(NSDictionary *)responseObject objectForKey:@"y_mValues"];
                                       NSArray *zArr = [(NSDictionary *)responseObject objectForKey:@"y_nValues"];
-                                      _timeModel = [[RKKLineModel alloc] init];
-                                      _timeModel.xArr = xArr;
-                                      _timeModel.yArr = yArr;
-                                      _timeModel.zArr = zArr;
+                                      weakSelf.timeModel = [[RKKLineModel alloc] init];
+                                      weakSelf.timeModel.xArr = xArr;
+                                      weakSelf.timeModel.yArr = yArr;
+                                      weakSelf.timeModel.zArr = zArr;
                                       
-                                      _timeModel.exponentModel = model;
-                                      _timeModel.time = responseObject[@"queryDate"];
+                                      weakSelf.timeModel.exponentModel = model;
+                                      weakSelf.timeModel.time = responseObject[@"queryDate"];
 
                                       [self hideHud];
                                       
@@ -209,14 +211,14 @@ typedef enum : NSUInteger {
                                           [MBProgressHUD bwm_showTitle:@"没有查到指数信息" toView:self.view hideAfter:2];
                                       }
                                       
-                                      [_tableView reloadData];
+                                      [weakSelf.tableView reloadData];
                                   }else{
                                       NSString *errorInfo = [(NSDictionary *)responseObject objectForKey:@"errorMsg"];
-                                      _timeModel = [[RKKLineModel alloc] init];
-                                      _timeModel.exponentModel = model;
-                                      _timeModel.time = responseObject[@"queryDate"];
+                                      weakSelf.timeModel = [[RKKLineModel alloc] init];
+                                      weakSelf.timeModel.exponentModel = model;
+                                      weakSelf.timeModel.time = responseObject[@"queryDate"];
                                       [self hideHud];
-                                      [_tableView reloadData];
+                                      [weakSelf.tableView reloadData];
                                       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:errorInfo delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
                                       [alert  show];
                                   }

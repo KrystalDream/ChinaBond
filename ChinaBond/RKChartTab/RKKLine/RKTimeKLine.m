@@ -74,19 +74,22 @@
         self.xyTextFont = [UIFont systemFontOfSize:10];
         self.chartScaleNum = 1.0;
         
-        UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(kLineLongPressed:)];
-        longGesture.minimumPressDuration = .1;
-        [self addGestureRecognizer:longGesture];
-        
-        UITapGestureRecognizer *doubleGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(kLineDoubleClicked:)];
-        doubleGesture.numberOfTapsRequired = 2;
-        [self addGestureRecognizer:doubleGesture];
-        
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(kLineTapClicked:)];
-        [tapGesture requireGestureRecognizerToFail:doubleGesture];
-        tapGesture.numberOfTapsRequired = 1;
-        [self addGestureRecognizer:tapGesture];
-        
+        if(xArr.count > 1){
+            UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(kLineLongPressed:)];
+            longGesture.minimumPressDuration = .1;
+            [self addGestureRecognizer:longGesture];
+            
+            UITapGestureRecognizer *doubleGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(kLineDoubleClicked:)];
+            doubleGesture.numberOfTapsRequired = 2;
+            [self addGestureRecognizer:doubleGesture];
+            
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(kLineTapClicked:)];
+            [tapGesture requireGestureRecognizerToFail:doubleGesture];
+            tapGesture.numberOfTapsRequired = 1;
+            [self addGestureRecognizer:tapGesture];
+            
+        }
+                
 //        UIPinchGestureRecognizer *pinGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(KLinePin:)];
 //        [self addGestureRecognizer:pinGesture];
 
@@ -581,6 +584,12 @@
 static bool getIt = NO;
 - (void)kLineLongPressed:(UILongPressGestureRecognizer *)sender
 {
+    //直接return掉，不在开始的状态里面添加任何操作，则长按手势就会被少调用一次了
+//    if (sender.state != UIGestureRecognizerStateBegan)
+//    {
+//        return;
+//    }
+    
     CGPoint locationPoint = [sender locationInView:sender.view];
     if (sender.state == UIGestureRecognizerStateBegan) {
         if (locationPoint.x<self.baseOriginPoint.x || locationPoint.x>self.baseRightBottomPoint.x) {
@@ -592,6 +601,13 @@ static bool getIt = NO;
         CGFloat xValue = [self xValueOfXInViewPosition:locationPoint.x];
         CGFloat xValueAfterCorrect = [self correctXValue:xValue];
         CGFloat xInView = [self xInViewPositionOfXValue:xValueAfterCorrect];
+        
+        //产生 NaN的情况
+        if (isnan(xInView)) {
+            return;
+        }
+        
+        
         CGPoint crossingPoint = [self pointCrossingOfXValue:xValueAfterCorrect];
         if (crossingPoint.y==-1) {
             return;
