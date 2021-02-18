@@ -190,7 +190,7 @@ typedef enum : NSUInteger {
     MJWeakSelf;
     NSString *todayString = [[RKDataManager sharedInstance].dateFormatter2 stringFromDate:[NSDate date]];
     [[CBHttpRequest shareRequest] postWithUrl:kApiExponentData
-                                       Params:@{@"ksr":dateString, @"jsr":todayString, @"id":model.levelID}
+                                       Params:@{@"ksr":dateString?dateString:@"", @"jsr":todayString, @"id":model.levelID}
                               completionBlock:^(id responseObject) {
                                   CBLog(@"time--------------------%@",responseObject);
                                   if ([[(NSDictionary *)responseObject objectForKey:@"state"] isEqualToString:@"0"]) {

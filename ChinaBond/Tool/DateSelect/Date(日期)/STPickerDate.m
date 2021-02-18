@@ -54,10 +54,14 @@
     if (_column) {
          [self.pickerView selectRow:(_day - 1) inComponent:2 animated:NO];
     }
+    
+    [self performSelector:@selector(method) withObject:nil afterDelay:0.1f];
    
-
 }
-
+- (void)method{
+    
+    [self.pickerView reloadComponent:2];
+}
 #pragma mark - --- delegate 视图委托 ---
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -135,9 +139,13 @@
     self.year  = [self.pickerView selectedRowInComponent:0] + self.yearLeast;
     self.month = [self.pickerView selectedRowInComponent:1] + 1;
     if (_column > 2) {
-        self.day   = [self.pickerView selectedRowInComponent:2] + 1;
+        [self performSelector:@selector(method2) withObject:nil afterDelay:0.1f];
     }
     
+}
+- (void)method2{
+    
+    self.day   = [self.pickerView selectedRowInComponent:2] + 1;
 }
 
 #pragma mark - --- setters 属性 ---
