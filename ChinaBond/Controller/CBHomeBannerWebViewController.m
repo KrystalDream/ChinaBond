@@ -13,7 +13,7 @@
 #import "NSURLProtocolCustom.h"
 #import "NSURLProtocol+WKWebVIew.h"
 #import <AFURLSessionManager.h>
-#import "CBFileController.h"
+//#import "CBFileController.h"
 #import "WKWebView+ClearCache.h"
 
 @interface CBHomeBannerWebViewController ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>

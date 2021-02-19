@@ -24,7 +24,7 @@
 #import "CBFocusMoreController.h"
 #import <AFNetworkReachabilityManager.h>
 #import "UIScrollView+Associated.h"
-#import "CBadController.h"
+//#import "CBadController.h"
 #import "CSWebView.h"
 #import "CBHomeBannerWebViewController.h"
 

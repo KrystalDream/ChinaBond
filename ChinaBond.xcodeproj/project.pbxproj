@@ -147,7 +147,6 @@
 		73A0F9441C3FB7ED001AC2F9 /* UIView+Night.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A0F92D1C3FB7ED001AC2F9 /* UIView+Night.m */; };
 		73AD33311C575B380055AFF8 /* CBCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AD332F1C575B380055AFF8 /* CBCollectCell.m */; };
 		73AD33321C575B380055AFF8 /* CBCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AD33301C575B380055AFF8 /* CBCollectCell.xib */; };
-		73AD33351C57D09C0055AFF8 /* CBadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AD33341C57D09C0055AFF8 /* CBadController.m */; };
 		73AF683E1C28FB9B0094AFA0 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73AF683D1C28FB9B0094AFA0 /* PushConfig.plist */; };
 		73AF68401C28FE940094AFA0 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AF683F1C28FE940094AFA0 /* libz.1.dylib */; };
 		73AF68421C2910BF0094AFA0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AF68411C2910BF0094AFA0 /* CFNetwork.framework */; };
@@ -197,7 +196,6 @@
 		73D7C6CC1C11E94E00259DAA /* CBZNSearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D7C6CB1C11E94E00259DAA /* CBZNSearchResultController.m */; };
 		73D7C6D01C11EA1D00259DAA /* CBZNSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D7C6CE1C11EA1D00259DAA /* CBZNSearchResultCell.m */; };
 		73D7C6D11C11EA1D00259DAA /* CBZNSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D7C6CF1C11EA1D00259DAA /* CBZNSearchResultCell.xib */; };
-		73DAAA521C44CF8D00CB29AB /* CBFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DAAA511C44CF8D00CB29AB /* CBFileController.m */; };
 		73DAAA801C44EF5600CB29AB /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DAAA561C44EF5600CB29AB /* MJRefreshAutoFooter.m */; };
 		73DAAA811C44EF5600CB29AB /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DAAA581C44EF5600CB29AB /* MJRefreshBackFooter.m */; };
 		73DAAA821C44EF5600CB29AB /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DAAA5A1C44EF5600CB29AB /* MJRefreshComponent.m */; };
@@ -516,8 +514,6 @@
 		73AD332E1C575B380055AFF8 /* CBCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCollectCell.h; sourceTree = "<group>"; };
 		73AD332F1C575B380055AFF8 /* CBCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCollectCell.m; sourceTree = "<group>"; };
 		73AD33301C575B380055AFF8 /* CBCollectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBCollectCell.xib; sourceTree = "<group>"; };
-		73AD33331C57D09C0055AFF8 /* CBadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBadController.h; sourceTree = "<group>"; };
-		73AD33341C57D09C0055AFF8 /* CBadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBadController.m; sourceTree = "<group>"; };
 		73AF683D1C28FB9B0094AFA0 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
 		73AF683F1C28FE940094AFA0 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		73AF68411C2910BF0094AFA0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -601,8 +597,6 @@
 		73D7C6CD1C11EA1D00259DAA /* CBZNSearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBZNSearchResultCell.h; sourceTree = "<group>"; };
 		73D7C6CE1C11EA1D00259DAA /* CBZNSearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBZNSearchResultCell.m; sourceTree = "<group>"; };
 		73D7C6CF1C11EA1D00259DAA /* CBZNSearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBZNSearchResultCell.xib; sourceTree = "<group>"; };
-		73DAAA501C44CF8D00CB29AB /* CBFileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBFileController.h; sourceTree = "<group>"; };
-		73DAAA511C44CF8D00CB29AB /* CBFileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBFileController.m; sourceTree = "<group>"; };
 		73DAAA551C44EF5600CB29AB /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		73DAAA561C44EF5600CB29AB /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		73DAAA571C44EF5600CB29AB /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -1584,10 +1578,6 @@
 				731A60A81C30E10D007F6281 /* CBGuzhiController.m */,
 				733B72941C3B983A007AE160 /* CBFocusMoreController.h */,
 				733B72951C3B983A007AE160 /* CBFocusMoreController.m */,
-				73DAAA501C44CF8D00CB29AB /* CBFileController.h */,
-				73DAAA511C44CF8D00CB29AB /* CBFileController.m */,
-				73AD33331C57D09C0055AFF8 /* CBadController.h */,
-				73AD33341C57D09C0055AFF8 /* CBadController.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -2004,7 +1994,6 @@
 				7321FC241C1FC5A800655850 /* CBMyCollectController.m in Sources */,
 				B2FFAABB25AC35500054EC9B /* ADViewController.m in Sources */,
 				21D055F91C18905900F1C88D /* RKCateLevelModel.m in Sources */,
-				73DAAA521C44CF8D00CB29AB /* CBFileController.m in Sources */,
 				73DAAA811C44EF5600CB29AB /* MJRefreshBackFooter.m in Sources */,
 				B2B0CE2325665FF5007B6ED8 /* UILabel+Extension.m in Sources */,
 				73BE03091C17CDCC00AE1C09 /* CBSellNewsDetailCell.m in Sources */,
@@ -2102,7 +2091,6 @@
 				733F42C61C103143004102FA /* CBHomeItemCell.m in Sources */,
 				B272AEC225771F8A0037327C /* CustomActivity.m in Sources */,
 				73DAAA881C44EF5600CB29AB /* MJRefreshBackGifFooter.m in Sources */,
-				73AD33351C57D09C0055AFF8 /* CBadController.m in Sources */,
 				73A0F93B1C3FB7ED001AC2F9 /* UIProgressView+Night.m in Sources */,
 				73DAAA8F1C44EF5600CB29AB /* MJRefreshConst.m in Sources */,
 				B2A3C2C22574E329000A945A /* CBHomeBannerWebViewController.m in Sources */,

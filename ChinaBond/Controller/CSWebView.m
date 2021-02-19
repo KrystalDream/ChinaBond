@@ -22,7 +22,7 @@
 //#import <ShareSDK/ShareSDK.h>
 #import "CustomActivity.h"
 #import <AFURLSessionManager.h>
-#import "CBFileController.h"
+//#import "CBFileController.h"
 #import "CBLoginController.h"
 #import "NSURLProtocolCustom.h"
 #import "NSURLProtocol+WKWebVIew.h"
