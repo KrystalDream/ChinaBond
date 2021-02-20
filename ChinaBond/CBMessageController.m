@@ -1113,6 +1113,7 @@
     
     cell.taskCode.text = dic[@"jxfs"];
     cell.taskCodeName.text = [dic[@"zqdm"] componentsSeparatedByString:@"("][0];
+    cell.taskTime.text = dic[@"rq"];
 }
 
 #pragma mark- time format
