@@ -232,6 +232,17 @@
 		73F123311C0BFFA800B84877 /* CBUserManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F123301C0BFFA800B84877 /* CBUserManageController.m */; };
 		73F123381C0C2CD400B84877 /* CBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F123371C0C2CD400B84877 /* CBNavigationController.m */; };
 		B22501CE25C104F100BDE78C /* privacy_policy(1).html in Resources */ = {isa = PBXBuildFile; fileRef = B22501CD25C104F100BDE78C /* privacy_policy(1).html */; };
+		B2341CC425ECCB9900EB246D /* XJKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2341CB525ECCB9900EB246D /* XJKeyboardView.m */; };
+		B2341CC525ECCB9900EB246D /* NSString+XJRandomLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = B2341CB625ECCB9900EB246D /* NSString+XJRandomLetter.m */; };
+		B2341CC625ECCB9900EB246D /* XJKeyboardAccessoryBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = B2341CB725ECCB9900EB246D /* XJKeyboardAccessoryBtn.m */; };
+		B2341CC725ECCB9900EB246D /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2341CB925ECCB9900EB246D /* UIView+Extension.m */; };
+		B2341CC825ECCB9900EB246D /* c_chaKeyboardButtonSel.png in Resources */ = {isa = PBXBuildFile; fileRef = B2341CBC25ECCB9900EB246D /* c_chaKeyboardButtonSel.png */; };
+		B2341CC925ECCB9900EB246D /* c_symbolKeyboardButtonSel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2341CBD25ECCB9900EB246D /* c_symbolKeyboardButtonSel@2x.png */; };
+		B2341CCA25ECCB9900EB246D /* formitem@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2341CBE25ECCB9900EB246D /* formitem@3x.png */; };
+		B2341CCB25ECCB9900EB246D /* keyboard_large@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2341CBF25ECCB9900EB246D /* keyboard_large@2x.png */; };
+		B2341CCC25ECCB9900EB246D /* keyboard_little@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2341CC025ECCB9900EB246D /* keyboard_little@2x.png */; };
+		B2341CCD25ECCB9900EB246D /* keyboard_backspace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2341CC125ECCB9900EB246D /* keyboard_backspace@2x.png */; };
+		B2341CCE25ECCB9900EB246D /* XJSafeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B2341CC225ECCB9900EB246D /* XJSafeTextField.m */; };
 		B23BD3DB256E2EE3007CABA5 /* STPickerDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3C5256E2EE3007CABA5 /* STPickerDate.m */; };
 		B23BD3DC256E2EE3007CABA5 /* NSCalendar+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3C7256E2EE3007CABA5 /* NSCalendar+ST.m */; };
 		B23BD3DD256E2EE3007CABA5 /* STPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B23BD3CA256E2EE3007CABA5 /* STPickerView.m */; };
@@ -253,6 +264,8 @@
 		B2B0CE0625661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */; };
 		B2B0CE12256652CE007B6ED8 /* user_agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE10256652CE007B6ED8 /* user_agreement.html */; };
 		B2B0CE2325665FF5007B6ED8 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */; };
+		B2B91B5B25ECD11000D19124 /* CBLoginUserNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B91B5925ECD11000D19124 /* CBLoginUserNameCell.m */; };
+		B2B91B5C25ECD11000D19124 /* CBLoginUserNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B91B5A25ECD11000D19124 /* CBLoginUserNameCell.xib */; };
 		B2E952D6256FA17600420B95 /* zhongzhai1_XR.gif in Resources */ = {isa = PBXBuildFile; fileRef = B2E952D5256FA17600420B95 /* zhongzhai1_XR.gif */; };
 		B2FFAABB25AC35500054EC9B /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FFAAB925AC35500054EC9B /* ADViewController.m */; };
 		B2FFAABC25AC35500054EC9B /* ADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2FFAABA25AC35500054EC9B /* ADViewController.xib */; };
@@ -670,6 +683,22 @@
 		73F123361C0C2CD400B84877 /* CBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNavigationController.h; sourceTree = "<group>"; };
 		73F123371C0C2CD400B84877 /* CBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNavigationController.m; sourceTree = "<group>"; };
 		B22501CD25C104F100BDE78C /* privacy_policy(1).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "privacy_policy(1).html"; sourceTree = "<group>"; };
+		B2341CB325ECCB9900EB246D /* XJKeyboardAccessoryBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJKeyboardAccessoryBtn.h; sourceTree = "<group>"; };
+		B2341CB425ECCB9900EB246D /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		B2341CB525ECCB9900EB246D /* XJKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJKeyboardView.m; sourceTree = "<group>"; };
+		B2341CB625ECCB9900EB246D /* NSString+XJRandomLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XJRandomLetter.m"; sourceTree = "<group>"; };
+		B2341CB725ECCB9900EB246D /* XJKeyboardAccessoryBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJKeyboardAccessoryBtn.m; sourceTree = "<group>"; };
+		B2341CB825ECCB9900EB246D /* XJKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJKeyboardView.h; sourceTree = "<group>"; };
+		B2341CB925ECCB9900EB246D /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		B2341CBA25ECCB9900EB246D /* NSString+XJRandomLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XJRandomLetter.h"; sourceTree = "<group>"; };
+		B2341CBC25ECCB9900EB246D /* c_chaKeyboardButtonSel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c_chaKeyboardButtonSel.png; sourceTree = "<group>"; };
+		B2341CBD25ECCB9900EB246D /* c_symbolKeyboardButtonSel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c_symbolKeyboardButtonSel@2x.png"; sourceTree = "<group>"; };
+		B2341CBE25ECCB9900EB246D /* formitem@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "formitem@3x.png"; sourceTree = "<group>"; };
+		B2341CBF25ECCB9900EB246D /* keyboard_large@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_large@2x.png"; sourceTree = "<group>"; };
+		B2341CC025ECCB9900EB246D /* keyboard_little@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_little@2x.png"; sourceTree = "<group>"; };
+		B2341CC125ECCB9900EB246D /* keyboard_backspace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_backspace@2x.png"; sourceTree = "<group>"; };
+		B2341CC225ECCB9900EB246D /* XJSafeTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJSafeTextField.m; sourceTree = "<group>"; };
+		B2341CC325ECCB9900EB246D /* XJSafeTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJSafeTextField.h; sourceTree = "<group>"; };
 		B23BD3C5256E2EE3007CABA5 /* STPickerDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerDate.m; sourceTree = "<group>"; };
 		B23BD3C6256E2EE3007CABA5 /* NSCalendar+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+ST.h"; sourceTree = "<group>"; };
 		B23BD3C7256E2EE3007CABA5 /* NSCalendar+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+ST.m"; sourceTree = "<group>"; };
@@ -711,6 +740,9 @@
 		B2B0CE10256652CE007B6ED8 /* user_agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = user_agreement.html; sourceTree = "<group>"; };
 		B2B0CE2125665FF4007B6ED8 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
+		B2B91B5825ECD11000D19124 /* CBLoginUserNameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBLoginUserNameCell.h; sourceTree = "<group>"; };
+		B2B91B5925ECD11000D19124 /* CBLoginUserNameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBLoginUserNameCell.m; sourceTree = "<group>"; };
+		B2B91B5A25ECD11000D19124 /* CBLoginUserNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CBLoginUserNameCell.xib; sourceTree = "<group>"; };
 		B2E952D5256FA17600420B95 /* zhongzhai1_XR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zhongzhai1_XR.gif; sourceTree = "<group>"; };
 		B2FFAAB825AC35500054EC9B /* ADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
 		B2FFAAB925AC35500054EC9B /* ADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
@@ -885,6 +917,7 @@
 		4EDBB97425523BCE007427B9 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B2341CB125ECCB9900EB246D /* XJSafeKeyboard */,
 				B2B0CE0525661A75007B6ED8 /* CBPrivacyPolicyPopViewController.h */,
 				B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */,
 				B24BC56325884D4E00788781 /* StoresTool.h */,
@@ -1614,6 +1647,9 @@
 				73F123301C0BFFA800B84877 /* CBUserManageController.m */,
 				735A49E61C230E6800DFD830 /* CBAddController.h */,
 				735A49E71C230E6800DFD830 /* CBAddController.m */,
+				B2B91B5825ECD11000D19124 /* CBLoginUserNameCell.h */,
+				B2B91B5925ECD11000D19124 /* CBLoginUserNameCell.m */,
+				B2B91B5A25ECD11000D19124 /* CBLoginUserNameCell.xib */,
 				7321FC971C20169700655850 /* CBLoginController.h */,
 				7321FC981C20169700655850 /* CBLoginController.m */,
 				7321FC991C20169700655850 /* CBLoginController.xib */,
@@ -1638,6 +1674,45 @@
 				581839DB0537D7514AE16309 /* Pods-ChinaBond.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B2341CB125ECCB9900EB246D /* XJSafeKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B2341CB225ECCB9900EB246D /* SafeKeyboardView */,
+				B2341CBB25ECCB9900EB246D /* Images */,
+				B2341CC325ECCB9900EB246D /* XJSafeTextField.h */,
+				B2341CC225ECCB9900EB246D /* XJSafeTextField.m */,
+			);
+			path = XJSafeKeyboard;
+			sourceTree = "<group>";
+		};
+		B2341CB225ECCB9900EB246D /* SafeKeyboardView */ = {
+			isa = PBXGroup;
+			children = (
+				B2341CB325ECCB9900EB246D /* XJKeyboardAccessoryBtn.h */,
+				B2341CB425ECCB9900EB246D /* UIView+Extension.h */,
+				B2341CB525ECCB9900EB246D /* XJKeyboardView.m */,
+				B2341CB625ECCB9900EB246D /* NSString+XJRandomLetter.m */,
+				B2341CB725ECCB9900EB246D /* XJKeyboardAccessoryBtn.m */,
+				B2341CB825ECCB9900EB246D /* XJKeyboardView.h */,
+				B2341CB925ECCB9900EB246D /* UIView+Extension.m */,
+				B2341CBA25ECCB9900EB246D /* NSString+XJRandomLetter.h */,
+			);
+			path = SafeKeyboardView;
+			sourceTree = "<group>";
+		};
+		B2341CBB25ECCB9900EB246D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B2341CBC25ECCB9900EB246D /* c_chaKeyboardButtonSel.png */,
+				B2341CBD25ECCB9900EB246D /* c_symbolKeyboardButtonSel@2x.png */,
+				B2341CBE25ECCB9900EB246D /* formitem@3x.png */,
+				B2341CBF25ECCB9900EB246D /* keyboard_large@2x.png */,
+				B2341CC025ECCB9900EB246D /* keyboard_little@2x.png */,
+				B2341CC125ECCB9900EB246D /* keyboard_backspace@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		B23BD3C3256E2EE3007CABA5 /* DateSelect */ = {
@@ -1845,6 +1920,7 @@
 				733F42C71C103143004102FA /* CBHomeItemCell.xib in Resources */,
 				73C2D1D31C2D0E2200CAE210 /* Images.xcassets in Resources */,
 				73C999E61C16EB1700B8ECEF /* CBSellNewsDetailTitleCell.xib in Resources */,
+				B2341CCD25ECCB9900EB246D /* keyboard_backspace@2x.png in Resources */,
 				B23BD3DE256E2EE3007CABA5 /* area.plist in Resources */,
 				73BCB05F1C1E76270049A359 /* CBUserCustomSCell.xib in Resources */,
 				73AD33321C575B380055AFF8 /* CBCollectCell.xib in Resources */,
@@ -1866,13 +1942,18 @@
 				73442AE11C27C0EC000C95C5 /* CBProductDetailCell.xib in Resources */,
 				73F122F71C0BEAAA00B84877 /* LaunchScreen.storyboard in Resources */,
 				73AF683E1C28FB9B0094AFA0 /* PushConfig.plist in Resources */,
+				B2341CCC25ECCB9900EB246D /* keyboard_little@2x.png in Resources */,
 				733B73501C3CED66007AE160 /* CBHelpController.xib in Resources */,
 				73D7C6D11C11EA1D00259DAA /* CBZNSearchResultCell.xib in Resources */,
 				7321FC2E1C1FCB1D00655850 /* CBProductController.xib in Resources */,
 				21F594BF1C17414600E19D3D /* RKExponentViewController.xib in Resources */,
+				B2B91B5C25ECD11000D19124 /* CBLoginUserNameCell.xib in Resources */,
 				7321FC291C1FC76700655850 /* CBCollectionController.xib in Resources */,
+				B2341CC825ECCB9900EB246D /* c_chaKeyboardButtonSel.png in Resources */,
 				73F122F41C0BEAAA00B84877 /* Assets.xcassets in Resources */,
+				B2341CCA25ECCB9900EB246D /* formitem@3x.png in Resources */,
 				73D7C6C91C11B62100259DAA /* CBZQSearchCell.xib in Resources */,
+				B2341CC925ECCB9900EB246D /* c_symbolKeyboardButtonSel@2x.png in Resources */,
 				73C999DE1C16D61300B8ECEF /* CBSellNewsCell.xib in Resources */,
 				21F594CA1C17414600E19D3D /* RKValuationCell.xib in Resources */,
 				4E776BCE2554E88500004BC7 /* main.css in Resources */,
@@ -1882,6 +1963,7 @@
 				21F594B61C17414600E19D3D /* RKChartSecondCell.xib in Resources */,
 				21F594C91C17414600E19D3D /* RKStatisticsViewController.xib in Resources */,
 				21F594BB1C17414600E19D3D /* RKExponentDetailController.xib in Resources */,
+				B2341CCB25ECCB9900EB246D /* keyboard_large@2x.png in Resources */,
 				73F122F21C0BEAAA00B84877 /* Main.storyboard in Resources */,
 				73BCB0711C1ED0A50049A359 /* CBFeedbackController.xib in Resources */,
 				733F42D11C103A84004102FA /* CBFocusCell.xib in Resources */,
@@ -2002,6 +2084,7 @@
 				73BCB0631C1EABB40049A359 /* CBFontSetView.m in Sources */,
 				73F122EC1C0BEAAA00B84877 /* AppDelegate.m in Sources */,
 				73C2D1E81C2D3F7700CAE210 /* EAIntroPage.m in Sources */,
+				B2341CC525ECCB9900EB246D /* NSString+XJRandomLetter.m in Sources */,
 				73A0F93F1C3FB7ED001AC2F9 /* UITabBar+Night.m in Sources */,
 				73A0F9381C3FB7ED001AC2F9 /* UILabel+Night.m in Sources */,
 				73DAAA801C44EF5600CB29AB /* MJRefreshAutoFooter.m in Sources */,
@@ -2036,6 +2119,7 @@
 				733B72961C3B983A007AE160 /* CBFocusMoreController.m in Sources */,
 				73F123381C0C2CD400B84877 /* CBNavigationController.m in Sources */,
 				73C2D1C71C2B9D6000CAE210 /* CBChannelModel.m in Sources */,
+				B2341CCE25ECCB9900EB246D /* XJSafeTextField.m in Sources */,
 				B248D38D25787379000D9640 /* Foundation+Log.m in Sources */,
 				B29047A025CCE43700C08623 /* WKWebView+ClearCache.m in Sources */,
 				73A0F9311C3FB7ED001AC2F9 /* DKNightVersionManager.m in Sources */,
@@ -2051,13 +2135,16 @@
 				73C29AD21C1AB9A700B64DBC /* CBUserHeadCell.m in Sources */,
 				73F123311C0BFFA800B84877 /* CBUserManageController.m in Sources */,
 				21E7B1111C3375D500B1A3E4 /* RKExponentTopModel.m in Sources */,
+				B2341CC425ECCB9900EB246D /* XJKeyboardView.m in Sources */,
 				73A0F9361C3FB7ED001AC2F9 /* UIBarButtonItem+Night.m in Sources */,
 				73A0F93C1C3FB7ED001AC2F9 /* UISearchBar+Night.m in Sources */,
 				7342F9251C1ABCE0009D7B49 /* CBUerCustomCell.m in Sources */,
 				73442AFA1C28564D000C95C5 /* TiRefreshControl.m in Sources */,
+				B2B91B5B25ECD11000D19124 /* CBLoginUserNameCell.m in Sources */,
 				73C999E11C16DC8400B8ECEF /* CBSellNewsDetailController.m in Sources */,
 				B23BD3DF256E2EE3007CABA5 /* STPickerArea.m in Sources */,
 				732248031C15740100D393C0 /* CBFirstLevelButton.m in Sources */,
+				B2341CC725ECCB9900EB246D /* UIView+Extension.m in Sources */,
 				73D7C6C01C11A21400259DAA /* CBSearchChannel.m in Sources */,
 				B23BD3DD256E2EE3007CABA5 /* STPickerView.m in Sources */,
 				73DAAA891C44EF5600CB29AB /* MJRefreshBackNormalFooter.m in Sources */,
@@ -2099,6 +2186,7 @@
 				73AF685D1C291F4A0094AFA0 /* CBNetworkManager.m in Sources */,
 				733F42D01C103A84004102FA /* CBFocusCell.m in Sources */,
 				73BCB0671C1EC12F0049A359 /* CBVersionController.m in Sources */,
+				B2341CC625ECCB9900EB246D /* XJKeyboardAccessoryBtn.m in Sources */,
 				73442AFC1C28564D000C95C5 /* UIScrollView+Associated.m in Sources */,
 				21F594C81C17414600E19D3D /* RKStatisticsViewController.m in Sources */,
 				73DAAA901C44EF5600CB29AB /* UIScrollView+MJExtension.m in Sources */,
@@ -2319,7 +2407,7 @@
 				);
 				GCC_PREFIX_HEADER = "ChinaBond/CB-Prefix.pch";
 				INFOPLIST_FILE = ChinaBond/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2362,7 +2450,7 @@
 				);
 				GCC_PREFIX_HEADER = "ChinaBond/CB-Prefix.pch";
 				INFOPLIST_FILE = ChinaBond/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

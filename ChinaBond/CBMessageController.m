@@ -280,6 +280,9 @@
                                                       /* @"pageSize":@"10",
                                                        @"pageNum":@(_page)}*/
                                      completionBlock:^(id responseObject) {
+                
+                CBLog(@"-----111000-------------%@",responseObject);
+
                                          [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                          [self.tableView.mj_footer endRefreshing];
                                          NSString *state = [responseObject objectForKey:@"state"];
@@ -367,6 +370,8 @@
                                               Params:@{@"SID":@"05",
                                                        @"sTime":dateStr}
                                      completionBlock:^(id responseObject) {
+                
+                CBLog(@"-----000000-------------%@",responseObject);
                                          
                                          [self.tableView.mj_footer endRefreshing];
                                          [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
