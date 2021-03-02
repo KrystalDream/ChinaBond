@@ -8,12 +8,13 @@
 
 #import "CBLoginController.h"
 #import "NSString+CBMD5.h"
+#import "XJSafeTextField.h"
 
 @interface CBLoginController ()<UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) UITextField *userName;
-@property (strong, nonatomic) UITextField *secret;
+@property (strong, nonatomic) XJSafeTextField *userName;
+@property (strong, nonatomic) XJSafeTextField *secret;
 @end
 
 @implementation CBLoginController
@@ -73,7 +74,7 @@
             imageView1.image = [UIImage imageNamed:@"log_name"];
             [nameCell.contentView addSubview:imageView1];
             
-            self.userName = [[UITextField alloc] initWithFrame:CGRectMake(58, 15, SCREEN_WIDTH-58, 20)];
+            self.userName = [[XJSafeTextField alloc] initWithFrame:CGRectMake(58, 15, SCREEN_WIDTH-58, 20)];
             self.userName.dk_textColorPicker = DKColorWithRGB(0x0f0f0f, 0x333333);
             self.userName.placeholder = @"用户名/手机号/电子邮箱";
             [nameCell.contentView addSubview:self.userName];
@@ -97,7 +98,7 @@
             imageView1.image = [UIImage imageNamed:@"log_secret"];
             [secretCell.contentView addSubview:imageView1];
             
-            self.secret = [[UITextField alloc] initWithFrame:CGRectMake(58, 15, SCREEN_WIDTH-58-60, 20)];
+            self.secret = [[XJSafeTextField alloc] initWithFrame:CGRectMake(58, 15, SCREEN_WIDTH-58-60, 20)];
             self.secret.dk_textColorPicker = DKColorWithRGB(0x0f0f0f, 0x333333);
             self.secret.placeholder = @"密码";
             self.secret.secureTextEntry = YES;
@@ -136,7 +137,7 @@
 
 - (void)secretOffButtonClick:(UISwitch *)sender
 {
-    self.secret.secureTextEntry = sender.on;
+    self.secret.secureTextEntry = !sender.on;
 }
 
 - (IBAction)login:(id)sender

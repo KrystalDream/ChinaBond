@@ -11,7 +11,7 @@ pod 'MBProgressHUD', '~> 0.9.1'
 pod 'MBProgressHUD+BWMExtension', '~> 1.0.0'
 pod 'JSONKit', '~> 1.5pre'
 pod 'SDWebImage', '~> 3.7.3'
-pod 'Masonry’,'1.1.0'
+pod 'Masonry', '~> 1.1.0'
 pod 'YYModel', '1.0.4'
 #pod 'DZNEmptyDataSet','1.8.1'
 

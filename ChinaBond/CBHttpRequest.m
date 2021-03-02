@@ -86,7 +86,7 @@ static CBHttpRequest *_shareRequest = nil;
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     if (!jsonData) {
-        NSLog(@"Got an error: %@", error);
+        CBLog(@"Got an error: %@", error);
     } else {
         jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     }

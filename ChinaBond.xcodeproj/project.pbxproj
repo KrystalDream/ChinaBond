@@ -264,8 +264,6 @@
 		B2B0CE0625661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE0425661A75007B6ED8 /* CBPrivacyPolicyPopViewController.m */; };
 		B2B0CE12256652CE007B6ED8 /* user_agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B0CE10256652CE007B6ED8 /* user_agreement.html */; };
 		B2B0CE2325665FF5007B6ED8 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */; };
-		B2B91B5B25ECD11000D19124 /* CBLoginUserNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B91B5925ECD11000D19124 /* CBLoginUserNameCell.m */; };
-		B2B91B5C25ECD11000D19124 /* CBLoginUserNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B91B5A25ECD11000D19124 /* CBLoginUserNameCell.xib */; };
 		B2E952D6256FA17600420B95 /* zhongzhai1_XR.gif in Resources */ = {isa = PBXBuildFile; fileRef = B2E952D5256FA17600420B95 /* zhongzhai1_XR.gif */; };
 		B2FFAABB25AC35500054EC9B /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FFAAB925AC35500054EC9B /* ADViewController.m */; };
 		B2FFAABC25AC35500054EC9B /* ADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2FFAABA25AC35500054EC9B /* ADViewController.xib */; };
@@ -740,9 +738,6 @@
 		B2B0CE10256652CE007B6ED8 /* user_agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = user_agreement.html; sourceTree = "<group>"; };
 		B2B0CE2125665FF4007B6ED8 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		B2B0CE2225665FF4007B6ED8 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
-		B2B91B5825ECD11000D19124 /* CBLoginUserNameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBLoginUserNameCell.h; sourceTree = "<group>"; };
-		B2B91B5925ECD11000D19124 /* CBLoginUserNameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBLoginUserNameCell.m; sourceTree = "<group>"; };
-		B2B91B5A25ECD11000D19124 /* CBLoginUserNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CBLoginUserNameCell.xib; sourceTree = "<group>"; };
 		B2E952D5256FA17600420B95 /* zhongzhai1_XR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zhongzhai1_XR.gif; sourceTree = "<group>"; };
 		B2FFAAB825AC35500054EC9B /* ADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
 		B2FFAAB925AC35500054EC9B /* ADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
@@ -1647,9 +1642,6 @@
 				73F123301C0BFFA800B84877 /* CBUserManageController.m */,
 				735A49E61C230E6800DFD830 /* CBAddController.h */,
 				735A49E71C230E6800DFD830 /* CBAddController.m */,
-				B2B91B5825ECD11000D19124 /* CBLoginUserNameCell.h */,
-				B2B91B5925ECD11000D19124 /* CBLoginUserNameCell.m */,
-				B2B91B5A25ECD11000D19124 /* CBLoginUserNameCell.xib */,
 				7321FC971C20169700655850 /* CBLoginController.h */,
 				7321FC981C20169700655850 /* CBLoginController.m */,
 				7321FC991C20169700655850 /* CBLoginController.xib */,
@@ -1947,7 +1939,6 @@
 				73D7C6D11C11EA1D00259DAA /* CBZNSearchResultCell.xib in Resources */,
 				7321FC2E1C1FCB1D00655850 /* CBProductController.xib in Resources */,
 				21F594BF1C17414600E19D3D /* RKExponentViewController.xib in Resources */,
-				B2B91B5C25ECD11000D19124 /* CBLoginUserNameCell.xib in Resources */,
 				7321FC291C1FC76700655850 /* CBCollectionController.xib in Resources */,
 				B2341CC825ECCB9900EB246D /* c_chaKeyboardButtonSel.png in Resources */,
 				73F122F41C0BEAAA00B84877 /* Assets.xcassets in Resources */,
@@ -2140,7 +2131,6 @@
 				73A0F93C1C3FB7ED001AC2F9 /* UISearchBar+Night.m in Sources */,
 				7342F9251C1ABCE0009D7B49 /* CBUerCustomCell.m in Sources */,
 				73442AFA1C28564D000C95C5 /* TiRefreshControl.m in Sources */,
-				B2B91B5B25ECD11000D19124 /* CBLoginUserNameCell.m in Sources */,
 				73C999E11C16DC8400B8ECEF /* CBSellNewsDetailController.m in Sources */,
 				B23BD3DF256E2EE3007CABA5 /* STPickerArea.m in Sources */,
 				732248031C15740100D393C0 /* CBFirstLevelButton.m in Sources */,

@@ -14,7 +14,7 @@ static NSString* const FilteredKey = @"FilteredKey";
  
 + (BOOL)canInitWithRequest:(NSURLRequest *)request
 {
-    NSLog(@"request.URL.absoluteString = %@",request.URL.absoluteString);
+    CBLog(@"request.URL.absoluteString = %@",request.URL.absoluteString);
     //https://www.chinabond.com.cn/Info/155464739?sd=chinabond
     
     //absoluteString： 绝对路径   资源文件
@@ -59,7 +59,7 @@ static NSString* const FilteredKey = @"FilteredKey";
 - (void)startLoading
 {
     NSString *fileName = [super.request.URL.absoluteString componentsSeparatedByString:@"/"].lastObject;
-       NSLog(@"fileName is %@",fileName);
+    CBLog(@"fileName is %@",fileName);
        //这里是获取本地资源路径 如:png,js等
        NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
        if (!path) {

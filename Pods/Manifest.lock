@@ -31,7 +31,7 @@ DEPENDENCIES:
   - AFNetworking (= 3.1.0)
   - FMDB (~> 2.5)
   - JSONKit (~> 1.5pre)
-  - Masonry (= 1.1.0)
+  - Masonry (~> 1.1.0)
   - MBProgressHUD (~> 0.9.1)
   - "MBProgressHUD+BWMExtension (~> 1.0.0)"
   - SDWebImage (~> 3.7.3)
@@ -58,6 +58,6 @@ SPEC CHECKSUMS:
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 63c8fe337a231350014abb927dfd58b12d419573
+PODFILE CHECKSUM: 6397fba658bcd7733b368af03ce3ef51678fadca
 
 COCOAPODS: 1.10.0
