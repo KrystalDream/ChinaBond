@@ -32,6 +32,24 @@
 
 - (void)setupRequestSerializer{
     self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/x-json",@"application/json",@"text/html",@"text/plain",nil];
+    
+    AFHTTPRequestSerializer *requestSerializer =  [AFJSONRequestSerializer serializer];
+//    NSString *cookieID = [JSBUserModel shareUser].cookieID;
+    NSDictionary *headerFieldValueDictionary = @{
+//                                                 @"Accept" : @"application/json",
+//                                                 @"Content-Type" : @"application/json;charset=utf-8;",
+//                                                 @"cookieId" : (cookieID ? cookieID : @""),
+                                                 @"X-XSS-Protection":@"1",
+//                                                 @"version": @"2"
+                                                 };
+    if (headerFieldValueDictionary != nil) {
+        for (NSString *httpHeaderField in headerFieldValueDictionary. allKeys) {
+            NSString *value = headerFieldValueDictionary[httpHeaderField];
+            [requestSerializer setValue:value forHTTPHeaderField:httpHeaderField];
+        }
+    }
+//    self.requestSerializer = requestSerializer;
+
 
     self.requestSerializer.timeoutInterval = 20.f;
     
