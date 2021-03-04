@@ -45,6 +45,19 @@
     self.view.dk_backgroundColorPicker = DKColorWithRGB(0xffffff, 0x0f0f0f);
     self.tableView.dk_backgroundColorPicker = DKColorWithColors([UIColor whiteColor], [UIColor blackColor]);
     self.tableView.dk_separatorColorPicker = DKColorWithRGB(0xdcdcdc, 0x1e1c1d);
+    
+    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationUserDidTakeScreenshotNotification
+                                                  object:nil
+                                                   queue:mainQueue
+                                              usingBlock:^(NSNotification *note) {
+        
+        self.userName.text = @"";
+        self.secret.text = @"";
+        
+        CBLog(@"截屏处理 --------------------");
+                                              }];
+
 
 }
 
@@ -104,9 +117,9 @@
             self.secret.secureTextEntry = YES;
             [secretCell.contentView addSubview:self.secret];
             
-            UISwitch *switchButton = [[UISwitch alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, 10, 35, 19)];
-            [switchButton addTarget:self action:@selector(secretOffButtonClick:) forControlEvents:UIControlEventValueChanged];
-            [secretCell.contentView addSubview:switchButton];
+//            UISwitch *switchButton = [[UISwitch alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, 10, 35, 19)];
+//            [switchButton addTarget:self action:@selector(secretOffButtonClick:) forControlEvents:UIControlEventValueChanged];
+//            [secretCell.contentView addSubview:switchButton];
         }
         
         secretCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -135,10 +148,10 @@
     [self.view endEditing:YES];
 }
 
-- (void)secretOffButtonClick:(UISwitch *)sender
-{
-    self.secret.secureTextEntry = !sender.on;
-}
+//- (void)secretOffButtonClick:(UISwitch *)sender
+//{
+//    self.secret.secureTextEntry = !sender.on;
+//}
 
 - (IBAction)login:(id)sender
 {
