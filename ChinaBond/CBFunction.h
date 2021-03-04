@@ -56,8 +56,10 @@ static CGFloat const kTabbarHeight            = 49;
 
 //配置2
 
-#define kAppDebug 0
-#if kAppDebug
+//#define kAppDebug 0
+//#if kAppDebug
+#if DEBUG
+
 #define CBLog(fmt, ...)                             NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else
 #define CBLog(...)
