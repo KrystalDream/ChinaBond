@@ -89,7 +89,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 7;
+    return 6;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -103,16 +103,16 @@
     if (section == 2) {
         return 2;
     }
+//    if (section == 3) {
+//        return 1;
+//    }
     if (section == 3) {
-        return 1;
-    }
-    if (section == 4) {
         return 3;
     }
-    if (section == 5) {
+    if (section == 4) {
         return 1;
     }
-    if (section == 6) {
+    if (section == 5) {
         return 1;
     }
     return 0;
@@ -123,7 +123,7 @@
     if (indexPath.section == 0) {
         return 90;
     }
-    else if (indexPath.section == 1 || indexPath.section == 6)
+    else if (indexPath.section == 1 || indexPath.section == 5)
     {
         if (self.isLog) {
             return 50;
@@ -144,7 +144,7 @@
     if (section == 0) {
         return 0;
     }
-    else if (section == 1 || section == 6)
+    else if (section == 1 || section == 5)
     {
         if (self.isLog) {
             return 10;
@@ -253,32 +253,32 @@
         }
     }
     
+//    if (indexPath.section == 3) {
+//        CBUserCustomSCell *userCell = [tableView dequeueReusableCellWithIdentifier:@"CBUserCustomSCell"];
+//        if (!userCell) {
+//            userCell = [CBUserCustomSCell userCustomCell];
+//        }
+//        userCell.userCustomLab.text = @"推送通知";
+//        userCell.userCustomImage.dk_imagePicker = DKImageWithNames(@"user_notification", @"user_notification_night");
+//
+//
+//        BOOL isNoti = [[NSUserDefaults standardUserDefaults] boolForKey:KNotification];
+//
+//        if (isNoti) {
+//            userCell.userCustomSwitch.on = YES;
+//        }
+//        else
+//        {
+//            userCell.userCustomSwitch.on = NO;
+//        }
+//
+//        [userCell.userCustomSwitch addTarget:self action:@selector(changeNotification:) forControlEvents:UIControlEventValueChanged];
+//        userCell.lineView.dk_backgroundColorPicker = DKColorWithRGB(0xe9e9e9, 0x1e1c1d);
+//        cell = userCell;
+//    }
+    
+    
     if (indexPath.section == 3) {
-        CBUserCustomSCell *userCell = [tableView dequeueReusableCellWithIdentifier:@"CBUserCustomSCell"];
-        if (!userCell) {
-            userCell = [CBUserCustomSCell userCustomCell];
-        }
-        userCell.userCustomLab.text = @"推送通知";
-        userCell.userCustomImage.dk_imagePicker = DKImageWithNames(@"user_notification", @"user_notification_night");
-        
-
-        BOOL isNoti = [[NSUserDefaults standardUserDefaults] boolForKey:KNotification];
-        
-        if (isNoti) {
-            userCell.userCustomSwitch.on = YES;
-        }
-        else
-        {
-            userCell.userCustomSwitch.on = NO;
-        }
-        
-        [userCell.userCustomSwitch addTarget:self action:@selector(changeNotification:) forControlEvents:UIControlEventValueChanged];
-        userCell.lineView.dk_backgroundColorPicker = DKColorWithRGB(0xe9e9e9, 0x1e1c1d);
-        cell = userCell;
-    }
-    
-    
-    if (indexPath.section == 4) {
         
         CBUerCustomCell *userCell = [tableView dequeueReusableCellWithIdentifier:@"CBUerCustomCell"];
         if (!userCell) {
@@ -308,7 +308,7 @@
         cell = userCell;
     }
     
-    if (indexPath.section == 5) {
+    if (indexPath.section == 4) {
         
         CBUerCustomCell *userCell = [tableView dequeueReusableCellWithIdentifier:@"CBUerCustomCell"];
         if (!userCell) {
@@ -336,7 +336,7 @@
         cell = userCell;
     }
     
-    if (indexPath.section == 6) {
+    if (indexPath.section == 5) {
         
         static NSString *cellIndentifier = @"logOutCell";
         
@@ -385,7 +385,7 @@
 //        }
     }
     
-    if (indexPath.section == 4) {
+    if (indexPath.section == 3) {
         if (indexPath.row == 0) {
             //版本信息
             CBVersionController *version = [[CBVersionController alloc] init];
@@ -410,7 +410,7 @@
 
     }
     
-    if (indexPath.section == 5) {
+    if (indexPath.section == 4) {
         //清除缓存
         [self clearCache];
         
