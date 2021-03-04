@@ -382,16 +382,21 @@
     titleLabel.dk_textColorPicker = DKColorWithRGB(0x4c4c4c, 0x8c8c8c);
     titleLabel.font = [UIFont systemFontOfSize:15];
     [header addSubview:titleLabel];
-    
+ 
     UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 16+17+6, SCREEN_WIDTH, 12)];
-    if (_model.time.length == 0) {
+    //    if (_model.time.length == 0) {
+    //        timeLabel.text = @"更新时间:       ";
+    //    }else{
+    //        NSDate *timeDate = [[RKDataManager sharedInstance].dateFormatter2 dateFromString:_model.time];
+    //        timeLabel.text = [NSString stringWithFormat:@"更新时间:%@",[[RKDataManager sharedInstance].dateFormatter stringFromDate:timeDate]];
+    //    }
+    if ([_model.time isKindOfClass:[NSNull class]]) {
         timeLabel.text = @"更新时间:       ";
-    }
-    else
-    {
+    }else{
         NSDate *timeDate = [[RKDataManager sharedInstance].dateFormatter2 dateFromString:_model.time];
         timeLabel.text = [NSString stringWithFormat:@"更新时间:%@",[[RKDataManager sharedInstance].dateFormatter stringFromDate:timeDate]];
     }
+
     timeLabel.textAlignment = NSTextAlignmentCenter;
     timeLabel.dk_textColorPicker = DKColorWithRGB(0xff4e4e, 0x4c4c4c);
     timeLabel.font = [UIFont systemFontOfSize:13];
