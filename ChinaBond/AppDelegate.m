@@ -78,9 +78,22 @@
     [[CBCacheManager shareCache] requestPhoneConfigue];
     [self.window makeKeyAndVisible];
     
+    //判断是否越狱
+    [self isJailbreaking];
+    
     return YES;
 }
+//判断是否越狱
+- (BOOL)isJailbreaking {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:@"/Applications/Cydia.app"] ||
+        [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://package/com.example.package"]] ||
+        [[NSFileManager defaultManager] fileExistsAtPath:@"/Library/MobileSubstrate/MobileSubstrate.dylib"]) {
+        [MBProgressHUD bwm_showTitle:@"您正在越狱设备中操作" toView: self.window hideAfter:3];
+        return YES;
+    }
 
+    return NO;
+}
 - (void)umengTrack {
 //    [MobClick setCrashReportEnabled:YES]; // 如果不需要捕捉异常，注释掉此行
 //    [MobClick setLogEnabled:NO];  // 打开友盟sdk调试，注意Release发布时需要注释掉此行,减少io消耗
